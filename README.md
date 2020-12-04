@@ -8,19 +8,19 @@ The main features of the current version are simple syntax for creating and perf
 
 #### Requirements
 
-`bn_zest` requires Python 3 (I'm not sure of the lowest version but 3.6 has worked for me). It also requires `pandas` and `pomegrante`, which in turn requires , these are all contained in the requirement.txt file.
+`bn_zest` requires Python 3 (I'm not sure of the lowest version but 3.6 has worked for me). It also requires `pandas` and `pomegrante`, which in turn require other packages, a full list is in the requirements.txt file.
 
 #### Instructions
 
-It is recommended to create a virtual environment. 
+It is recommended to create a virtual environment.
 
-I have encountered issues when installing pomegranate because (for some unkown reason) Cython it is not listed in the installation dependencies even though it depend on it. It is therefore necessary to install a few packages beforehand, this can be done with pip (probably also conda but I've not tried)  
+I have encountered issues when installing pomegranate because (for some unkown reason) Cython it is not listed in the installation dependencies even though it is! It is therefore necessary to install a few packages beforehand, this can be done with pip (probably also conda but I've not tried)
 
 ```
 pip install nose joblib scipy numpy networkx Cython
 ```
 
-Once installed the easiest way to install `bn_zest` is (if you have git installed) to issue the command
+Once those have been installed the easiest next step (if you have git on your computer) is to issue the command
 
 ```
 pip install git+https://github.research.its.qmul.ac.uk/ahw387/bn_zest --no-cache-dir
@@ -32,7 +32,7 @@ Alternatively you can download the source code and copy to a relevant directory 
 pip install <path-to-directory> --no-cache-dir
 ```
 
-This will also install pandas and pomegranate. Not that because pomegranate is written in cython it needs to be compiled, so the setup can take a few minutes. 
+This will also install pandas and pomegranate. *Note that because pomegranate is written in cython it needs to be compiled, so the setup can take a few minutes to complete.*
 
 ## Quick Start
 
