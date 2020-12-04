@@ -1,0 +1,11 @@
+# files
+*.pyc
+*.pyo
+
+
+# foldes
+__pycache__/
+.idea/
+dev/
+
+
