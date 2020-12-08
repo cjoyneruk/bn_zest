@@ -7,6 +7,9 @@ class Node(State):
 
     def __init__(self, name, states=None, parents=None, npt=None, **kwargs):
 
+        # - Initialize state with empty distribution and add later during NPT setting
+        super().__init__(None, name)
+
         self.name = name
         self.parents = []
         self.children = []
@@ -16,21 +19,14 @@ class Node(State):
 
         self.states = states
 
-        if 'group' in kwargs:
-            self.group = kwargs['group']
-
-        if 'description' in kwargs:
-            self.description = kwargs['description']
-
-        if 'level' in kwargs:
-            self.level = kwargs['level']
+        for key in ['group', 'description', 'level']:
+            if key in kwargs:
+                setattr(self, key, kwargs[key])
 
         if npt is None:
             npt = np.ones([len(states)] + [len(p) for p in self.parents])
 
         self.NPT = npt
-        super(Node, self).__init__(self.NPT.dist, name)
-
 
     @property
     def states(self):
@@ -81,6 +77,7 @@ class Node(State):
     @NPT.setter
     def NPT(self, npt):
         self.__NPT = ProbTable(self, npt)
+        self.distribution = self.__NPT.get_distribution()
 
     def __str__(self):
         return f"node('{self.name}')"

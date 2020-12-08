@@ -4,6 +4,7 @@ import pomegranate
 from .parsers import from_cmpx, to_cmpx
 from .nodes import Node
 
+
 class BayesianNetwork(pomegranate.BayesianNetwork):
 
     def __init__(self, name, nodes):
@@ -15,8 +16,6 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
             for parent in node.parents:
                 self.add_edge(parent, node)
 
-        self.bake()
-
     @property
     def nodes(self):
         return self.states
@@ -26,6 +25,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         return [x.name for x in self.states]
 
     def predict_proba(self, X=None, *args, **kwargs):
+
+        self.bake()
 
         """
         Aim - to implement with sklearn
