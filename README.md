@@ -67,7 +67,7 @@ model = BayesianNetwork('My BN', nodes=[x,y])
 and we can then perform inference (using `pomegranate`) by issuing, for example, the command
 
 ```
-marginals = BN.predict_proba(input={y: 'a'})
+marginals = model.predict_proba(input={y: 'a'})
 print(marginals)
 ```
 
