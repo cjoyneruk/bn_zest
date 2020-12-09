@@ -12,7 +12,7 @@ print('')
 # - Get one of the nodes and print out the NPT
 x = model['X']
 print('X NPT:')
-print(x.NPT)
+print(x.npt)
 print('')
 
 # - Run the model

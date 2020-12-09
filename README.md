@@ -1,4 +1,4 @@
-# bn_zest (v0.2)
+# bn_zest (v0.2.1)
 
 `bn_zest` is a python package designed for quickly constructing and analysing Bayesian Networks. It is essentially a lightweight wrapper around the `pomegrante` package (you can see pomegranate's [docs](https://pomegranate.readthedocs.io/en/latest/) and [BN examples](https://github.com/jmschrei/pomegranate/blob/master/tutorials/B_Model_Tutorial_4_Bayesian_Networks.ipynb)) that provides inference, fitting and structural learning algorithms for BNs, as well as other Markov models.
 
@@ -42,20 +42,24 @@ To use `bn_zest` import the relevant aspects from the module, for example
 
 ```
 from bn_zest import Node, BayesianNetwork
+import numpy as np
 ```
 
 Then you can create nodes
 
 ```
 x = Node('X', states=['No', 'Yes'], npt=[0.2,0.8])
-y = Node('Y', states=['a', 'b', 'c'], parents=[x], npt=np.random.rand(3,2))
+
+y_npt = np.random.rand(3,2)
+y_npt = y_npt/y_npt.sum(axis=0)
+y = Node('Y', states=['a', 'b', 'c'], parents=[x], npt=y_npt)
 ```
 
 This creates two variables `x` and `y` with states 'Yes'/'No' and 'a'/'b'/'c' respectively.
 The variable y is a child of x. To view the NPTs of the variables we can write in the console
 
 ```
->>> y.NPT
+>>> y.npt
 ```
 
 These variables can be subsequently wrapped inside a Bayesian Network by writing

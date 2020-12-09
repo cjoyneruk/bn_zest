@@ -1,23 +1,26 @@
 from bn_zest import Node, BayesianNetwork
 import numpy as np
 
+def normalize(npt):
+    return npt/npt.sum(axis=0)
+
 # - Create prior nodes
 X = Node('X', states=['a', 'b', 'c'], npt=[0.2, 0.3, 0.5])
 Y = Node('Y', states=['low', 'medium', 'high'], npt=[0.9, 0.05, 0.05])
 
 print('Y npt:')
-print(Y.NPT)
+print(Y.npt)
 print('')
 
 # - Create random npt of desired shape
 np.random.seed(121)
-npt_Z = np.random.rand(2, 3, 3)
+npt_Z = normalize(np.random.rand(2, 3, 3))
 
 # - Create conditional nodes
 Z = Node('Z', states=['No', 'Yes'], parents=[X, Y], npt=npt_Z)
 
 print('Z npt:\n')
-print(Z.NPT)
+print(Z.npt)
 print('')
 
 # - Wrap in a Bayesian Network model
