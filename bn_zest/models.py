@@ -3,11 +3,11 @@ import os
 import pomegranate
 from .parsers import from_cmpx, to_cmpx
 from .nodes import Node
-
+import pandas as pd
 
 class BayesianNetwork(pomegranate.BayesianNetwork):
 
-    def __init__(self, name, nodes):
+    def __init__(self, name, nodes, compiled=False):
 
         super().__init__(name)
         self.add_states(*nodes)
@@ -15,6 +15,10 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         for node in self.nodes:
             for parent in node.parents:
                 self.add_edge(parent, node)
+
+        self.compiled = compiled
+        if self.compiled:
+            self.bake()
 
     @property
     def nodes(self):
@@ -33,6 +37,10 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         :param kwargs:
         :return:
         """
+
+        if not self.compiled:
+            self.bake()
+
         evidence = {}
         if X is not None:
 
@@ -52,6 +60,14 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         probs = [list(p.parameters[0].values()) for p in probs if not isinstance(p, str)]
         output_nodes = [node.name for node in self.nodes if node not in evidence.keys()]
         return dict(zip(output_nodes, probs))
+
+    def sample(self, *args, **kwargs):
+        if not self.compiled:
+            self.bake()
+
+        values = super(BayesianNetwork, self).sample(*args, **kwargs)
+        return pd.DataFrame(values, columns=self.node_names)
+
 
     @classmethod
     def from_file(cls, filename, file_type=None, *args, **kwargs):
