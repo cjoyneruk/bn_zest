@@ -1,19 +1,29 @@
 import pandas as pd
 import numpy as np
-import pomegranate as pg
+from pomegranate import DiscreteDistribution
+from pomegranate import ConditionalProbabilityTable as BaseCPT
 
 pd.set_option('expand_frame_repr', False)
 
 
-class PriorProbabilityTable(pg.DiscreteDistribution):
+class PriorProbabilityTable(DiscreteDistribution):
 
-    def __init__(self, target, values, force_values=False):
+    def __new__(cls, *args):
 
-        self.target = target
-        self.force_values = force_values
-        self.values = values
+        if isinstance(args[0], dict):
+            return super(PriorProbabilityTable, cls).__new__(cls, args[0])
 
-        super().__init__(dict(zip(self.target.states, self.values)))
+        target, values = args[:2]
+        if not cls._check_values(values):
+            raise ValueError('Probability values must sum to 1')
+
+        return super(PriorProbabilityTable, cls).__new__(cls, dict(zip(target.states, values)))
+
+    def __init__(self, *args):
+
+        if not isinstance(args[0], dict):
+            self.target = args[0]
+            self.values = args[1]
 
     @property
     def values(self):
@@ -28,10 +38,14 @@ class PriorProbabilityTable(pg.DiscreteDistribution):
         if not np.array_equal([len(self.target)], values.shape):
             raise ValueError(f"The distribution supplied for '{self.target.name}' is not the correct shape")
 
-        if (not self.force_values) and (not all(p == 1 for p in self.values.sum(axis=0))):
+        if values.sum(axis=0) != 1:
             raise ValueError(f"The probabilities for '{self.target.name}' do not sum to 1")
 
         self.__values = values / values.sum(axis=0)
+
+    @staticmethod
+    def _check_values(values):
+        return sum(values) == 1
 
     def to_df(self):
         return pd.DataFrame(self.values, index=self.target.states, columns=[self.target.name])
@@ -40,15 +54,19 @@ class PriorProbabilityTable(pg.DiscreteDistribution):
         return str(self.to_df().round(3))
 
 
-class ConditionalProbabilityTable(pg.ConditionalProbabilityTable):
+class ConditionalProbabilityTable(BaseCPT):
 
-    def __init__(self, target, values, force_values=False):
+    def __init__(self, *args):
 
-        self.target = target
-        self.force_values = force_values
-        self.values = values
+        if isinstance(args[0], np.ndarray):
+            super().__init__(*args)
 
-        super().__init__(self.input_values(), self.parent_distributions())
+        else:
+
+            self.target = args[0]
+            self.values = args[1]
+
+            super().__init__(self.input_values(), self.parent_distributions())
 
     @property
     def values(self):
@@ -63,9 +81,9 @@ class ConditionalProbabilityTable(pg.ConditionalProbabilityTable):
         shape = [len(self.target)] + [len(parent) for parent in self.target.parents]
 
         if not np.array_equal(shape, values.shape):
-            raise ValueError(f"The distribution supplied for '{self.target.name}' is should be of shape {shape}")
+            raise ValueError(f"The distribution supplied for '{self.target.name}' should be of shape {shape}")
 
-        if (not self.force_values) and (not all(p == 1 for p in self.values.sum(axis=0))):
+        if not all(p == 1 for p in values.sum(axis=0)):
             raise ValueError(f"The probabilities for '{self.target.name}' do not sum to 1")
 
         self.__values = values / values.sum(axis=0)

@@ -26,8 +26,6 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     def predict_proba(self, X=None, *args, **kwargs):
 
-        self.bake()
-
         """
         Aim - to implement with sklearn
         :X dict:
@@ -49,7 +47,6 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
             else:
                 raise TypeError('The keys must either be all Nodes or names of Nodes')
-
 
         probs = super(BayesianNetwork, self).predict_proba(evidence)
         probs = [list(p.parameters[0].values()) for p in probs if not isinstance(p, str)]

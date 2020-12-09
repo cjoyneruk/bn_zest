@@ -1,6 +1,5 @@
-import numpy as np
 from pomegranate import State
-from .tables import ProbTable
+from .tables import PriorProbabilityTable, ConditionalProbabilityTable
 
 
 class Node(State):
@@ -19,14 +18,11 @@ class Node(State):
 
         self.states = states
 
-        for key in ['group', 'description', 'level']:
+        for key in ['group', 'description', 'level', 'force_values']:
             if key in kwargs:
                 setattr(self, key, kwargs[key])
 
-        if npt is None:
-            npt = np.ones([len(states)] + [len(p) for p in self.parents])
-
-        self.NPT = npt
+        self.distribution = npt
 
     @property
     def states(self):
@@ -67,17 +63,27 @@ class Node(State):
     def parent_names(self):
         return [parent.name for parent in self.parents]
 
-    def is_prior(self):
+    def prior(self):
         return len(self.parents) == 0
 
-    @property
-    def NPT(self):
-        return self.__NPT
+    def _get_distribution_class(self):
+        return PriorProbabilityTable if self.prior() else ConditionalProbabilityTable
 
-    @NPT.setter
-    def NPT(self, npt):
-        self.__NPT = ProbTable(self, npt)
-        self.distribution = self.__NPT.get_distribution()
+    @property
+    def distribution(self):
+        return self.__distribution
+
+    @distribution.setter
+    def distribution(self, values):
+        self.__distribution = self._get_distribution_class()(self, values)
+
+    @property
+    def npt(self):
+        return self.distribution
+
+    @npt.setter
+    def npt(self, values):
+        self.distribution = values
 
     def __str__(self):
         return f"node('{self.name}')"
