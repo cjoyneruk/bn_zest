@@ -1,4 +1,4 @@
-# bn_zest (v0.2.1)
+# bn_zest (v0.2.2)
 
 `bn_zest` is a python package designed for quickly constructing and analysing Bayesian Networks. It is essentially a lightweight wrapper around the `pomegrante` package (you can see pomegranate's [docs](https://pomegranate.readthedocs.io/en/latest/) and [BN examples](https://github.com/jmschrei/pomegranate/blob/master/tutorials/B_Model_Tutorial_4_Bayesian_Networks.ipynb)) that provides inference, fitting and structural learning algorithms for BNs, as well as other Markov models.
 

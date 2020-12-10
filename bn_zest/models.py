@@ -4,10 +4,12 @@ import pomegranate
 from .parsers import from_cmpx, to_cmpx
 from .nodes import Node
 import pandas as pd
+import numpy as np
+
 
 class BayesianNetwork(pomegranate.BayesianNetwork):
 
-    def __init__(self, name, nodes, compiled=False):
+    def __init__(self, name=None, nodes=None, compiled=False, output_nodes=None):
 
         super().__init__(name)
         self.add_states(*nodes)
@@ -20,6 +22,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         if self.compiled:
             self.bake()
 
+        self.output_nodes = output_nodes
+
     @property
     def nodes(self):
         return self.states
@@ -28,38 +32,89 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
     def node_names(self):
         return [x.name for x in self.states]
 
-    def predict_proba(self, X=None, *args, **kwargs):
+    def predict_proba(self, X=None, max_iterations=100, check_input=True, n_jobs=1):
 
         """
-        Aim - to implement with sklearn
-        :X dict:
+
+        :X NoneType, dict, DataFrame:
+        Either a dictionary or dataframe of input values
+
         :param args:
         :param kwargs:
-        :return:
+        :return: Marginal probabilities of output nodes
         """
 
         if not self.compiled:
             self.bake()
 
-        evidence = {}
-        if X is not None:
+        if isinstance(X, dict):
 
-            if not isinstance(X, dict):
-                raise TypeError('You must supply a dictionary of nodes and state values')
+            if all(isinstance(node, Node) for node in X.keys()):
+                X = {node.name: state for node, state in X.items()}
 
-            if all(isinstance(node, str) for node in X.keys()):
-                evidence = {node: state for node, state in X.items()}
-
-            elif all(isinstance(node, Node) for node in X.keys()):
-                evidence = {node.name: state for node, state in X.items()}
-
-            else:
+            elif not all(isinstance(node, str) for node in X.keys()):
                 raise TypeError('The keys must either be all Nodes or names of Nodes')
 
-        probs = super(BayesianNetwork, self).predict_proba(evidence)
-        probs = [list(p.parameters[0].values()) for p in probs if not isinstance(p, str)]
-        output_nodes = [node.name for node in self.nodes if node not in evidence.keys()]
-        return dict(zip(output_nodes, probs))
+            for name, state in X.items():
+                if name not in self.node_names:
+                    raise KeyError(f"The name '{name}' does not match any nodes in the model")
+                if state not in self[name].states:
+                    raise KeyError(f"The state '{state}' is not a state of {name}")
+
+            probs = super(BayesianNetwork, self).predict_proba(X, max_iterations=max_iterations, check_input=check_input, n_jobs=n_jobs)
+            outputs = (list(p.parameters[0].values()) for p in probs if not isinstance(p, str))
+            output_names = (name for name in self.node_names if name not in X.keys())
+            return dict(zip(output_names, outputs))
+
+        elif isinstance(X, pd.DataFrame):
+
+            # - Check entries
+            for col in X.columns:
+                if col not in self.node_names:
+                    raise KeyError(f"The name {col} is not a recognized node")
+
+                states = X[col].unique()
+                for state in states:
+                    if state not in self[col].states:
+                        raise KeyError(f"The state '{state}' is not a state of {col}")
+
+                output_names = [name for name in self.node_names if name not in X.columns]
+                probs = X.apply(self._convert_probs(output_names, max_iterations=max_iterations, check_input=check_input, n_jobs=n_jobs), axis=1)
+                return pd.json_normalize(probs.values)
+
+        if X is not None:
+            raise TypeError('X must be either a dictionary or a pandas DataFrame')
+
+        probs = super(BayesianNetwork, self).predict_proba({})
+        outputs = (list(p.parameters[0].values()) for p in probs)
+        return dict(zip(self.node_names, outputs))
+
+    def _convert_probs(self, output_names, **kwargs):
+
+        def get_output(x):
+            probs = super(BayesianNetwork, self).predict_proba(dict(x), **kwargs)
+            outputs = [list(p.parameters[0].values()) for p in probs if not isinstance(p, str)]
+            return dict(zip(output_names, outputs))
+
+        return get_output
+
+    def predict(self, X, *args, **kwargs):
+
+        if not isinstance(X, pd.DataFrame):
+            raise TypeError('X must be a pandas DataFrame')
+
+        # - Construct apply function
+        def get_prediction(node):
+            def get_state(values):
+                return node.states[np.argmax(values)]
+            return get_state
+
+        X_pred = self.predict_proba(X).copy()
+
+        for col in X_pred.columns:
+            X_pred[col] = X_pred[col].apply(get_prediction(self[col]))
+
+        return X_pred
 
     def sample(self, *args, **kwargs):
         if not self.compiled:
@@ -68,6 +123,12 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         values = super(BayesianNetwork, self).sample(*args, **kwargs)
         return pd.DataFrame(values, columns=self.node_names)
 
+    def fit(self, X, y=None, **kwargs):
+
+        if y is not None:
+            X = pd.concat((X, y), axis=1)
+
+        super(BayesianNetwork, self).fit(X, **kwargs)
 
     @classmethod
     def from_file(cls, filename, file_type=None, *args, **kwargs):

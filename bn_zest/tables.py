@@ -53,6 +53,9 @@ class PriorProbabilityTable(DiscreteDistribution):
     def __repr__(self):
         return str(self.to_df().round(3))
 
+    def __str__(self):
+        return str(self.to_df().round(3))
+
 
 class ConditionalProbabilityTable(BaseCPT):
 
@@ -83,7 +86,8 @@ class ConditionalProbabilityTable(BaseCPT):
         if not np.array_equal(shape, values.shape):
             raise ValueError(f"The distribution supplied for '{self.target.name}' should be of shape {shape}")
 
-        if not all(p == 1 for p in values.sum(axis=0)):
+        f = np.abs(values.sum(axis=0) - 1) > 1e-10
+        if any(f.flatten()):
             raise ValueError(f"The probabilities for '{self.target.name}' do not sum to 1")
 
         self.__values = values / values.sum(axis=0)
@@ -115,4 +119,7 @@ class ConditionalProbabilityTable(BaseCPT):
         return input_npt.values
 
     def __repr__(self):
+        return str(self.to_df().round(3))
+
+    def __str__(self):
         return str(self.to_df().round(3))
