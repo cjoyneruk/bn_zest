@@ -91,7 +91,7 @@ def _get_cmpx_node(node):
 
     node_table = {'nptCompiled': True,
                   'type': 'Manual',
-                  'probabilities': node.NPT.to_df().values.tolist()}
+                  'probabilities': node.npt.to_df().values.tolist()}
 
     config = {'type': node_type,
               'table': node_table,

@@ -141,9 +141,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
                 raise TypeError('Please supply a cmpx file')
             file_type = extension
 
-        else:
-            if file_type not in ['cmpx']:
-                raise TypeError('Please supply a cmpx file_type')
+        elif file_type not in ['cmpx']:
+            raise TypeError('Please supply a cmpx file_type')
 
         with open(filename, 'r') as file:
             data_string = file.read()
@@ -166,9 +165,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
                 raise TypeError('Please supply a cmpx file')
             file_type = extension
 
-        else:
-            if file_type not in ['cmpx']:
-                raise TypeError('Please supply a cmpx file_type')
+        elif file_type not in ['cmpx']:
+            raise TypeError('Please supply a cmpx file_type')
 
         data = getattr(self, f'to_{file_type}')()
 
