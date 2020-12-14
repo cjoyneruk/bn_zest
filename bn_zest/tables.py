@@ -2,31 +2,25 @@ import pandas as pd
 import numpy as np
 from pomegranate import DiscreteDistribution
 from pomegranate import ConditionalProbabilityTable as BaseCPT
+import itertools
 
 pd.set_option('expand_frame_repr', False)
 
 
 class PriorProbabilityTable(DiscreteDistribution):
 
-    def __new__(cls, *args):
+    def __new__(cls, label, states, values):
+        return super(PriorProbabilityTable, cls).__new__(cls, dict(zip(states, values)))
 
-        if isinstance(args[0], dict):
-            return super(PriorProbabilityTable, cls).__new__(cls, args[0])
-
-        target, values = args[:2]
-        if not cls._check_values(values):
-            raise ValueError('Probability values must sum to 1')
-
-        return super(PriorProbabilityTable, cls).__new__(cls, dict(zip(target.states, values)))
-
-    def __init__(self, *args):
-
-        if not isinstance(args[0], dict):
-            self.target = args[0]
-            self.values = args[1]
+    def __init__(self, label, states, values):
+        self.label = label
+        self.states = states
+        self.values = values
 
     @property
     def values(self):
+        if np.array_equal(self.__values, self.parameters[0].values()):
+            self.__values = list(self.parameters[0].values())
         return self.__values
 
     @values.setter
@@ -35,20 +29,26 @@ class PriorProbabilityTable(DiscreteDistribution):
         if isinstance(values, list):
             values = np.array(values)
 
-        if not np.array_equal([len(self.target)], values.shape):
-            raise ValueError(f"The distribution supplied for '{self.target.name}' is not the correct shape")
+        if not np.array_equal([len(self.states)], values.shape):
+            raise ValueError(f"The distribution supplied for '{self.label}' is not the correct shape")
 
         if values.sum(axis=0) != 1:
-            raise ValueError(f"The probabilities for '{self.target.name}' do not sum to 1")
+            raise ValueError(f"The probabilities for '{self.label}' do not sum to 1")
 
         self.__values = values / values.sum(axis=0)
-
-    @staticmethod
-    def _check_values(values):
-        return sum(values) == 1
+        self.parameters = [dict(zip(self.states, self.__values))]
 
     def to_df(self):
-        return pd.DataFrame(self.values, index=self.target.states, columns=[self.target.name])
+        return pd.DataFrame(self.values, index=self.states, columns=[self.label])
+
+    def get_params(self, *args, **kwargs):
+        params = {}
+        for key in ['label', 'states', 'values']:
+            params[key] = getattr(self, key)
+        return params
+
+    def copy(self):
+        return self.__class__(**self.get_params())
 
     def __repr__(self):
         return str(self.to_df().round(3))
@@ -59,20 +59,27 @@ class PriorProbabilityTable(DiscreteDistribution):
 
 class ConditionalProbabilityTable(BaseCPT):
 
-    def __init__(self, *args):
+    def __init__(self, label, states, parent_nodes, values):
+        self.label = label
+        self.states = states
+        self.parent_nodes = parent_nodes
+        self.npt_shape = [len(states)] + [len(node) for node in self.parent_nodes]
 
-        if isinstance(args[0], np.ndarray):
-            super().__init__(*args)
+        params = self._values_to_parameters(values)
+        super().__init__(params, [p.distribution for p in self.parent_nodes])
+        self.values = values
 
-        else:
+    def parent_labels(self):
+        return [parent.label for parent in self.parents]
 
-            self.target = args[0]
-            self.values = args[1]
-
-            super().__init__(self.input_values(), self.parent_distributions())
+    def state_list(self):
+        return [parent.states for parent in self.parent_nodes] + [self.states]
 
     @property
     def values(self):
+        values = self._parameters_to_values()
+        if any((self.__values != values).flatten()):
+            self.values = values
         return self.__values
 
     @values.setter
@@ -81,42 +88,50 @@ class ConditionalProbabilityTable(BaseCPT):
         if isinstance(values, list):
             values = np.array(values)
 
-        shape = [len(self.target)] + [len(parent) for parent in self.target.parents]
+        self._check_values(values)
 
-        if not np.array_equal(shape, values.shape):
-            raise ValueError(f"The distribution supplied for '{self.target.name}' should be of shape {shape}")
+        self.__values = values
+        self.parameters = [self._values_to_parameters(values), self.parents]
+
+    def _parameters_to_values(self):
+        params = np.array(self.parameters[0])[:, -1]
+        shape = [len(parent) for parent in self.parents] + [len(self)]
+        params = params.astype(float).reshape(shape)
+        return np.moveaxis(params, -1, 0)
+
+    def _values_to_parameters(self, values):
+        values = np.moveaxis(values, 0, -1).flatten()
+        state_combs = list(itertools.product(*self.state_list()))
+        return [list(states) + [float(value)] for states, value in zip(state_combs, values)]
+
+    def _check_values(self, values):
+
+        if not np.array_equal(self.npt_shape, values.shape):
+            raise ValueError(f"The distribution supplied for '{self.label}' should be of shape {self.npt_shape}")
 
         f = np.abs(values.sum(axis=0) - 1) > 1e-10
         if any(f.flatten()):
-            raise ValueError(f"The probabilities for '{self.target.name}' do not sum to 1")
+            raise ValueError(f"The probabilities for '{self.label}' do not sum to 1")
 
         self.__values = values / values.sum(axis=0)
 
     def to_df(self):
 
-        values = self.values.reshape(len(self.target), np.prod(self.target.parent_sizes()))
+        values = self.values.reshape(self.npt_shape[0], np.prod(self.npt_shape[1:]))
 
-        levels = (parent.states for parent in self.target.parents)
-        headings = pd.MultiIndex.from_product(levels, names=self.target.parent_names())
+        levels = (parent.states for parent in self.parent_nodes)
+        headings = pd.MultiIndex.from_product(levels, names=self.parent_labels())
 
-        return pd.DataFrame(values, index=self.target.states, columns=headings)
+        return pd.DataFrame(values, index=self.states, columns=headings)
 
-    def parent_distributions(self):
-        return [parent.distribution for parent in self.target.parents]
+    def get_params(self, *args, **kwargs):
+        params = {}
+        for key in ['label', 'states', 'parent_nodes', 'values']:
+            params[key] = getattr(self, key)
+        return params
 
-    def input_values(self):
-
-        # - Rearrange to get npt
-        input_npt = self.to_df().transpose()
-
-        # - Rename parents to avoid potential conflict with state names
-        new_parent_names = [f'parent_{name}' for name in self.target.parent_names()]
-        input_npt.index.rename(new_parent_names, inplace=True)
-        input_npt = input_npt.reset_index().melt(
-            id_vars=new_parent_names,
-            value_vars=self.target.states
-        )
-        return input_npt.values
+    def copy(self):
+        return self.__class__(**self.get_params())
 
     def __repr__(self):
         return str(self.to_df().round(3))

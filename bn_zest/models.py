@@ -14,7 +14,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         super().__init__(name)
         self.add_states(*nodes)
 
-        for node in self.nodes:
+        for node in filter(lambda x: not x.prior(), self.nodes):
             for parent in node.parents:
                 self.add_edge(parent, node)
 
