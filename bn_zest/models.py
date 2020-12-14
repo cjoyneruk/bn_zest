@@ -9,7 +9,7 @@ import numpy as np
 
 class BayesianNetwork(pomegranate.BayesianNetwork):
 
-    def __init__(self, name=None, nodes=None, compiled=False, output_nodes=None):
+    def __init__(self, name=None, nodes=None):
 
         super().__init__(name)
         self.add_states(*nodes)
@@ -17,12 +17,6 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         for node in filter(lambda x: not x.prior(), self.nodes):
             for parent in node.parents:
                 self.add_edge(parent, node)
-
-        self.compiled = compiled
-        if self.compiled:
-            self.bake()
-
-        self.output_nodes = output_nodes
 
     @property
     def nodes(self):
@@ -32,7 +26,32 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
     def node_names(self):
         return [x.name for x in self.states]
 
-    def predict_proba(self, X=None, max_iterations=100, check_input=True, n_jobs=1):
+    def _get_dict_proba(self, X, output_nodes, check_states=True, **kwargs):
+
+        # - Check states
+        if check_states:
+            for name, state in X.items():
+                if state not in self[name].states:
+                    raise ValueError(f"The state '{state}' is not a state of {name}")
+
+        prob = super(BayesianNetwork, self).predict_proba(X, **kwargs)
+        output = {
+            node.name: [prob[i].parameters[0][state] for state in node.states]
+            for i, node in output_nodes}
+
+        return output
+
+    def _get_DataFrame_proba(self, X, output_nodes, **kwargs):
+
+        # - Check states
+        for name in X.columns:
+            for state in X[name].unique():
+                if state not in self[name].states:
+                    raise ValueError(f"The state '{state}' is not a state of {name}")
+
+        return pd.json_normalize(X.apply(lambda x: self._get_dict_proba(dict(x), output_nodes, check_states=False, **kwargs), axis=1))
+
+    def predict_proba(self, X=None, **kwargs):
 
         """
 
@@ -40,63 +59,27 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         Either a dictionary or dataframe of input values
 
         :param args:
-        :param kwargs:
+        :param kwargs: See
         :return: Marginal probabilities of output nodes
         """
 
-        if not self.compiled:
-            self.bake()
+        # - Check types
+        if X is None:
+            X = {}
 
-        if isinstance(X, dict):
+        if (not isinstance(X, dict)) and (not isinstance(X, pd.DataFrame)):
+            raise TypeError('X must be either a dictionary of pandas DataFrame')
 
-            if all(isinstance(node, Node) for node in X.keys()):
-                X = {node.name: state for node, state in X.items()}
+        # - Check input names
+        for name in list(X.keys()):
+            if name not in self.node_names:
+                raise KeyError(f'The node {name} does not match any contained in the model')
 
-            elif not all(isinstance(node, str) for node in X.keys()):
-                raise TypeError('The keys must either be all Nodes or names of Nodes')
+        output_nodes = [(self.nodes.index(node), node) for node in self.nodes if node.name not in list(X.keys())]
 
-            for name, state in X.items():
-                if name not in self.node_names:
-                    raise KeyError(f"The name '{name}' does not match any nodes in the model")
-                if state not in self[name].states:
-                    raise KeyError(f"The state '{state}' is not a state of {name}")
+        self.bake()
 
-            probs = super(BayesianNetwork, self).predict_proba(X, max_iterations=max_iterations, check_input=check_input, n_jobs=n_jobs)
-            outputs = (list(p.parameters[0].values()) for p in probs if not isinstance(p, str))
-            output_names = (name for name in self.node_names if name not in X.keys())
-            return dict(zip(output_names, outputs))
-
-        elif isinstance(X, pd.DataFrame):
-
-            # - Check entries
-            for col in X.columns:
-                if col not in self.node_names:
-                    raise KeyError(f"The name {col} is not a recognized node")
-
-                states = X[col].unique()
-                for state in states:
-                    if state not in self[col].states:
-                        raise KeyError(f"The state '{state}' is not a state of {col}")
-
-                output_names = [name for name in self.node_names if name not in X.columns]
-                probs = X.apply(self._convert_probs(output_names, max_iterations=max_iterations, check_input=check_input, n_jobs=n_jobs), axis=1)
-                return pd.json_normalize(probs.values)
-
-        if X is not None:
-            raise TypeError('X must be either a dictionary or a pandas DataFrame')
-
-        probs = super(BayesianNetwork, self).predict_proba({})
-        outputs = (list(p.parameters[0].values()) for p in probs)
-        return dict(zip(self.node_names, outputs))
-
-    def _convert_probs(self, output_names, **kwargs):
-
-        def get_output(x):
-            probs = super(BayesianNetwork, self).predict_proba(dict(x), **kwargs)
-            outputs = [list(p.parameters[0].values()) for p in probs if not isinstance(p, str)]
-            return dict(zip(output_names, outputs))
-
-        return get_output
+        return getattr(self, f'_get_{type(X).__name__}_proba')(X, output_nodes)
 
     def predict(self, X, *args, **kwargs):
 
@@ -117,8 +100,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         return X_pred
 
     def sample(self, *args, **kwargs):
-        if not self.compiled:
-            self.bake()
+        self.bake()
 
         values = super(BayesianNetwork, self).sample(*args, **kwargs)
         return pd.DataFrame(values, columns=self.node_names)
@@ -136,13 +118,15 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         file, extension = os.path.splitext(filename)
         extension = extension.split('.')[1]
 
+        supported_file_types = ['cmpx']
+
         if file_type is None:
-            if extension not in ['cmpx']:
-                raise TypeError('Please supply a cmpx file')
+            if extension not in supported_file_types:
+                raise TypeError(f'Only file types of the form {supported_file_types} are supported')
             file_type = extension
 
-        elif file_type not in ['cmpx']:
-            raise TypeError('Please supply a cmpx file_type')
+        elif file_type not in supported_file_types:
+            raise TypeError(f'Only file types of the form {supported_file_types} are supported')
 
         with open(filename, 'r') as file:
             data_string = file.read()
