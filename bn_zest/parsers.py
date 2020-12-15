@@ -58,10 +58,12 @@ def from_cmpx(data, network=0, remove_disconnected_nodes=True):
         node_data = {
             'name': row['name'],
             'states': states,
-            'parents': parent_nodes,
             'npt': npt,
             'level': row['level']
         }
+
+        if len(parent_nodes) > 0:
+            node_data['parents'] = parent_nodes
 
         if row['description'] not in ['', 'New Node']:
             node_data['description'] = row['description']

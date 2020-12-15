@@ -28,6 +28,9 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     def _get_dict_proba(self, X, output_nodes, check_states=True, **kwargs):
 
+        # - Remove NoneTypes
+        X = {key: value for key, value in X.items() if value is not None}
+
         # - Check states
         if check_states:
             for name, state in X.items():
@@ -46,7 +49,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         # - Check states
         for name in X.columns:
             for state in X[name].unique():
-                if state not in self[name].states:
+                if (state not in self[name].states) and (state is not None):
                     raise ValueError(f"The state '{state}' is not a state of {name}")
 
         return pd.json_normalize(X.apply(lambda x: self._get_dict_proba(dict(x), output_nodes, check_states=False, **kwargs), axis=1))
