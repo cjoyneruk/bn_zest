@@ -15,13 +15,10 @@ class PriorProbabilityTable(DiscreteDistribution):
     def __init__(self, label, states, values):
         self.label = label
         self.states = states
-        self.values = values
 
     @property
     def values(self):
-        if np.array_equal(self.__values, self.parameters[0].values()):
-            self.__values = list(self.parameters[0].values())
-        return self.__values
+        return self.parameters[0].values()
 
     @values.setter
     def values(self, values):
@@ -29,14 +26,14 @@ class PriorProbabilityTable(DiscreteDistribution):
         if isinstance(values, list):
             values = np.array(values)
 
+        print(values)
+
         if not np.array_equal([len(self.states)], values.shape):
             raise ValueError(f"The distribution supplied for '{self.label}' is not the correct shape")
 
         if values.sum(axis=0) != 1:
             raise ValueError(f"The probabilities for '{self.label}' do not sum to 1")
-
-        self.__values = values / values.sum(axis=0)
-        self.parameters = [dict(zip(self.states, self.__values))]
+        self.parameters = [dict(zip(self.states, values))]
 
     def to_df(self):
         return pd.DataFrame(self.values, index=self.states, columns=[self.label])
@@ -67,7 +64,6 @@ class ConditionalProbabilityTable(BaseCPT):
 
         params = self._values_to_parameters(values)
         super().__init__(params, [p.distribution for p in self.parent_nodes])
-        self.values = values
 
     def parent_labels(self):
         return [parent.label for parent in self.parents]
@@ -77,34 +73,16 @@ class ConditionalProbabilityTable(BaseCPT):
 
     @property
     def values(self):
-        values = self._parameters_to_values()
-        if any((self.__values != values).flatten()):
-            self.values = values
-        return self.__values
+        params = np.array(self.parameters[0])[:, -1]
+        shape = [len(parent) for parent in self.parents] + [len(self)]
+        params = params.astype(float).reshape(shape)
+        return np.moveaxis(params, -1, 0)
 
     @values.setter
     def values(self, values):
 
         if isinstance(values, list):
             values = np.array(values)
-
-        self._check_values(values)
-
-        self.__values = values
-        self.parameters = [self._values_to_parameters(values), self.parents]
-
-    def _parameters_to_values(self):
-        params = np.array(self.parameters[0])[:, -1]
-        shape = [len(parent) for parent in self.parents] + [len(self)]
-        params = params.astype(float).reshape(shape)
-        return np.moveaxis(params, -1, 0)
-
-    def _values_to_parameters(self, values):
-        values = np.moveaxis(values, 0, -1).flatten()
-        state_combs = list(itertools.product(*self.state_list()))
-        return [list(states) + [float(value)] for states, value in zip(state_combs, values)]
-
-    def _check_values(self, values):
 
         if not np.array_equal(self.npt_shape, values.shape):
             raise ValueError(f"The distribution supplied for '{self.label}' should be of shape {self.npt_shape}")
@@ -113,7 +91,12 @@ class ConditionalProbabilityTable(BaseCPT):
         if any(f.flatten()):
             raise ValueError(f"The probabilities for '{self.label}' do not sum to 1")
 
-        self.__values = values / values.sum(axis=0)
+        self.parameters[0] = self._values_to_parameters(values)
+
+    def _values_to_parameters(self, values):
+        values = np.moveaxis(values, 0, -1).flatten()
+        state_combs = list(itertools.product(*self.state_list()))
+        return [list(states) + [float(value)] for states, value in zip(state_combs, values)]
 
     def to_df(self):
 

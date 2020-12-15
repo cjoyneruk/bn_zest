@@ -6,11 +6,25 @@ class Node(State):
 
     def __init__(self, name, states, parents=None, npt=None, **kwargs):
 
-        # - Initialize state with empty distribution and add later during NPT setting
         self.parents = parents
         self.states = states
-        super().__init__(None, name)
-        self.npt = npt
+
+        if self.prior():
+            distribution = PriorProbabilityTable(
+                label=name,
+                states=self.states,
+                values=npt
+            )
+        else:
+            distribution = ConditionalProbabilityTable(
+                label=name,
+                states=self.states,
+                parent_nodes=self.parents,
+                values=npt
+            )
+
+        super().__init__(distribution, name)
+        self.name = name
 
         for key in ['group', 'description', 'level']:
             if key in kwargs:
@@ -40,28 +54,13 @@ class Node(State):
     def prior(self):
         return self.parents is None
 
-    def _get_distribution_class(self):
-        return PriorProbabilityTable if self.prior() else ConditionalProbabilityTable
-
-    def get_distribution_kwargs(self, values):
-        distribution_kwargs = {
-            'label': self.name,
-            'states': self.states,
-            'values': values
-        }
-
-        if not self.prior():
-            distribution_kwargs['parent_nodes'] = self.parents
-
-        return distribution_kwargs
-
     @property
     def npt(self):
         return self.distribution
 
     @npt.setter
     def npt(self, values):
-        self.distribution = self._get_distribution_class()(**self.get_distribution_kwargs(values))
+        self.distribution.values = values
 
     def __str__(self):
         return f"node('{self.name}')"
