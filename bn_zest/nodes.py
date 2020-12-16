@@ -24,7 +24,6 @@ class Node(State):
             )
 
         super().__init__(distribution, name)
-        self.name = name
 
         for key in ['group', 'description', 'level']:
             if key in kwargs:
