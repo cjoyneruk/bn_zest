@@ -28,7 +28,7 @@ class PriorProbabilityTable(DiscreteDistribution):
 
     @staticmethod
     def _check_values(label, states, values):
-        if not np.array_equal([len(states)], len(values)):
+        if len(states) != len(values):
             raise ValueError(f"The distribution supplied for '{label}' is not the correct shape")
 
         if sum(values) != 1:
