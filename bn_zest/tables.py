@@ -10,6 +10,7 @@ pd.set_option('expand_frame_repr', False)
 class PriorProbabilityTable(DiscreteDistribution):
 
     def __new__(cls, label, states, values):
+        cls._check_values(label, states, values)
         return super(PriorProbabilityTable, cls).__new__(cls, dict(zip(states, values)))
 
     def __init__(self, label, states, values):
@@ -22,18 +23,16 @@ class PriorProbabilityTable(DiscreteDistribution):
 
     @values.setter
     def values(self, values):
-
-        if isinstance(values, list):
-            values = np.array(values)
-
-        print(values)
-
-        if not np.array_equal([len(self.states)], values.shape):
-            raise ValueError(f"The distribution supplied for '{self.label}' is not the correct shape")
-
-        if values.sum(axis=0) != 1:
-            raise ValueError(f"The probabilities for '{self.label}' do not sum to 1")
+        self._check_values(self.label, self.states, values)
         self.parameters = [dict(zip(self.states, values))]
+
+    @staticmethod
+    def _check_values(label, states, values):
+        if not np.array_equal([len(states)], len(values)):
+            raise ValueError(f"The distribution supplied for '{label}' is not the correct shape")
+
+        if sum(values) != 1:
+            raise ValueError(f"The probabilities for '{label}' do not sum to 1")
 
     def to_df(self):
         return pd.DataFrame(self.values, index=self.states, columns=[self.label])
@@ -62,6 +61,10 @@ class ConditionalProbabilityTable(BaseCPT):
         self.parent_nodes = parent_nodes
         self.npt_shape = [len(states)] + [len(node) for node in self.parent_nodes]
 
+        if isinstance(values, list):
+            values = np.array(values)
+
+        self._check_values(values)
         params = self._values_to_parameters(values)
         super().__init__(params, [p.distribution for p in self.parent_nodes])
 
@@ -84,14 +87,16 @@ class ConditionalProbabilityTable(BaseCPT):
         if isinstance(values, list):
             values = np.array(values)
 
+        self.parameters[0] = self._values_to_parameters(values)
+
+    def _check_values(self, values):
+
         if not np.array_equal(self.npt_shape, values.shape):
             raise ValueError(f"The distribution supplied for '{self.label}' should be of shape {self.npt_shape}")
 
         f = np.abs(values.sum(axis=0) - 1) > 1e-10
         if any(f.flatten()):
             raise ValueError(f"The probabilities for '{self.label}' do not sum to 1")
-
-        self.parameters[0] = self._values_to_parameters(values)
 
     def _values_to_parameters(self, values):
         values = np.moveaxis(values, 0, -1).flatten()
