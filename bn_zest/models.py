@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import pomegranate
 from .parsers import from_cmpx, to_cmpx
 from .nodes import Node
@@ -9,7 +10,7 @@ import numpy as np
 
 class BayesianNetwork(pomegranate.BayesianNetwork):
 
-    def __init__(self, name=None, description=None, nodes=None, **kwargs):
+    def __init__(self, name, description=None, nodes=None, **kwargs):
 
         super().__init__(name)
         self.add_states(*nodes)
@@ -20,6 +21,9 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         for node in filter(lambda x: not x.prior(), self.nodes):
             for parent in node.parents:
                 self.add_edge(parent, node)
+
+        if 'id' not in kwargs:
+            self.id = re.sub(r'[^a-z0-9]', '', self.name.lower())
 
         for key, value in kwargs.items():
             setattr(self, key, value)
@@ -168,6 +172,28 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     def to_cmpx(self):
         return to_cmpx(self)
+
+    def to_dict(self):
+        data = {
+            'id': self.id,
+            'name': self.name,            
+        }
+
+        for key in ['description', 'input_groups', 'output_groups']:
+            if hasattr(self, key):
+                data[key] = getattr(self, key)
+        
+        data['variables'] = [node.to_dict() for node in self.nodes]        
+        return data
+
+    def to_json(self, file=None):
+
+        json_string = json.dumps(self.to_dict(), indent=2)
+
+        if file is None:
+            return json_string
+        else:
+            open(file, 'w').write(json_string)
 
     def __getitem__(self, item):
         return self.states[self.node_names.index(item)]

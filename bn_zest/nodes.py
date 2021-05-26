@@ -1,4 +1,6 @@
 from pomegranate import State
+import re
+import json
 from .tables import PriorProbabilityTable, ConditionalProbabilityTable
 
 
@@ -25,7 +27,10 @@ class Node(State):
 
         super().__init__(distribution, name)
 
-        for key in ['id', 'group', 'description', 'level']:
+        if 'id' not in kwargs:
+            self.id = re.sub(r'[^a-z0-9]', '', self.name.lower())
+
+        for key in ['id', 'group', 'description']:
             if key in kwargs:
                 setattr(self, key, kwargs[key])
 
@@ -61,11 +66,34 @@ class Node(State):
     def npt(self, values):
         self.distribution.values = values
 
+    def to_dict(self):
+        
+        data = {
+            'id': self.id,
+            'name': self.name,
+            'states': self.states
+        }
+
+        if self.parents is not None:
+            data['parents'] = [parent.id for parent in self.parents]
+        
+        data['npt'] = self.npt.to_df().values.tolist()
+        
+        for key in ['description', 'group']:
+            if hasattr(self, key):
+                data[key] = getattr(self, key)
+        
+        return data
+
+    def to_json(self):
+        return json.dumps(self.to_dict(), indent=2)
+
     def __str__(self):
-        return f"node('{self.name}')"
+        return f"Node('{self.name}')"
 
     def __repr__(self):
         return self.name
 
     def __len__(self):
         return len(self.states)
+
