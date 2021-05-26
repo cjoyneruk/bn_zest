@@ -25,7 +25,7 @@ class Node(State):
 
         super().__init__(distribution, name)
 
-        for key in ['group', 'description', 'level']:
+        for key in ['id', 'group', 'description', 'level']:
             if key in kwargs:
                 setattr(self, key, kwargs[key])
 

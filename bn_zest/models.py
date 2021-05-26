@@ -9,14 +9,20 @@ import numpy as np
 
 class BayesianNetwork(pomegranate.BayesianNetwork):
 
-    def __init__(self, name=None, nodes=None):
+    def __init__(self, name=None, description=None, nodes=None, **kwargs):
 
         super().__init__(name)
         self.add_states(*nodes)
 
+        if description is not None:
+            self.description = description
+
         for node in filter(lambda x: not x.prior(), self.nodes):
             for parent in node.parents:
                 self.add_edge(parent, node)
+
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
     @property
     def nodes(self):
