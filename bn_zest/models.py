@@ -36,9 +36,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
             for name, state in X.items():
                 if state not in self[name].states:
                     raise ValueError(f"The state '{state}' is not a state of {name}")
-        print(X)
         prob = super(BayesianNetwork, self).predict_proba(X, **kwargs)
-        print(prob)
         output = {
             node.name: [prob[i].parameters[0][state] for state in node.states]
             for i, node in output_nodes}

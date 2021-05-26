@@ -28,10 +28,11 @@ class PriorProbabilityTable(DiscreteDistribution):
 
     @staticmethod
     def _check_values(label, states, values):
+
         if len(states) != len(values):
             raise ValueError(f"The distribution supplied for '{label}' is not the correct shape")
 
-        if sum(values) != 1:
+        if abs(sum(values) - 1) > 1e-10:
             raise ValueError(f"The probabilities for '{label}' do not sum to 1")
 
     def to_df(self):

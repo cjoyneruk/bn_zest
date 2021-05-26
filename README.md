@@ -8,7 +8,7 @@ The main features of the current version are simple syntax for creating and perf
 
 #### Requirements
 
-`bn_zest` requires Python 3 (I'm not sure of the lowest version but 3.6 has worked for me). It also requires `pandas` and `pomegrante`, which in turn require other packages, a full list is in the requirements.txt file.
+`bn_zest` requires Python 3 (I'm not sure of the lowest version but 3.6 has worked for me). It also requires `pandas` and `pomegranate`, which in turn require other packages, a full list is in the requirements.txt file.
 
 #### Instructions
 
@@ -86,7 +86,7 @@ A couple of problems to be fixed
 
 * *Expanded node types* - In a previous implementation I had some support for Logistic Regression Nodes, Ranked Nodes and NoisyOR nodes which I aim to implement
 
-* *Fitting* - `pomegrante` supports fitting of the NPT parameters. I think this needs to be modified to support `pandas` dataframes as inputs.
+* *Fitting* - `pomegranate` supports fitting of the NPT parameters. I think this needs to be modified to support `pandas` dataframes as inputs.
 
 * *scikit-learn implementation* - It should be possible to configure the `BayesianNetwork` object to work with scikit-learn as a classifier model. In that case scikit-learn's tools package can be leveraged. For example cross validation support would look something like
 
