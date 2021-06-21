@@ -13,7 +13,6 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
     def __init__(self, name, description=None, nodes=None, **kwargs):
 
         super().__init__(name)
-        print(nodes)
         self.add_states(*nodes)
 
         if description is not None:
@@ -23,11 +22,30 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
             for parent in node.parents:
                 self.add_edge(parent, node)
 
+        # Set id
         if 'id' not in kwargs:
-            self.id = re.sub(r'[^a-z0-9]', '', self.name.lower())
 
+            value = re.sub(r'[^a-z0-9]', '', self.name.lower())[:20]
+
+            if len(value) < 5:
+                value = value + '_network'
+
+            self.id = value
+
+        # Set remaining kwargs
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    @property
+    def id(self):
+        return self.__id
+
+    @id.setter
+    def id(self, value):
+        if not re.match(r'^[a-z0-9_]{5,10}$', value):
+            raise ValueError('The id must be between 5 and 10 alphanumeric characters or underscore')
+
+        self.__id = value
 
     @property
     def nodes(self):
@@ -150,7 +168,6 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
     @classmethod
     def from_cmpx(cls, data, network=0, remove_disconnected_nodes=True):
         name, description, nodes = from_cmpx(data, network=network, remove_disconnected_nodes=remove_disconnected_nodes)
-        print('Nodes', nodes)
         return cls(name, description, nodes)
 
     def to_file(self, filename, file_type=None):

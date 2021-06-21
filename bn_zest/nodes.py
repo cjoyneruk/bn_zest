@@ -28,11 +28,28 @@ class Node(State):
         super().__init__(distribution, name)
 
         if 'id' not in kwargs:
-            self.id = re.sub(r'[^a-z0-9]', '', self.name.lower())
+
+            value = re.sub(r'[^a-z0-9]', '', self.name.lower())[:20]
+            
+            if len(value) < 5:
+                value = value + '_network'
+
+            self.id = value
 
         for key in ['id', 'group', 'description']:
             if key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    @property
+    def id(self):
+        return self.__id
+
+    @id.setter
+    def id(self, value):
+        if not re.match(r'^[a-z0-9_]{3,10}$', value):
+            raise ValueError('The id must be between 3 and 10 alphanumeric characters or underscore')
+
+        self.__id = value
 
     @property
     def states(self):
