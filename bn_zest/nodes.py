@@ -30,9 +30,9 @@ class Node(State):
         if 'id' not in kwargs:
 
             value = re.sub(r'[^a-z0-9]', '', self.name.lower())[:20]
-            
-            if len(value) < 5:
-                value = value + '_network'
+
+            if len(value) < 3:
+                value = value + '_node'
 
             self.id = value
 
@@ -46,8 +46,8 @@ class Node(State):
 
     @id.setter
     def id(self, value):
-        if not re.match(r'^[a-z0-9_]{3,10}$', value):
-            raise ValueError('The id must be between 3 and 10 alphanumeric characters or underscore')
+        if not re.match(r'[a-z0-9_]{3,20}$', value):
+            raise ValueError(f'The id {value} must be between 3 and 20 alphanumeric characters or underscore')
 
         self.__id = value
 

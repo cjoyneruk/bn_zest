@@ -42,8 +42,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     @id.setter
     def id(self, value):
-        if not re.match(r'^[a-z0-9_]{5,10}$', value):
-            raise ValueError('The id must be between 5 and 10 alphanumeric characters or underscore')
+        if not re.match(r'^[a-z0-9_]{5,20}$', value):
+            raise ValueError(f'The id {value} must be between 5 and 10 alphanumeric characters or underscore')
 
         self.__id = value
 

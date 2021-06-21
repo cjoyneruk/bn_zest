@@ -59,8 +59,10 @@ def from_cmpx(data, network=0, remove_disconnected_nodes=True):
             'name': row['name'],
             'states': states,
             'npt': npt,
-            'level': row['level']
+            'level': row['level'],
+            'id': idx[:20] + '_node' if len(idx[:20]) < 5 else idx[:20]          
         }
+
 
         if len(parent_nodes) > 0:
             node_data['parents'] = parent_nodes
@@ -73,17 +75,6 @@ def from_cmpx(data, network=0, remove_disconnected_nodes=True):
     description = None if ('description' not in model_data.keys()) else model_data['description']
 
     return model_data['name'], description, nodes
-
-
-def _get_label(node):
-
-    """
-    Converts a node name into a label by converting to lowercase and removing all non alphanumeric characters
-    :param node:
-    :return:
-    """
-
-    return re.sub(r'[^0-9a-zA-Z]+', '', node.name.lower())
 
 
 def _get_cmpx_node(node):
@@ -109,7 +100,7 @@ def _get_cmpx_node(node):
     node_data = {'configuration': config,
                  'name': node.name,
                  'description': description,
-                 'id': _get_label(node)}
+                 'id': node.id}
 
     return node_data
 
@@ -119,17 +110,17 @@ def to_cmpx(model):
     nodes = [_get_cmpx_node(node) for node in model.nodes]
 
     links = [{
-        'parent': _get_label(parent),
-        'child': _get_label(child)
+        'parent': parent.id,
+        'child': child.id
     } for parent, child in model.edges]
 
-    network = [{'nodes': nodes,
+    network = {'nodes': nodes,
                     'links': links,
                     'name': model.name,
-                    'id': re.sub(r'[^0-9a-zA-Z]+', '', model.name.lower())}]
+                    'id': model.id}
 
     settings = {'parameterLearningLogging': False, 'discreteTails': False, 'sampleSizeRanked': 5, 'convergence': 0.001,
      'simulationLogging': False, 'sampleSize': 2, 'iterations': 50, 'tolerance': 1}
 
-    return {'model': {'settings': settings, 'networks': network}}
+    return {'model': {'settings': settings, 'networks': [network]}}
 
