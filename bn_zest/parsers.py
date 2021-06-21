@@ -70,7 +70,9 @@ def from_cmpx(data, network=0, remove_disconnected_nodes=True):
 
         nodes.append(Node(**node_data))
 
-    return model_data['name'], nodes
+    description = None if ('description' not in model_data.keys()) else model_data['description']
+
+    return model_data['name'], description, nodes
 
 
 def _get_label(node):

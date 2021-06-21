@@ -13,6 +13,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
     def __init__(self, name, description=None, nodes=None, **kwargs):
 
         super().__init__(name)
+        print(nodes)
         self.add_states(*nodes)
 
         if description is not None:
@@ -148,8 +149,9 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     @classmethod
     def from_cmpx(cls, data, network=0, remove_disconnected_nodes=True):
-        name, nodes = from_cmpx(data, network=network, remove_disconnected_nodes=remove_disconnected_nodes)
-        return cls(name, nodes)
+        name, description, nodes = from_cmpx(data, network=network, remove_disconnected_nodes=remove_disconnected_nodes)
+        print('Nodes', nodes)
+        return cls(name, description, nodes)
 
     def to_file(self, filename, file_type=None):
 
