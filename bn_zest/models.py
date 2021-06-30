@@ -167,8 +167,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     @classmethod
     def from_cmpx(cls, data, network=0, remove_disconnected_nodes=True):
-        name, description, nodes = from_cmpx(data, network=network, remove_disconnected_nodes=remove_disconnected_nodes)
-        return cls(name, description, nodes)
+        model_id, name, description, nodes = from_cmpx(data, network=network, remove_disconnected_nodes=remove_disconnected_nodes)
+        return cls(name, description, nodes, id=model_id)
 
     def to_file(self, filename, file_type=None):
 
