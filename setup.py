@@ -1,11 +1,16 @@
 import setuptools
+import os
+
+ROOT_DIR = os.path.dirname(__file__)
+VERSION_FILE = os.path.join(ROOT_DIR, 'bn_zest/_version.py')
+VERSION = open(VERSION_FILE, 'r').read().split(' = ')[1:-1]
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="bn_zest",
-    version="0.3.6",
+    version=VERSION,
     author="C. H. Joyner",
     author_email="c.joyner@qmul.ac.uk",
     description="Lightweight pomegranate wrapper for Bayesian Network construction and analysis",
