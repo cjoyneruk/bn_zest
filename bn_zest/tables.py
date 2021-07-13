@@ -39,10 +39,10 @@ class PriorProbabilityTable(DiscreteDistribution):
         return pd.DataFrame(self.values, index=self.states, columns=[self.label])
 
     def get_params(self, *args, **kwargs):
-        params = {}
-        for key in ['label', 'states', 'values']:
-            params[key] = getattr(self, key)
-        return params
+        return {
+            key: getattr(self, key)
+            for key in ['label', 'states', 'values']
+        }
 
     def copy(self):
         return self.__class__(**self.get_params())
@@ -114,10 +114,10 @@ class ConditionalProbabilityTable(BaseCPT):
         return pd.DataFrame(values, index=self.states, columns=headings)
 
     def get_params(self, *args, **kwargs):
-        params = {}
-        for key in ['label', 'states', 'parent_nodes', 'values']:
-            params[key] = getattr(self, key)
-        return params
+        return {
+            key: getattr(self, key)
+            for key in ['label', 'states', 'parent_nodes', 'values']
+        }
 
     def copy(self):
         return self.__class__(**self.get_params())

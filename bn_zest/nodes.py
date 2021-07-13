@@ -28,13 +28,7 @@ class Node(State):
         super().__init__(distribution, name)
 
         if 'id' not in kwargs:
-
-            value = re.sub(r'[^a-z0-9]', '', self.name.lower())[:20]
-
-            if len(value) < 3:
-                value = value + '_node'
-
-            self.id = value
+            self.id = re.sub(r'[^a-z0-9]', '', self.name.lower())[:20]
 
         for key in ['id', 'group', 'description']:
             if key in kwargs:
@@ -46,8 +40,8 @@ class Node(State):
 
     @id.setter
     def id(self, value):
-        if not re.match(r'[a-z0-9_]{3,20}$', value):
-            raise ValueError(f'The id {value} must be between 3 and 20 alphanumeric characters or underscore')
+        if not re.match(r'[A-Za-z0-9_]{1,20}$', value):
+            raise ValueError(f'The id {value} must be at most 20 characters and contain only letters numbers or underscores')
 
         self.__id = value
 

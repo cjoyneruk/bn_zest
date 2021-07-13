@@ -4,7 +4,7 @@ import numpy as np
 import re
 
 
-def from_cmpx(data, network=0, remove_disconnected_nodes=True):
+def from_cmpx(data, network=0, remove_disconnected_nodes=True, force_summation=False):
     model_data = data['model']['networks'][network]
 
     node_list = pd.json_normalize(model_data['nodes'])
@@ -54,13 +54,20 @@ def from_cmpx(data, network=0, remove_disconnected_nodes=True):
         else:
             parent_sizes = [len(parent) for parent in parent_nodes]
             npt = np.array(row['configuration.table.probabilities']).reshape([len(states)] + parent_sizes)
+        
+        f = np.abs(npt.sum(axis=0) - 1) > 1e-10
+        if any(f.flatten()):
+            raise ValueError(f"The probabilities for {row['name']} do not sum to 1. Please change or use force_summation=True when reading from cmpx file")
+
+        if force_summation:
+            npt = npt/npt.sum(axis=0)
 
         node_data = {
             'name': row['name'],
             'states': states,
             'npt': npt,
             'level': row['level'],
-            'id': idx[:20] + '_node' if len(idx[:20]) < 5 else idx[:20]          
+            'id': idx[:20] 
         }
 
 
@@ -73,8 +80,8 @@ def from_cmpx(data, network=0, remove_disconnected_nodes=True):
         nodes.append(Node(**node_data))
 
     description = None if ('description' not in model_data.keys()) else model_data['description']
-
-    return model_data['id'], model_data['name'], description, nodes
+    model_id = re.sub('[^A-Za-z0-9_]', '_', model_data['name'])[:20]
+    return model_id, model_data['name'], description, nodes
 
 
 def _get_cmpx_node(node):

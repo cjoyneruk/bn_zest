@@ -42,8 +42,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     @id.setter
     def id(self, value):
-        if not re.match(r'^[a-z0-9_]{5,20}$', value):
-            raise ValueError(f'The id {value} must be between 5 and 10 alphanumeric characters or underscore')
+        if not re.match(r'^[A-Za-z0-9_]{1,20}$', value):
+            raise ValueError(f'The id {value} must be at most 20 characters and contain only letters numbers or underscores')
 
         self.__id = value
 
@@ -159,15 +159,13 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         elif file_type not in supported_file_types:
             raise TypeError(f'Only file types of the form {supported_file_types} are supported')
 
-        with open(filename, 'r') as file:
-            data_string = file.read()
-            data = json.loads(data_string)
+        data = json.loads(open(filename, 'r').read())
 
         return getattr(cls, f'from_{file_type}')(data, *args, **kwargs)
 
     @classmethod
-    def from_cmpx(cls, data, network=0, remove_disconnected_nodes=True):
-        model_id, name, description, nodes = from_cmpx(data, network=network, remove_disconnected_nodes=remove_disconnected_nodes)
+    def from_cmpx(cls, data, network=0, **kwargs):
+        model_id, name, description, nodes = from_cmpx(data, network=network, **kwargs)
         return cls(name, description, nodes, id=model_id)
 
     def to_file(self, filename, file_type=None):
