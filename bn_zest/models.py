@@ -144,27 +144,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         super(BayesianNetwork, self).fit(X, **kwargs)
 
     @classmethod
-    def from_file(cls, filename, file_type=None, *args, **kwargs):
-
-        file, extension = os.path.splitext(filename)
-        extension = extension.split('.')[1]
-
-        file_types = ['cmpx', 'json']
-
-        if file_type is None:
-            if extension not in file_types:
-                raise TypeError(f'Only file types of the form {file_types} are supported')
-            file_type = extension
-
-        elif file_type not in file_types:
-            raise TypeError(f'Only file types of the form {file_types} are supported')
-
-        data = json.loads(open(filename, 'r').read())
-
-        return getattr(cls, f'from_{file_type}')(data, *args, **kwargs)
-
-    @classmethod
-    def from_cmpx(cls, data, network=0, **kwargs):
+    def from_cmpx(cls, file, network=0, **kwargs):
+        data = json.loads(open(file, 'r').read())
         return cls(**from_cmpx(data, network=network, **kwargs))
 
     @classmethod
@@ -173,7 +154,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     @classmethod
     def from_json(cls, file):
-        data = json.loads(open(file, 'r').read())
+        print(file)
+        data = json.loads(open(file, 'r').read())        
         return cls.from_dict(data)
 
     def to_file(self, filename, file_type=None):
