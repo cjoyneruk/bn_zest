@@ -3,7 +3,7 @@ import os
 
 ROOT_DIR = os.path.dirname(__file__)
 VERSION_FILE = os.path.join(ROOT_DIR, 'bn_zest/_version.py')
-VERSION = open(VERSION_FILE, 'r').read().split(' = ')[1:-1]
+VERSION = open(VERSION_FILE, 'r').read().split(' = ')[1][1:-1]
 
 with open("README.md", "r") as fh:
     long_description = fh.read()

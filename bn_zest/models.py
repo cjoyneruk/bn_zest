@@ -2,7 +2,7 @@ import json
 import os
 import re
 import pomegranate
-from .parsers import from_cmpx, to_cmpx
+from .parsers import from_cmpx, to_cmpx, from_dict
 from .nodes import Node
 import pandas as pd
 import numpy as np
@@ -10,17 +10,17 @@ import numpy as np
 
 class BayesianNetwork(pomegranate.BayesianNetwork):
 
-    def __init__(self, name, description=None, nodes=None, **kwargs):
+    def __init__(self, name, description=None, variables=None, **kwargs):
 
         super().__init__(name)
-        self.add_states(*nodes)
+        self.add_states(*variables)
 
         if description is not None:
             self.description = description
 
-        for node in filter(lambda x: not x.prior(), self.nodes):
-            for parent in node.parents:
-                self.add_edge(parent, node)
+        for variable in filter(lambda x: not x.prior(), self.variables):
+            for parent in variable.parents:
+                self.add_edge(parent, variable)
 
         # Set id
         if 'id' not in kwargs:
@@ -48,14 +48,14 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         self.__id = value
 
     @property
-    def nodes(self):
+    def variables(self):
         return self.states
 
     @property
-    def node_names(self):
+    def variable_names(self):
         return [x.name for x in self.states]
 
-    def _get_dict_proba(self, X, output_nodes, check_states=True, **kwargs):
+    def _get_dict_proba(self, X, output_variables, check_states=True, **kwargs):
 
         # - Remove NoneTypes
         X = {key: value for key, value in X.items() if value is not None}
@@ -68,11 +68,11 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         prob = super(BayesianNetwork, self).predict_proba(X, **kwargs)
         output = {
             node.name: [prob[i].parameters[0][state] for state in node.states]
-            for i, node in output_nodes}
+            for i, node in output_variables}
 
         return output
 
-    def _get_DataFrame_proba(self, X, output_nodes, **kwargs):
+    def _get_DataFrame_proba(self, X, output_variables, **kwargs):
 
         # - Check states
         for name in X.columns:
@@ -80,7 +80,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
                 if (state not in self[name].states) and (state is not None):
                     raise ValueError(f"The state '{state}' is not a state of {name}")
 
-        return pd.json_normalize(X.apply(lambda x: self._get_dict_proba(dict(x), output_nodes, check_states=False, **kwargs), axis=1))
+        return pd.json_normalize(X.apply(lambda x: self._get_dict_proba(dict(x), output_variables, check_states=False, **kwargs), axis=1))
 
     def predict_proba(self, X=None, **kwargs):
 
@@ -91,7 +91,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
         :param args:
         :param kwargs: See
-        :return: Marginal probabilities of output nodes
+        :return: Marginal probabilities of output variables
         """
 
         # - Check types
@@ -103,14 +103,14 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
         # - Check input names
         for name in list(X.keys()):
-            if name not in self.node_names:
+            if name not in self.variable_names:
                 raise KeyError(f'The node {name} does not match any contained in the model')
 
-        output_nodes = [(self.nodes.index(node), node) for node in self.nodes if node.name not in list(X.keys())]
+        output_variables = [(self.variables.index(node), node) for node in self.variables if node.name not in list(X.keys())]
 
         self.bake()
 
-        return getattr(self, f'_get_{type(X).__name__}_proba')(X, output_nodes)
+        return getattr(self, f'_get_{type(X).__name__}_proba')(X, output_variables)
 
     def predict(self, X, *args, **kwargs):
 
@@ -134,7 +134,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         self.bake()
 
         values = super(BayesianNetwork, self).sample(*args, **kwargs)
-        return pd.DataFrame(values, columns=self.node_names)
+        return pd.DataFrame(values, columns=self.variable_names)
 
     def fit(self, X, y=None, **kwargs):
 
@@ -149,15 +149,15 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         file, extension = os.path.splitext(filename)
         extension = extension.split('.')[1]
 
-        supported_file_types = ['cmpx']
+        file_types = ['cmpx', 'json']
 
         if file_type is None:
-            if extension not in supported_file_types:
-                raise TypeError(f'Only file types of the form {supported_file_types} are supported')
+            if extension not in file_types:
+                raise TypeError(f'Only file types of the form {file_types} are supported')
             file_type = extension
 
-        elif file_type not in supported_file_types:
-            raise TypeError(f'Only file types of the form {supported_file_types} are supported')
+        elif file_type not in file_types:
+            raise TypeError(f'Only file types of the form {file_types} are supported')
 
         data = json.loads(open(filename, 'r').read())
 
@@ -165,21 +165,31 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     @classmethod
     def from_cmpx(cls, data, network=0, **kwargs):
-        model_id, name, description, nodes = from_cmpx(data, network=network, **kwargs)
-        return cls(name, description, nodes, id=model_id)
+        return cls(**from_cmpx(data, network=network, **kwargs))
+
+    @classmethod
+    def from_dict(cls, data):        
+        return cls(**from_dict(data))
+
+    @classmethod
+    def from_json(cls, file):
+        data = json.loads(open(file, 'r').read())
+        return cls.from_dict(data)
 
     def to_file(self, filename, file_type=None):
+
+        file_types = ['cmpx', 'json']
 
         file, extension = os.path.splitext(filename)
         extension = extension.split('.')[1]
 
         if file_type is None:
-            if extension not in ['cmpx']:
-                raise TypeError('Please supply a cmpx file')
+            if extension not in file_types:
+                raise TypeError(f'Please supply a {file_types} file')
             file_type = extension
 
-        elif file_type not in ['cmpx']:
-            raise TypeError('Please supply a cmpx file_type')
+        elif file_type not in file_types:
+            raise TypeError(f'Please supply a {file_types} file_type')
 
         data = getattr(self, f'to_{file_type}')()
 
@@ -200,7 +210,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
             if hasattr(self, key):
                 data[key] = getattr(self, key)
         
-        data['variables'] = [node.to_dict() for node in self.nodes]        
+        data['variables'] = [variable.to_dict() for variable in self.variables]        
         return data
 
     def to_json(self, file=None):
@@ -213,7 +223,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
             open(file, 'w').write(json_string)
 
     def __getitem__(self, item):
-        return self.states[self.node_names.index(item)]
+        return self.states[self.variable_names.index(item)]
 
     def __str__(self):
         return self.name
