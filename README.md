@@ -1,4 +1,4 @@
-# bn_zest (v0.3.7)
+# bn_zest (v0.3.8)
 
 `bn_zest` is a python package designed for quickly constructing and analysing Bayesian Networks. It is essentially a lightweight wrapper around the `pomegrante` package (you can see pomegranate's [docs](https://pomegranate.readthedocs.io/en/latest/) and [BN examples](https://github.com/jmschrei/pomegranate/blob/master/tutorials/B_Model_Tutorial_4_Bayesian_Networks.ipynb)) that provides inference, fitting and structural learning algorithms for BNs, as well as other Markov models.
 
@@ -65,22 +65,15 @@ The variable y is a child of x. To view the NPTs of the variables we can write i
 These variables can be subsequently wrapped inside a Bayesian Network by writing
 
 ```
-model = BayesianNetwork('My BN', nodes=[x,y])
+model = BayesianNetwork('My BN', variables=[x,y])
 ```
 
 and we can then perform inference (using `pomegranate`) by issuing, for example, the command
 
 ```
-marginals = model.predict_proba(input={y: 'a'})
+marginals = model.predict_proba(X={y: 'a'})
 print(marginals)
 ```
-
-## Current Issues
-A couple of problems to be fixed 
-
-* *FIX MODEL NPT REPLACEMENT* - NPTs in the model are not being properly reassigned
-  
-* *CHECK COMPUTATIONS* - Outputs need validating against Agena
 
 ## Future development
 
@@ -100,8 +93,6 @@ score = cross_val_score(model, X, y)
 
 ```
 * *cmpx import/export refinement* - For example, node descriptions, grouping and support for Ranked Node conversion
-
-* *BNDS interface interaction* - The ability to quickly upload, download and edit models on the Newton Server
 
 * *Documentation and examples* - Documentation both inside and outside the code needs improving. It would also be helpful to have some python notebooks
 
