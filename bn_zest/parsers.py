@@ -7,7 +7,7 @@ import re
 def from_cmpx(data, network=0, remove_disconnected_variables=True, force_summation=False):
     model_data = data['model']['networks'][network]
 
-    node_list = pd.json_normalize(model_data['variables'])
+    node_list = pd.json_normalize(model_data['nodes'])
     links = pd.json_normalize(model_data['links'])
 
     node_list['parents'] = node_list['id'].apply(
@@ -125,7 +125,7 @@ def to_cmpx(model):
         'child': child.id
     } for parent, child in model.edges]
 
-    network = {'variables': variables,
+    network = {'nodes': variables,
                     'links': links,
                     'name': model.name,
                     'id': model.id}
