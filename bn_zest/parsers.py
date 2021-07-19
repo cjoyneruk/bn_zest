@@ -55,12 +55,12 @@ def from_cmpx(data, network=0, remove_disconnected_variables=True, force_summati
             parent_sizes = [len(parent) for parent in parent_variables]
             npt = np.array(row['configuration.table.probabilities']).reshape([len(states)] + parent_sizes)
         
+        if force_summation:
+            npt = npt/npt.sum(axis=0)
+
         f = np.abs(npt.sum(axis=0) - 1) > 1e-10
         if any(f.flatten()):
             raise ValueError(f"The probabilities for {row['name']} do not sum to 1. Please change or use force_summation=True when reading from cmpx file")
-
-        if force_summation:
-            npt = npt/npt.sum(axis=0)
 
         node_data = {
             'name': row['name'],
