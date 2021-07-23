@@ -159,29 +159,10 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
            
         return cls.from_dict(json.loads(data_string))
 
-    def to_file(self, filename, file_type=None):
-
-        file_types = ['cmpx', 'json']
-
-        file, extension = os.path.splitext(filename)
-        extension = extension.split('.')[1]
-
-        if file_type is None:
-            if extension not in file_types:
-                raise TypeError(f'Please supply a {file_types} file')
-            file_type = extension
-
-        elif file_type not in file_types:
-            raise TypeError(f'Please supply a {file_types} file_type')
-
-        data = getattr(self, f'to_{file_type}')()
-
+    def to_cmpx(self, filename):
+        data = json.dumps(to_cmpx(self), indent=2)
         with open(filename, 'w') as file:
-            jstring = json.dumps(data)
-            file.write(jstring)
-
-    def to_cmpx(self):
-        return to_cmpx(self)
+            file.write(data)
 
     def to_dict(self):
         data = {
