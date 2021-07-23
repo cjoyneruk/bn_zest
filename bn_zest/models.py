@@ -25,11 +25,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         # Set id
         if 'id' not in kwargs:
 
-            value = re.sub(r'[^a-z0-9]', '', self.name.lower())[:20]
-
-            if len(value) < 5:
-                value = value + '_network'
-
+            value = re.sub(r'[^a-z0-9_]', '', self.name.lower())[:20]
             self.id = value
 
         # Set remaining kwargs
@@ -42,8 +38,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     @id.setter
     def id(self, value):
-        if not re.match(r'^[A-Za-z0-9_]{1,20}$', value):
-            raise ValueError(f'The id {value} must be at most 20 characters and contain only letters numbers or underscores')
+        if not re.match(r'^[a-z0-9_]{1,20}$', value):
+            raise ValueError(f'The id {value} must be at most 20 characters consisting of lowercase letters, numbers and underscores')
 
         self.__id = value
 
