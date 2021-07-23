@@ -144,19 +144,24 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         super(BayesianNetwork, self).fit(X, **kwargs)
 
     @classmethod
-    def from_cmpx(cls, file, network=0, **kwargs):
-        data = json.loads(open(file, 'r').read())
-        return cls(**from_cmpx(data, network=network, **kwargs))
+    def from_cmpx(cls, filename, network=0, **kwargs):
+
+        with open(filename, 'r') as file:
+            data_string = file.read()
+
+        return cls(**from_cmpx(json.loads(data_string), network=network, **kwargs))
 
     @classmethod
     def from_dict(cls, data):        
         return cls(**from_dict(data))
 
     @classmethod
-    def from_json(cls, file):
-        print(file)
-        data = json.loads(open(file, 'r').read())        
-        return cls.from_dict(data)
+    def from_json(cls, filename):
+        
+        with open(filename, 'r') as file:
+            data_string = file.read()
+           
+        return cls.from_dict(json.loads(data_string))
 
     def to_file(self, filename, file_type=None):
 
@@ -195,14 +200,15 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         data['variables'] = [variable.to_dict() for variable in self.variables]        
         return data
 
-    def to_json(self, file=None):
+    def to_json(self, filename=None):
 
         json_string = json.dumps(self.to_dict(), indent=2)
 
-        if file is None:
+        if filename is None:
             return json_string
         else:
-            open(file, 'w').write(json_string)
+            with open(filename, 'w') as file:
+                file.write(json_string)
 
     def __getitem__(self, item):
         return self.states[self.variable_names.index(item)]
