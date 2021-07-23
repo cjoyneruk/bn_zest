@@ -67,7 +67,7 @@ def from_cmpx(data, network=0, remove_disconnected_variables=True, force_summati
             'states': states,
             'npt': npt,
             'level': row['level'],
-            'id': idx[:20] 
+            'id': re.sub('[^a-z0-9_]', '', idx.lower())[:20]
         }
 
 
@@ -81,7 +81,7 @@ def from_cmpx(data, network=0, remove_disconnected_variables=True, force_summati
 
     description = None if ('description' not in model_data.keys()) else model_data['description']
     return {
-        'id': re.sub('[^A-Za-z0-9_]', '_', model_data['name'])[:20],
+        'id': re.sub('[^a-z0-9_]', '', model_data['name'].lower())[:20],
         'name': model_data['name'],
         'description': description,
         'variables': variables
