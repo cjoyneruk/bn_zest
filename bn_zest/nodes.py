@@ -2,7 +2,7 @@ from pomegranate import State
 import re
 import json
 from .tables import PriorProbabilityTable, ConditionalProbabilityTable
-
+import numpy as np
 
 class Node(State):
 
@@ -10,6 +10,17 @@ class Node(State):
 
         self.parents = parents
         self.states = states
+
+        if npt is None:
+            npt = 'uniform'
+
+        if isinstance(npt, str):
+
+            if npt in ['random', 'uniform']:
+                shape = [len(self.states), *self.parent_sizes()]
+                npt = getattr(self, f'_{npt}_npt')(*shape)
+            else:
+                raise ValueError(f'The keyword {npt} for the argument npt is not recognised')
 
         if self.prior():
             distribution = PriorProbabilityTable(
@@ -61,10 +72,12 @@ class Node(State):
             self.__states = states
 
     def parent_sizes(self):
-        return [len(parent) for parent in self.parents]
+        parents = [] if (self.parents is None) else self.parents
+        return [len(parent) for parent in parents]
 
     def parent_names(self):
-        return [parent.name for parent in self.parents]
+        parents = [] if (self.parents is None) else self.parents
+        return [parent.name for parent in parents]
 
     def prior(self):
         return self.parents is None
@@ -95,6 +108,16 @@ class Node(State):
                 data[key] = getattr(self, key)
         
         return data
+
+    @staticmethod
+    def _random_npt(*args):
+        npt = np.random.rand(*args)
+        return npt/npt.sum(axis=0)
+
+    @staticmethod
+    def _uniform_npt(*args):
+        npt = np.ones(args)
+        return npt/npt.sum(axis=0)
 
     def to_json(self):
         return json.dumps(self.to_dict(), indent=2)
