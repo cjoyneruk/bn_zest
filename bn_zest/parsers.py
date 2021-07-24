@@ -66,10 +66,8 @@ def from_cmpx(data, network=0, remove_disconnected_variables=True, force_summati
             'name': row['name'],
             'states': states,
             'npt': npt,
-            'level': row['level'],
             'id': re.sub('[^a-z0-9_]', '', idx.lower())[:20]
         }
-
 
         if len(parent_variables) > 0:
             node_data['parents'] = parent_variables
@@ -135,7 +133,7 @@ def to_cmpx(model):
 
     return {'model': {'settings': settings, 'networks': [network]}}
 
-def from_dict(data):
+def from_dict(data, force_summation=False):
 
     node_list = pd.json_normalize(data['variables'])
 
@@ -176,6 +174,9 @@ def from_dict(data):
             node_data['parents'] = [variables[i] for i in row['parents']]
             shape = [len(row['states']), *(len(variable) for variable in node_data['parents'])]
             node_data['npt'] = node_data['npt'].reshape(shape)
+
+        if force_summation:
+            node_data['npt'] = node_data['npt']/node_data['npt'].sum(axis=0)
 
         variables.append(Node(**node_data))
 
