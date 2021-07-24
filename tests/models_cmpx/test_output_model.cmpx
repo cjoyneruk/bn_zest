@@ -96,7 +96,7 @@
               ]
             },
             "name": "C",
-            "description": "New node",
+            "description": null,
             "id": "c"
           },
           {
@@ -127,7 +127,7 @@
               ]
             },
             "name": "D",
-            "description": "New node",
+            "description": null,
             "id": "d"
           },
           {
@@ -161,7 +161,7 @@
               ]
             },
             "name": "E",
-            "description": "New node",
+            "description": null,
             "id": "e"
           },
           {
@@ -192,7 +192,7 @@
               ]
             },
             "name": "F",
-            "description": "New node",
+            "description": null,
             "id": "f"
           }
         ],

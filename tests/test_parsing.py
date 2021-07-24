@@ -12,7 +12,7 @@ from models.test_model import create_test_model
 CMPX_DIR = os.path.join(FILE_DIR, 'models_cmpx')
 JSON_DIR = os.path.join(FILE_DIR, 'models_json')
 
-class TestParser(unittest.TestCase):
+class ErrorTestMixin:
 
     def assertRaisesWithMessage(self, excClass, callableObj, msg, *args, **kwargs):
 
@@ -23,13 +23,15 @@ class TestParser(unittest.TestCase):
         except excClass as error:
             self.assertEqual(str(error), msg)
 
+
+class TestCMPXParser(ErrorTestMixin, unittest.TestCase):
+
     def assertIsBayesianNetworkFromCMPX(self, filepath, **kwargs):
         model = BayesianNetwork.from_cmpx(filepath, **kwargs)
         self.assertIsInstance(model, BayesianNetwork)
 
     def test_cmpx_bendi_bn(self):
         self.assertIsBayesianNetworkFromCMPX(os.path.join(CMPX_DIR, 'bendi_bn_test.cmpx'))
-
 
     def test_cmpx_limbmodel_fail(self):
 
@@ -55,6 +57,30 @@ class TestParser(unittest.TestCase):
         self.assertIsBayesianNetworkFromCMPX(output_path)
 
 
+class TestJSONParser(ErrorTestMixin, unittest.TestCase):
+
+    def assertIsBayesianNetworkFromJSON(self, filepath, **kwargs):
+        model = BayesianNetwork.from_json(filepath, **kwargs)
+        self.assertIsInstance(model, BayesianNetwork)
+
+    def test_model_json_output(self):
+        
+        model = create_test_model()
+        output_path = os.path.join(JSON_DIR, 'test_output_model.json')
+
+        model.to_json(output_path)
+        self.assertIsBayesianNetworkFromJSON(output_path)
+
+    def test_model_json_fail(self):
+
+        model_path = os.path.join(JSON_DIR, 'test_input_model.json')
+
+        self.assertRaisesWithMessage(
+            ValueError,
+            BayesianNetwork.from_json,
+            "The probabilities for 'A' do not sum to 1",
+            model_path
+        )
 
 if __name__ == '__main__':
     unittest.main()

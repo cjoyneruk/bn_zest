@@ -1,0 +1,193 @@
+{
+  "id": "zest_test_network",
+  "name": "Zest test network",
+  "description": "This is my BN",
+  "input_groups": [
+    {
+      "id": "inputs_1",
+      "name": "Inputs 1",
+      "description": "Description for inputs 1"
+    },
+    {
+      "id": "inputs_2",
+      "name": "Inputs 2",
+      "description": "Description for inputs 2"
+    }
+  ],
+  "output_groups": [
+    {
+      "id": "outputs_1",
+      "name": "Outputs 1",
+      "description": "Description for outputs 1"
+    },
+    {
+      "id": "outputs_2",
+      "name": "Outputs 2",
+      "description": "Description for outputs 2"
+    }
+  ],
+  "variables": [
+    {
+      "id": "a",
+      "name": "A",
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "group": "inputs_1",
+      "description": "This is the prior node",
+      "parents": null,
+      "npt": [
+        [
+          0.5
+        ],
+        [
+          0.5
+        ]
+      ]
+    },
+    {
+      "id": "b",
+      "name": "B",
+      "states": [
+        "Low",
+        "Med",
+        "High"
+      ],
+      "group": "outputs_1",
+      "description": "This is the output node",
+      "parents": null,
+      "npt": [
+        [
+          0.6
+        ],
+        [
+          0.15
+        ],
+        [
+          0.25
+        ]
+      ]
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "states": [
+        "Positive",
+        "Negative"
+      ],
+      "group": "inputs_1",
+      "description": null,
+      "parents": [
+        "a",
+        "b"
+      ],
+      "npt": [
+        [
+          0.6287446283761415,
+          0.9453383823139994,
+          0.8712995357752639,
+          0.5889179621578454,
+          0.8261295618591747,
+          0.016784136097453675
+        ],
+        [
+          0.37125537162385847,
+          0.054661617686000676,
+          0.12870046422473616,
+          0.41108203784215464,
+          0.1738704381408253,
+          0.9832158639025463
+        ]
+      ]
+    },
+    {
+      "id": "d",
+      "name": "D",
+      "states": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "group": "inputs_2",
+      "description": null,
+      "parents": [
+        "c"
+      ],
+      "npt": [
+        [
+          0.39267230474525106,
+          0.44128746826055154
+        ],
+        [
+          0.5969275777779706,
+          0.48765161833309706
+        ],
+        [
+          0.010400117476778417,
+          0.07106091340635147
+        ]
+      ]
+    },
+    {
+      "id": "e",
+      "name": "E",
+      "states": [
+        "Down",
+        "Up"
+      ],
+      "group": "outputs_2",
+      "description": null,
+      "parents": [
+        "c",
+        "d"
+      ],
+      "npt": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "id": "f",
+      "name": "F",
+      "states": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "group": "outputs_2",
+      "description": null,
+      "parents": [
+        "e"
+      ],
+      "npt": [
+        [
+          0.23396845864380733,
+          0.21123224275524405
+        ],
+        [
+          0.048998478555335394,
+          0.6203204965849961
+        ],
+        [
+          0.7170330628008573,
+          0.16844726065975976
+        ]
+      ]
+    }
+  ]
+}
