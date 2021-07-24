@@ -151,6 +151,20 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
     @classmethod
     def from_cmpx(cls, filename, network=0, **kwargs):
+        
+        """
+        Returns BayesianNetwork model from cmpx file
+
+        Args:
+        filename (str) - path to cmpx
+        
+        Kwargs:
+        network [=0] (int) - specifies which network to use
+
+        Optional kwargs:
+        remove_disconnected_variables [=True] (bool) - removes any disconnected variables from the model
+        force_summation [=False] - forces values of the npt to equal 1
+        """
 
         with open(filename, 'r') as file:
             data_string = file.read()
@@ -158,16 +172,37 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         return cls(**from_cmpx(json.loads(data_string), network=network, **kwargs))
 
     @classmethod
-    def from_dict(cls, data):        
-        return cls(**from_dict(data))
+    def from_dict(cls, data, **kwargs):
+                
+        """
+        Returns BayesianNetwork model from  dict
+
+        Args:
+        data (dict) - model data in dictionary form
+    
+        Optional kwargs:
+        force_summation [=False] - forces values of the npt to equal 1
+        """
+
+        return cls(**from_dict(data, **kwargs))
 
     @classmethod
-    def from_json(cls, filename):
+    def from_json(cls, filename, **kwargs):
         
+        """
+        Returns BayesianNetwork model from json file
+
+        Args:
+        filename (str) - path to json
+        
+        Optional kwargs:
+        force_summation [=False] - forces values of the npt to equal 1
+        """
+
         with open(filename, 'r') as file:
             data_string = file.read()
            
-        return cls.from_dict(json.loads(data_string))
+        return cls.from_dict(json.loads(data_string), **kwargs)
 
     def to_cmpx(self, filename):
         data = json.dumps(to_cmpx(self), indent=2)
