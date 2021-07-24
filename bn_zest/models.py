@@ -15,6 +15,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         super().__init__(name)
         self.add_states(*variables)
 
+        self._check_variable_ids()
+
         if description is not None:
             self.description = description
 
@@ -50,6 +52,14 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
     @property
     def variable_names(self):
         return [x.name for x in self.states]
+
+    def variable_ids(self):
+        return [x.id for x in self.states]
+
+    def _check_variable_ids(self):
+        var_ids = self.variable_ids()
+        if len(np.unique(var_ids)) < len(var_ids):
+            raise ValueError('The ids of the provided variables are not unique')
 
     def _get_dict_proba(self, X, output_variables, check_states=True, **kwargs):
 
