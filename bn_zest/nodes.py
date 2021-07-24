@@ -6,7 +6,7 @@ import numpy as np
 
 class Node(State):
 
-    def __init__(self, name, states, parents=None, npt=None, **kwargs):
+    def __init__(self, name, states, parents=None, npt=None, id=None, group=None, description=None):
 
         self.parents = parents
         self.states = states
@@ -38,12 +38,9 @@ class Node(State):
 
         super().__init__(distribution, name)
 
-        if 'id' not in kwargs:
-            self.id = re.sub(r'[^a-z0-9_]', '', self.name.lower())[:20]
-
-        for key in ['id', 'group', 'description']:
-            if key in kwargs:
-                setattr(self, key, kwargs[key])
+        self.id = re.sub(r'[^a-z0-9_]', '', self.name.lower())[:20] if (id is None) else id
+        self.group = group
+        self.description = description
 
     @property
     def id(self):
@@ -95,17 +92,13 @@ class Node(State):
         data = {
             'id': self.id,
             'name': self.name,
-            'states': self.states
+            'states': self.states,
+            'group': self.group,
+            'description': self.description
         }
 
-        if self.parents is not None:
-            data['parents'] = [parent.id for parent in self.parents]
-        
+        data['parents'] = None if (self.parents is None) else [parent.id for parent in self.parents]
         data['npt'] = self.npt.to_df().values.tolist()
-        
-        for key in ['description', 'group']:
-            if hasattr(self, key):
-                data[key] = getattr(self, key)
         
         return data
 
