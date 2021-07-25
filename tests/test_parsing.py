@@ -7,7 +7,7 @@ sys.path.append(ROOT_DIR)
 
 import unittest
 from bn_zest import BayesianNetwork
-from models.test_model import create_test_model
+from models.construct_model import create_test_model
 
 CMPX_DIR = os.path.join(FILE_DIR, 'models_cmpx')
 JSON_DIR = os.path.join(FILE_DIR, 'models_json')
