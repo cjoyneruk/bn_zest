@@ -94,7 +94,7 @@ def from_cmpx(data, network=0, remove_disconnected_variables=True, force_summati
     var_list.loc[var_list['description'].isin(['', 'New Node']), 'description'] = None    
     var_list.loc[var_list['description'].isna(), 'description'] = None
     
-    var_list = var_list[[ 'id', 'name','description' , 'npt', 'states']]
+    var_list = var_list[[ 'id', 'name','description' , 'npt', 'states', 'group']]
 
     var_list['id'] = var_list['id'].apply(_sub_id)
 
