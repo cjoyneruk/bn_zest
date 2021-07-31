@@ -53,6 +53,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
     def variable_names(self):
         return [x.name for x in self.states]
 
+    @property
     def variable_ids(self):
         return [x.id for x in self.states]
 
@@ -73,8 +74,8 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
                     raise ValueError(f"The state '{state}' is not a state of {name}")
         prob = super(BayesianNetwork, self).predict_proba(X, **kwargs)
         output = {
-            node.name: [prob[i].parameters[0][state] for state in node.states]
-            for i, node in output_variables}
+            variable.id: [prob[i].parameters[0][state] for state in variable.states]
+            for i, variable in output_variables}
 
         return output
 
@@ -107,12 +108,12 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         if (not isinstance(X, dict)) and (not isinstance(X, pd.DataFrame)):
             raise TypeError('X must be either a dictionary of pandas DataFrame')
 
-        # - Check input names
-        for name in list(X.keys()):
-            if name not in self.variable_names:
-                raise KeyError(f'The node {name} does not match any contained in the model')
+        # - Check input ids
+        for idx in list(X.keys()):
+            if idx not in self.variable_ids:
+                raise KeyError(f'The node {idx} does not match any contained in the model')
 
-        output_variables = [(self.variables.index(node), node) for node in self.variables if node.name not in list(X.keys())]
+        output_variables = [(self.variables.index(variable), variable) for variable in self.variables if variable.id not in list(X.keys())]
 
         self.bake()
 
@@ -233,7 +234,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
                 file.write(json_string)
 
     def __getitem__(self, item):
-        return self.states[self.variable_names.index(item)]
+        return self.states[self.variable_ids.index(item)]
 
     def __str__(self):
         return self.name
