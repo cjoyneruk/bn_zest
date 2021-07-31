@@ -45,6 +45,44 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
 
         self.__id = value
 
+    @staticmethod
+    def _check_groups(groups, form):
+
+        msg = f"{form} groups must be a list of dictionaries of the form {{id, name, description}}"
+
+        if not isinstance(groups, list):
+            raise TypeError(msg)
+        
+        if not all(isinstance(d, dict) for d in groups):
+            raise TypeError(msg)
+        
+        for group in groups:
+            if not set(group.keys()) == {'id', 'name', 'description'}:
+                raise TypeError(msg)
+
+        id_list = [g['id'] for g in groups]
+
+        if len(np.unique(id_list)) != len(id_list):
+            raise TypeError(f"The ids of {form} groups must be unique")
+
+    @property
+    def input_groups(self):
+        return self.__input_groups
+    
+    @input_groups.setter
+    def input_groups(self, groups):        
+        self._check_groups(groups, 'input')
+        self.__input_groups = groups
+
+    @property
+    def output_groups(self):
+        return self.__output_groups
+    
+    @output_groups.setter
+    def output_groups(self, groups):
+        self._check_groups(groups, 'output')
+        self.__output_groups = groups
+
     @property
     def variables(self):
         return self.states
