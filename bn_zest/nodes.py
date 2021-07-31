@@ -116,10 +116,10 @@ class Node(State):
         return json.dumps(self.to_dict(), indent=2)
 
     def __str__(self):
-        return f"Node('{self.name}')"
+        return f"Node('{self.id}')"
 
     def __repr__(self):
-        return self.name
+        return self.id
 
     def __len__(self):
         return len(self.states)
