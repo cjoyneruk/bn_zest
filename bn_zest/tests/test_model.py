@@ -1,13 +1,13 @@
 import unittest
-import base
+from . import base
 from bn_zest import BayesianNetwork, Node
-from models.construct_model import create_test_model
+
 
 class TestModel(base.ErrorTestMixin, unittest.TestCase):
         
     def setUp(self):
 
-        self.model = create_test_model()
+        self.model = base.create_test_model()
 
     def test_model_instance(self):
         self.assertIsInstance(self.model, BayesianNetwork)
