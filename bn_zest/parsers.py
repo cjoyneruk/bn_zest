@@ -60,14 +60,18 @@ def get_variables(df, force_summation=False):
     # - Create column for variables
     df['variable'] = None
 
+    prior_keys = ['id', 'name', 'states', 'description', 'npt', 'group']
+    other_keys = prior_keys + ['parents']
     for level in range(0, current_level+1):
         
+        
+
         recs = df['level']==level
         if level==0:
-            df.loc[recs, 'variable'] = df.loc[recs, ['id', 'name', 'states', 'description', 'npt']].apply(lambda x: Node(**x), axis=1)
+            df.loc[recs, 'variable'] = df.loc[recs, prior_keys].apply(lambda x: Node(**x), axis=1)
         else:
             df.loc[recs, 'parents'] = df.loc[recs, 'parents'].apply(lambda x: [df.loc[idx, 'variable'] for idx in x])            
-            df.loc[recs, 'variable'] = df.loc[recs, ['id', 'name', 'states', 'parents', 'description', 'npt']].apply(lambda x: Node(**x), axis=1)
+            df.loc[recs, 'variable'] = df.loc[recs, other_keys].apply(lambda x: Node(**x), axis=1)
 
     return df['variable'].to_list()
 
@@ -83,6 +87,9 @@ def from_cmpx(data, network=0, remove_disconnected_variables=True, force_summati
 
     if 'description' not in var_list.columns:
         var_list['description'] = None
+
+    if 'group' not in var_list.columns:
+        var_list['group'] = None
 
     var_list.loc[var_list['description'].isin(['', 'New Node']), 'description'] = None    
     var_list.loc[var_list['description'].isna(), 'description'] = None
@@ -127,6 +134,9 @@ def from_dict(data, force_summation=False):
     
     if 'description' not in var_list.columns:
         var_list['description'] = None
+
+    if 'group' not in var_list.columns:
+        var_list['group'] = None
 
     data['variables'] = get_variables(var_list, force_summation=force_summation)
 
