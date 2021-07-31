@@ -58,7 +58,7 @@ class BayesianNetwork(pomegranate.BayesianNetwork):
         return [x.id for x in self.states]
 
     def _check_variable_ids(self):
-        var_ids = self.variable_ids()
+        var_ids = self.variable_ids
         if len(np.unique(var_ids)) < len(var_ids):
             raise ValueError('The ids of the provided variables are not unique')
 
