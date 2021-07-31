@@ -128,26 +128,6 @@ def from_dict(data, force_summation=False):
     if 'description' not in var_list.columns:
         var_list['description'] = None
 
-    # # - get_levels
-    # current_level = 1
-    # var_list['level'] = 0
-    # var_list.loc[var_list['parents'].isna(), 'level'] = 1
-
-    # var_list['parents'] = var_list['parents'].apply(lambda x: [] if x is None else x)
-    # var_list = var_list.set_index('id')
-
-    # # - get next level
-    # while sum(var_list['level'] == 0) > 0:
-    #     current_level += 1
-    #     var_list.loc[var_list['level'] == 0, 'level'] = var_list.loc[var_list['level'] == 0, 'parents'].apply(
-    #         lambda parents: current_level if all(var_list.loc[parent, 'level'] > 0 for parent in parents) else 0
-    #     )
-
-    # var_list = var_list.sort_values(by='level')
-    # var_list['order'] = range(0, var_list.shape[0])
-    # var_list['parents'] = var_list['parents'].apply(lambda parents: [var_list.loc[parent, 'order'] for parent in parents])
-
-    # variables = 
     data['variables'] = get_variables(var_list, force_summation=force_summation)
 
     return data
