@@ -34,6 +34,8 @@ def _get_npt_shape(df):
 
 def get_variables(df, force_summation=False):
 
+    df = df.reset_index(drop=True)
+    
     # - Number parents
     df['parents'] = df['parents'].apply(lambda x: [df['id'].to_list().index(idx) for idx in x])
 
@@ -116,7 +118,7 @@ def from_cmpx(data, network=0, remove_disconnected_variables=True, force_summati
         disconnected_variables = var_list['parents'].apply(lambda x: len(x) == 0) & var_list['children'].apply(
             lambda x: len(x) == 0)
         var_list = var_list[~disconnected_variables]
-    
+
     data = {
         'id': re.sub('[^a-z0-9_]', '', model_data['name'].lower())[:20],
         'name': model_data['name'],
