@@ -8,4 +8,4 @@ __pycache__/
 .idea/
 dev/
 .vscode/
-
+bn_zest.egg-info/
