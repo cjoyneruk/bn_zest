@@ -1,0 +1,7413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Cancer status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No history of cancer</th>
+      <td>0.730571</td>
+    </tr>
+    <tr>
+      <th>Previous cancer diagnosis</th>
+      <td>0.152286</td>
+    </tr>
+    <tr>
+      <th>Current cancer diagnosis</th>
+      <td>0.117143</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Trauma</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>None</th>
+      <td>0.821429</td>
+    </tr>
+    <tr>
+      <th>Low velocity</th>
+      <td>0.134857</td>
+    </tr>
+    <tr>
+      <th>High velocity</th>
+      <td>0.043714</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Infection risk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.976286</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.023714</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Systemic illness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.934143</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.065857</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Immunosuppression</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.872857</td>
+    </tr>
+    <tr>
+      <th>Yes (drug induced)</th>
+      <td>0.084429</td>
+    </tr>
+    <tr>
+      <th>Yes (immunodeficient disorder)</th>
+      <td>0.042714</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>18-40</th>
+      <td>0.208429</td>
+    </tr>
+    <tr>
+      <th>40-65</th>
+      <td>0.450571</td>
+    </tr>
+    <tr>
+      <th>65-80</th>
+      <td>0.262143</td>
+    </tr>
+    <tr>
+      <th>80+</th>
+      <td>0.078857</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Steroids</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.814286</td>
+    </tr>
+    <tr>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <td>0.029000</td>
+    </tr>
+    <tr>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <td>0.056857</td>
+    </tr>
+    <tr>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <td>0.053143</td>
+    </tr>
+    <tr>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <td>0.046714</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Bone health</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.872</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.128</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Locus of control</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Internal</th>
+      <td>0.591143</td>
+    </tr>
+    <tr>
+      <th>External</th>
+      <td>0.408857</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Medication use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Appropriate</th>
+      <td>0.238714</td>
+    </tr>
+    <tr>
+      <th>Inappropriate (underusing)</th>
+      <td>0.493000</td>
+    </tr>
+    <tr>
+      <th>inappropriate (overusing)</th>
+      <td>0.268286</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Cancer status</th>
+      <th>No history of cancer</th>
+      <th>Previous cancer diagnosis</th>
+      <th>Current cancer diagnosis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.990099</td>
+      <td>0.946862</td>
+      <td>0.836897</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.009901</td>
+      <td>0.053138</td>
+      <td>0.163103</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Cancer status</th>
+      <th colspan="2" halign="left">No history of cancer</th>
+      <th colspan="2" halign="left">Previous cancer diagnosis</th>
+      <th colspan="2" halign="left">Current cancer diagnosis</th>
+    </tr>
+    <tr>
+      <th>Bone health</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.995742</td>
+      <td>0.978488</td>
+      <td>0.996484</td>
+      <td>0.982184</td>
+      <td>0.974983</td>
+      <td>0.883463</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.004258</td>
+      <td>0.021512</td>
+      <td>0.003516</td>
+      <td>0.017816</td>
+      <td>0.025017</td>
+      <td>0.116537</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Cancer status</th>
+      <th colspan="60" halign="left">No history of cancer</th>
+      <th colspan="60" halign="left">Previous cancer diagnosis</th>
+      <th colspan="60" halign="left">Current cancer diagnosis</th>
+    </tr>
+    <tr>
+      <th>Infection risk</th>
+      <th colspan="30" halign="left">No</th>
+      <th colspan="30" halign="left">Yes</th>
+      <th colspan="30" halign="left">No</th>
+      <th colspan="30" halign="left">Yes</th>
+      <th colspan="30" halign="left">No</th>
+      <th colspan="30" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Systemic illness</th>
+      <th colspan="15" halign="left">No</th>
+      <th colspan="15" halign="left">Yes</th>
+      <th colspan="15" halign="left">No</th>
+      <th colspan="15" halign="left">Yes</th>
+      <th colspan="15" halign="left">No</th>
+      <th colspan="15" halign="left">Yes</th>
+      <th colspan="15" halign="left">No</th>
+      <th colspan="15" halign="left">Yes</th>
+      <th colspan="15" halign="left">No</th>
+      <th colspan="15" halign="left">Yes</th>
+      <th colspan="15" halign="left">No</th>
+      <th colspan="15" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Immunosuppression</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+      <th colspan="5" halign="left">No</th>
+      <th colspan="5" halign="left">Yes (drug induced)</th>
+      <th colspan="5" halign="left">Yes (immunodeficient disorder)</th>
+    </tr>
+    <tr>
+      <th>Steroids</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+      <th>No</th>
+      <th>Yes currently &lt;5mg over 3 months</th>
+      <th>Yes in the past &lt;5mg over 3 months</th>
+      <th>Yes currently &gt;5mg over 3 months</th>
+      <th>Yes in the past &gt;5mg over 3 months</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.984542</td>
+      <td>0.970253</td>
+      <td>0.959794</td>
+      <td>0.955996</td>
+      <td>0.961317</td>
+      <td>0.960323</td>
+      <td>0.925347</td>
+      <td>0.900713</td>
+      <td>0.891963</td>
+      <td>0.90425</td>
+      <td>0.976894</td>
+      <td>0.955853</td>
+      <td>0.94064</td>
+      <td>0.935155</td>
+      <td>0.942845</td>
+      <td>0.945934</td>
+      <td>0.899599</td>
+      <td>0.867683</td>
+      <td>0.856487</td>
+      <td>0.872231</td>
+      <td>0.869261</td>
+      <td>0.772985</td>
+      <td>0.713634</td>
+      <td>0.694</td>
+      <td>0.721779</td>
+      <td>0.920722</td>
+      <td>0.856068</td>
+      <td>0.813188</td>
+      <td>0.798452</td>
+      <td>0.819219</td>
+      <td>0.967124</td>
+      <td>0.937754</td>
+      <td>0.916846</td>
+      <td>0.909375</td>
+      <td>0.91986</td>
+      <td>0.917893</td>
+      <td>0.851304</td>
+      <td>0.807325</td>
+      <td>0.792244</td>
+      <td>0.813501</td>
+      <td>0.951285</td>
+      <td>0.909094</td>
+      <td>0.879794</td>
+      <td>0.869468</td>
+      <td>0.883981</td>
+      <td>0.88988</td>
+      <td>0.805389</td>
+      <td>0.751789</td>
+      <td>0.733794</td>
+      <td>0.759214</td>
+      <td>0.754357</td>
+      <td>0.611303</td>
+      <td>0.535104</td>
+      <td>0.511606</td>
+      <td>0.545089</td>
+      <td>0.842871</td>
+      <td>0.733129</td>
+      <td>0.667835</td>
+      <td>0.646615</td>
+      <td>0.676692</td>
+      <td>0.973199</td>
+      <td>0.94897</td>
+      <td>0.931555</td>
+      <td>0.925298</td>
+      <td>0.934074</td>
+      <td>0.93243</td>
+      <td>0.876038</td>
+      <td>0.837982</td>
+      <td>0.82478</td>
+      <td>0.843366</td>
+      <td>0.960166</td>
+      <td>0.925062</td>
+      <td>0.900344</td>
+      <td>0.891566</td>
+      <td>0.903893</td>
+      <td>0.908884</td>
+      <td>0.836292</td>
+      <td>0.788973</td>
+      <td>0.77286</td>
+      <td>0.795589</td>
+      <td>0.791264</td>
+      <td>0.660016</td>
+      <td>0.586914</td>
+      <td>0.5639</td>
+      <td>0.596625</td>
+      <td>0.868792</td>
+      <td>0.772262</td>
+      <td>0.712792</td>
+      <td>0.693125</td>
+      <td>0.720951</td>
+      <td>0.943731</td>
+      <td>0.895716</td>
+      <td>0.862755</td>
+      <td>0.851213</td>
+      <td>0.867446</td>
+      <td>0.864383</td>
+      <td>0.765484</td>
+      <td>0.70492</td>
+      <td>0.684952</td>
+      <td>0.713213</td>
+      <td>0.917582</td>
+      <td>0.850782</td>
+      <td>0.806683</td>
+      <td>0.791565</td>
+      <td>0.812875</td>
+      <td>0.82166</td>
+      <td>0.702335</td>
+      <td>0.633276</td>
+      <td>0.611134</td>
+      <td>0.642561</td>
+      <td>0.636478</td>
+      <td>0.472756</td>
+      <td>0.396222</td>
+      <td>0.373918</td>
+      <td>0.405878</td>
+      <td>0.753593</td>
+      <td>0.610324</td>
+      <td>0.53408</td>
+      <td>0.510577</td>
+      <td>0.544068</td>
+      <td>0.979026</td>
+      <td>0.959846</td>
+      <td>0.945931</td>
+      <td>0.940905</td>
+      <td>0.947951</td>
+      <td>0.946633</td>
+      <td>0.900835</td>
+      <td>0.869255</td>
+      <td>0.85817</td>
+      <td>0.873756</td>
+      <td>0.968735</td>
+      <td>0.940715</td>
+      <td>0.920718</td>
+      <td>0.913563</td>
+      <td>0.923604</td>
+      <td>0.927653</td>
+      <td>0.867839</td>
+      <td>0.827761</td>
+      <td>0.813911</td>
+      <td>0.833417</td>
+      <td>0.829722</td>
+      <td>0.713912</td>
+      <td>0.646186</td>
+      <td>0.624361</td>
+      <td>0.655322</td>
+      <td>0.894864</td>
+      <td>0.813395</td>
+      <td>0.761347</td>
+      <td>0.743809</td>
+      <td>0.768574</td>
+      <td>0.955672</td>
+      <td>0.91695</td>
+      <td>0.889875</td>
+      <td>0.880297</td>
+      <td>0.893753</td>
+      <td>0.891221</td>
+      <td>0.807536</td>
+      <td>0.754347</td>
+      <td>0.736473</td>
+      <td>0.76172</td>
+      <td>0.934688</td>
+      <td>0.879938</td>
+      <td>0.842864</td>
+      <td>0.829979</td>
+      <td>0.848115</td>
+      <td>0.85554</td>
+      <td>0.752043</td>
+      <td>0.689416</td>
+      <td>0.668892</td>
+      <td>0.697958</td>
+      <td>0.692366</td>
+      <td>0.535443</td>
+      <td>0.457569</td>
+      <td>0.434295</td>
+      <td>0.467562</td>
+      <td>0.797213</td>
+      <td>0.668137</td>
+      <td>0.595711</td>
+      <td>0.572831</td>
+      <td>0.605354</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.015458</td>
+      <td>0.029747</td>
+      <td>0.040206</td>
+      <td>0.044004</td>
+      <td>0.038683</td>
+      <td>0.039677</td>
+      <td>0.074653</td>
+      <td>0.099287</td>
+      <td>0.108037</td>
+      <td>0.09575</td>
+      <td>0.023106</td>
+      <td>0.044147</td>
+      <td>0.05936</td>
+      <td>0.064845</td>
+      <td>0.057155</td>
+      <td>0.054066</td>
+      <td>0.100401</td>
+      <td>0.132317</td>
+      <td>0.143513</td>
+      <td>0.127769</td>
+      <td>0.130739</td>
+      <td>0.227015</td>
+      <td>0.286366</td>
+      <td>0.306</td>
+      <td>0.278221</td>
+      <td>0.079278</td>
+      <td>0.143932</td>
+      <td>0.186812</td>
+      <td>0.201548</td>
+      <td>0.180781</td>
+      <td>0.032876</td>
+      <td>0.062246</td>
+      <td>0.083154</td>
+      <td>0.090625</td>
+      <td>0.08014</td>
+      <td>0.082107</td>
+      <td>0.148696</td>
+      <td>0.192675</td>
+      <td>0.207756</td>
+      <td>0.186499</td>
+      <td>0.048715</td>
+      <td>0.090906</td>
+      <td>0.120206</td>
+      <td>0.130532</td>
+      <td>0.116019</td>
+      <td>0.11012</td>
+      <td>0.194611</td>
+      <td>0.248211</td>
+      <td>0.266206</td>
+      <td>0.240786</td>
+      <td>0.245643</td>
+      <td>0.388697</td>
+      <td>0.464896</td>
+      <td>0.488394</td>
+      <td>0.454911</td>
+      <td>0.157129</td>
+      <td>0.266871</td>
+      <td>0.332165</td>
+      <td>0.353385</td>
+      <td>0.323308</td>
+      <td>0.026801</td>
+      <td>0.05103</td>
+      <td>0.068445</td>
+      <td>0.074702</td>
+      <td>0.065926</td>
+      <td>0.06757</td>
+      <td>0.123962</td>
+      <td>0.162018</td>
+      <td>0.17522</td>
+      <td>0.156634</td>
+      <td>0.039834</td>
+      <td>0.074938</td>
+      <td>0.099656</td>
+      <td>0.108434</td>
+      <td>0.096107</td>
+      <td>0.091116</td>
+      <td>0.163708</td>
+      <td>0.211027</td>
+      <td>0.22714</td>
+      <td>0.204411</td>
+      <td>0.208736</td>
+      <td>0.339984</td>
+      <td>0.413086</td>
+      <td>0.4361</td>
+      <td>0.403375</td>
+      <td>0.131208</td>
+      <td>0.227738</td>
+      <td>0.287208</td>
+      <td>0.306875</td>
+      <td>0.279049</td>
+      <td>0.056269</td>
+      <td>0.104284</td>
+      <td>0.137245</td>
+      <td>0.148787</td>
+      <td>0.132554</td>
+      <td>0.135617</td>
+      <td>0.234516</td>
+      <td>0.29508</td>
+      <td>0.315048</td>
+      <td>0.286787</td>
+      <td>0.082418</td>
+      <td>0.149218</td>
+      <td>0.193317</td>
+      <td>0.208435</td>
+      <td>0.187125</td>
+      <td>0.17834</td>
+      <td>0.297665</td>
+      <td>0.366724</td>
+      <td>0.388866</td>
+      <td>0.357439</td>
+      <td>0.363522</td>
+      <td>0.527244</td>
+      <td>0.603778</td>
+      <td>0.626082</td>
+      <td>0.594122</td>
+      <td>0.246407</td>
+      <td>0.389676</td>
+      <td>0.46592</td>
+      <td>0.489423</td>
+      <td>0.455932</td>
+      <td>0.020974</td>
+      <td>0.040154</td>
+      <td>0.054069</td>
+      <td>0.059095</td>
+      <td>0.052049</td>
+      <td>0.053367</td>
+      <td>0.099165</td>
+      <td>0.130745</td>
+      <td>0.14183</td>
+      <td>0.126244</td>
+      <td>0.031265</td>
+      <td>0.059285</td>
+      <td>0.079282</td>
+      <td>0.086437</td>
+      <td>0.076396</td>
+      <td>0.072347</td>
+      <td>0.132161</td>
+      <td>0.172239</td>
+      <td>0.186089</td>
+      <td>0.166583</td>
+      <td>0.170278</td>
+      <td>0.286088</td>
+      <td>0.353814</td>
+      <td>0.375639</td>
+      <td>0.344678</td>
+      <td>0.105136</td>
+      <td>0.186605</td>
+      <td>0.238653</td>
+      <td>0.256191</td>
+      <td>0.231426</td>
+      <td>0.044328</td>
+      <td>0.08305</td>
+      <td>0.110125</td>
+      <td>0.119703</td>
+      <td>0.106247</td>
+      <td>0.108779</td>
+      <td>0.192464</td>
+      <td>0.245653</td>
+      <td>0.263527</td>
+      <td>0.23828</td>
+      <td>0.065312</td>
+      <td>0.120062</td>
+      <td>0.157136</td>
+      <td>0.170021</td>
+      <td>0.151885</td>
+      <td>0.14446</td>
+      <td>0.247957</td>
+      <td>0.310584</td>
+      <td>0.331108</td>
+      <td>0.302042</td>
+      <td>0.307634</td>
+      <td>0.464557</td>
+      <td>0.542431</td>
+      <td>0.565705</td>
+      <td>0.532438</td>
+      <td>0.202787</td>
+      <td>0.331863</td>
+      <td>0.404289</td>
+      <td>0.427169</td>
+      <td>0.394646</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Trauma</th>
+      <th colspan="40" halign="left">None</th>
+      <th colspan="40" halign="left">Low velocity</th>
+      <th colspan="40" halign="left">High velocity</th>
+    </tr>
+    <tr>
+      <th>ag</th>
+      <th colspan="10" halign="left">18-40</th>
+      <th colspan="10" halign="left">40-65</th>
+      <th colspan="10" halign="left">65-80</th>
+      <th colspan="10" halign="left">80+</th>
+      <th colspan="10" halign="left">18-40</th>
+      <th colspan="10" halign="left">40-65</th>
+      <th colspan="10" halign="left">65-80</th>
+      <th colspan="10" halign="left">80+</th>
+      <th colspan="10" halign="left">18-40</th>
+      <th colspan="10" halign="left">40-65</th>
+      <th colspan="10" halign="left">65-80</th>
+      <th colspan="10" halign="left">80+</th>
+    </tr>
+    <tr>
+      <th>Steroids</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes currently &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &lt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes currently &gt;5mg over 3 months</th>
+      <th colspan="2" halign="left">Yes in the past &gt;5mg over 3 months</th>
+    </tr>
+    <tr>
+      <th>Bone health</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.955776</td>
+      <td>0.899595</td>
+      <td>0.952012</td>
+      <td>0.891591</td>
+      <td>0.919628</td>
+      <td>0.825891</td>
+      <td>0.876049</td>
+      <td>0.745548</td>
+      <td>0.895626</td>
+      <td>0.780575</td>
+      <td>0.963802</td>
+      <td>0.91693</td>
+      <td>0.960693</td>
+      <td>0.91017</td>
+      <td>0.933759</td>
+      <td>0.853884</td>
+      <td>0.896984</td>
+      <td>0.783066</td>
+      <td>0.913581</td>
+      <td>0.814215</td>
+      <td>0.877361</td>
+      <td>0.747844</td>
+      <td>0.867846</td>
+      <td>0.731357</td>
+      <td>0.791126</td>
+      <td>0.610924</td>
+      <td>0.700558</td>
+      <td>0.492357</td>
+      <td>0.739614</td>
+      <td>0.540768</td>
+      <td>0.84776</td>
+      <td>0.697751</td>
+      <td>0.836377</td>
+      <td>0.679393</td>
+      <td>0.746719</td>
+      <td>0.549998</td>
+      <td>0.645524</td>
+      <td>0.430182</td>
+      <td>0.688567</td>
+      <td>0.478239</td>
+      <td>0.937266</td>
+      <td>0.860989</td>
+      <td>0.932038</td>
+      <td>0.850421</td>
+      <td>0.887765</td>
+      <td>0.766309</td>
+      <td>0.830101</td>
+      <td>0.669475</td>
+      <td>0.85574</td>
+      <td>0.710913</td>
+      <td>0.94847</td>
+      <td>0.884131</td>
+      <td>0.94412</td>
+      <td>0.875067</td>
+      <td>0.906931</td>
+      <td>0.80158</td>
+      <td>0.857534</td>
+      <td>0.713905</td>
+      <td>0.879634</td>
+      <td>0.751838</td>
+      <td>0.831806</td>
+      <td>0.672156</td>
+      <td>0.819483</td>
+      <td>0.653016</td>
+      <td>0.723628</td>
+      <td>0.520489</td>
+      <td>0.617927</td>
+      <td>0.401368</td>
+      <td>0.66257</td>
+      <td>0.448741</td>
+      <td>0.793793</td>
+      <td>0.614772</td>
+      <td>0.779424</td>
+      <td>0.594304</td>
+      <td>0.670842</td>
+      <td>0.457966</td>
+      <td>0.557303</td>
+      <td>0.342921</td>
+      <td>0.604495</td>
+      <td>0.387865</td>
+      <td>0.835308</td>
+      <td>0.677694</td>
+      <td>0.823187</td>
+      <td>0.658713</td>
+      <td>0.728648</td>
+      <td>0.526785</td>
+      <td>0.623868</td>
+      <td>0.407447</td>
+      <td>0.66819</td>
+      <td>0.454992</td>
+      <td>0.86204</td>
+      <td>0.721479</td>
+      <td>0.851537</td>
+      <td>0.70395</td>
+      <td>0.767882</td>
+      <td>0.578315</td>
+      <td>0.67142</td>
+      <td>0.458617</td>
+      <td>0.712719</td>
+      <td>0.507024</td>
+      <td>0.626713</td>
+      <td>0.410381</td>
+      <td>0.606473</td>
+      <td>0.389832</td>
+      <td>0.470582</td>
+      <td>0.269268</td>
+      <td>0.35444</td>
+      <td>0.185411</td>
+      <td>0.399974</td>
+      <td>0.216514</td>
+      <td>0.566504</td>
+      <td>0.351392</td>
+      <td>0.545369</td>
+      <td>0.332133</td>
+      <td>0.408941</td>
+      <td>0.222895</td>
+      <td>0.299408</td>
+      <td>0.150505</td>
+      <td>0.341614</td>
+      <td>0.177025</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.044224</td>
+      <td>0.100405</td>
+      <td>0.047988</td>
+      <td>0.108409</td>
+      <td>0.080372</td>
+      <td>0.174109</td>
+      <td>0.123951</td>
+      <td>0.254452</td>
+      <td>0.104374</td>
+      <td>0.219425</td>
+      <td>0.036198</td>
+      <td>0.08307</td>
+      <td>0.039307</td>
+      <td>0.08983</td>
+      <td>0.066241</td>
+      <td>0.146116</td>
+      <td>0.103016</td>
+      <td>0.216934</td>
+      <td>0.086419</td>
+      <td>0.185785</td>
+      <td>0.122639</td>
+      <td>0.252156</td>
+      <td>0.132154</td>
+      <td>0.268643</td>
+      <td>0.208874</td>
+      <td>0.389076</td>
+      <td>0.299442</td>
+      <td>0.507643</td>
+      <td>0.260386</td>
+      <td>0.459232</td>
+      <td>0.15224</td>
+      <td>0.302249</td>
+      <td>0.163623</td>
+      <td>0.320607</td>
+      <td>0.253281</td>
+      <td>0.450002</td>
+      <td>0.354476</td>
+      <td>0.569818</td>
+      <td>0.311433</td>
+      <td>0.521761</td>
+      <td>0.062734</td>
+      <td>0.139011</td>
+      <td>0.067962</td>
+      <td>0.149579</td>
+      <td>0.112235</td>
+      <td>0.233691</td>
+      <td>0.169899</td>
+      <td>0.330525</td>
+      <td>0.14426</td>
+      <td>0.289087</td>
+      <td>0.05153</td>
+      <td>0.115869</td>
+      <td>0.05588</td>
+      <td>0.124933</td>
+      <td>0.093069</td>
+      <td>0.19842</td>
+      <td>0.142466</td>
+      <td>0.286095</td>
+      <td>0.120366</td>
+      <td>0.248162</td>
+      <td>0.168194</td>
+      <td>0.327844</td>
+      <td>0.180517</td>
+      <td>0.346984</td>
+      <td>0.276372</td>
+      <td>0.479511</td>
+      <td>0.382073</td>
+      <td>0.598632</td>
+      <td>0.33743</td>
+      <td>0.551259</td>
+      <td>0.206207</td>
+      <td>0.385228</td>
+      <td>0.220576</td>
+      <td>0.405696</td>
+      <td>0.329158</td>
+      <td>0.542034</td>
+      <td>0.442697</td>
+      <td>0.657079</td>
+      <td>0.395505</td>
+      <td>0.612135</td>
+      <td>0.164692</td>
+      <td>0.322306</td>
+      <td>0.176813</td>
+      <td>0.341287</td>
+      <td>0.271352</td>
+      <td>0.473215</td>
+      <td>0.376132</td>
+      <td>0.592553</td>
+      <td>0.33181</td>
+      <td>0.545008</td>
+      <td>0.13796</td>
+      <td>0.278521</td>
+      <td>0.148463</td>
+      <td>0.29605</td>
+      <td>0.232118</td>
+      <td>0.421685</td>
+      <td>0.32858</td>
+      <td>0.541383</td>
+      <td>0.287281</td>
+      <td>0.492976</td>
+      <td>0.373287</td>
+      <td>0.589619</td>
+      <td>0.393527</td>
+      <td>0.610168</td>
+      <td>0.529418</td>
+      <td>0.730732</td>
+      <td>0.64556</td>
+      <td>0.814589</td>
+      <td>0.600026</td>
+      <td>0.783486</td>
+      <td>0.433496</td>
+      <td>0.648608</td>
+      <td>0.454631</td>
+      <td>0.667867</td>
+      <td>0.591059</td>
+      <td>0.777105</td>
+      <td>0.700592</td>
+      <td>0.849495</td>
+      <td>0.658386</td>
+      <td>0.822975</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Cord compression</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.982857</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.017143</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>ag</th>
+      <th>18-40</th>
+      <th>40-65</th>
+      <th>65-80</th>
+      <th>80+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.931019</td>
+      <td>0.957576</td>
+      <td>0.971993</td>
+      <td>0.979555</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.068981</td>
+      <td>0.042424</td>
+      <td>0.028007</td>
+      <td>0.020445</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nerve root</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>0.763571</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.236429</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Locus of control</th>
+      <th colspan="3" halign="left">Internal</th>
+      <th colspan="3" halign="left">External</th>
+    </tr>
+    <tr>
+      <th>Medication use</th>
+      <th>Appropriate</th>
+      <th>Inappropriate (underusing)</th>
+      <th>inappropriate (overusing)</th>
+      <th>Appropriate</th>
+      <th>Inappropriate (underusing)</th>
+      <th>inappropriate (overusing)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>None</th>
+      <td>0.304334</td>
+      <td>0.279392</td>
+      <td>0.221816</td>
+      <td>0.135088</td>
+      <td>0.159057</td>
+      <td>0.121823</td>
+    </tr>
+    <tr>
+      <th>Low</th>
+      <td>0.318876</td>
+      <td>0.299603</td>
+      <td>0.273664</td>
+      <td>0.292123</td>
+      <td>0.269243</td>
+      <td>0.226506</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>0.242666</td>
+      <td>0.252921</td>
+      <td>0.276281</td>
+      <td>0.346787</td>
+      <td>0.315579</td>
+      <td>0.317176</td>
+    </tr>
+    <tr>
+      <th>High</th>
+      <td>0.134124</td>
+      <td>0.168085</td>
+      <td>0.228240</td>
+      <td>0.226002</td>
+      <td>0.256121</td>
+      <td>0.334495</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Locus of control</th>
+      <th>Internal</th>
+      <th>External</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Low</th>
+      <td>0.407810</td>
+      <td>0.235063</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>0.374562</td>
+      <td>0.375928</td>
+    </tr>
+    <tr>
+      <th>High</th>
+      <td>0.217628</td>
+      <td>0.389009</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Locus of control</th>
+      <th>Internal</th>
+      <th>External</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Insignificant</th>
+      <td>0.294858</td>
+      <td>0.170509</td>
+    </tr>
+    <tr>
+      <th>Moderate</th>
+      <td>0.320561</td>
+      <td>0.289333</td>
+    </tr>
+    <tr>
+      <th>High</th>
+      <td>0.248018</td>
+      <td>0.316650</td>
+    </tr>
+    <tr>
+      <th>PTSD</th>
+      <td>0.136562</td>
+      <td>0.223508</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Trauma</th>
+      <th colspan="2" halign="left">None</th>
+      <th colspan="2" halign="left">Low velocity</th>
+      <th colspan="2" halign="left">High velocity</th>
+    </tr>
+    <tr>
+      <th>Locus of control</th>
+      <th>Internal</th>
+      <th>External</th>
+      <th>Internal</th>
+      <th>External</th>
+      <th>Internal</th>
+      <th>External</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>None</th>
+      <td>0.254281</td>
+      <td>0.126619</td>
+      <td>0.265617</td>
+      <td>0.152886</td>
+      <td>0.206001</td>
+      <td>0.098935</td>
+    </tr>
+    <tr>
+      <th>Low</th>
+      <td>0.259270</td>
+      <td>0.225055</td>
+      <td>0.261645</td>
+      <td>0.238916</td>
+      <td>0.231601</td>
+      <td>0.176352</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>0.223448</td>
+      <td>0.276374</td>
+      <td>0.219671</td>
+      <td>0.267949</td>
+      <td>0.226585</td>
+      <td>0.244023</td>
+    </tr>
+    <tr>
+      <th>High</th>
+      <td>0.162774</td>
+      <td>0.234492</td>
+      <td>0.157193</td>
+      <td>0.215669</td>
+      <td>0.192903</td>
+      <td>0.262120</td>
+    </tr>
+    <tr>
+      <th>Extreme</th>
+      <td>0.100227</td>
+      <td>0.137460</td>
+      <td>0.095873</td>
+      <td>0.124581</td>
+      <td>0.142911</td>
+      <td>0.218569</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Space occupying lesion/cancer</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Cauda equina</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Fracture</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No issues</th>
+      <td>1.0</td>
+      <td>0.882428</td>
+      <td>0.136715</td>
+      <td>0.120641</td>
+      <td>0.570585</td>
+      <td>0.503500</td>
+      <td>0.078007</td>
+      <td>0.068836</td>
+    </tr>
+    <tr>
+      <th>Reduced flow</th>
+      <td>0.0</td>
+      <td>0.082143</td>
+      <td>0.576286</td>
+      <td>0.567099</td>
+      <td>0.314278</td>
+      <td>0.350013</td>
+      <td>0.552900</td>
+      <td>0.539719</td>
+    </tr>
+    <tr>
+      <th>Unable to pass urine</th>
+      <td>0.0</td>
+      <td>0.035429</td>
+      <td>0.287000</td>
+      <td>0.312260</td>
+      <td>0.115137</td>
+      <td>0.146487</td>
+      <td>0.369092</td>
+      <td>0.391445</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Space occupying lesion/cancer</th>
+      <th colspan="8" halign="left">No</th>
+      <th colspan="8" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Cauda equina</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Infective condition</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Fracture</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1.0</td>
+      <td>0.891</td>
+      <td>0.944286</td>
+      <td>0.841358</td>
+      <td>0.541713</td>
+      <td>0.482666</td>
+      <td>0.511532</td>
+      <td>0.455775</td>
+      <td>0.868857</td>
+      <td>0.774151</td>
+      <td>0.820449</td>
+      <td>0.73102</td>
+      <td>0.470671</td>
+      <td>0.419368</td>
+      <td>0.444448</td>
+      <td>0.396003</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.0</td>
+      <td>0.109</td>
+      <td>0.055714</td>
+      <td>0.158642</td>
+      <td>0.458287</td>
+      <td>0.517334</td>
+      <td>0.488468</td>
+      <td>0.544225</td>
+      <td>0.131143</td>
+      <td>0.225849</td>
+      <td>0.179551</td>
+      <td>0.26898</td>
+      <td>0.529329</td>
+      <td>0.580632</td>
+      <td>0.555552</td>
+      <td>0.603997</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Space occupying lesion/cancer</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Cauda equina</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Fracture</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1.0</td>
+      <td>0.889857</td>
+      <td>0.347147</td>
+      <td>0.308911</td>
+      <td>0.920143</td>
+      <td>0.818796</td>
+      <td>0.319425</td>
+      <td>0.284243</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.0</td>
+      <td>0.110143</td>
+      <td>0.652853</td>
+      <td>0.691089</td>
+      <td>0.079857</td>
+      <td>0.181204</td>
+      <td>0.680575</td>
+      <td>0.715757</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Space occupying lesion/cancer</th>
+      <th colspan="240" halign="left">No</th>
+      <th colspan="240" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Cauda equina</th>
+      <th colspan="120" halign="left">No</th>
+      <th colspan="120" halign="left">Yes</th>
+      <th colspan="120" halign="left">No</th>
+      <th colspan="120" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Fracture</th>
+      <th colspan="60" halign="left">No</th>
+      <th colspan="60" halign="left">Yes</th>
+      <th colspan="60" halign="left">No</th>
+      <th colspan="60" halign="left">Yes</th>
+      <th colspan="60" halign="left">No</th>
+      <th colspan="60" halign="left">Yes</th>
+      <th colspan="60" halign="left">No</th>
+      <th colspan="60" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Depression</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+    </tr>
+    <tr>
+      <th>Stress</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+    </tr>
+    <tr>
+      <th>Anxiety/fear (judgement)</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1.0</td>
+      <td>0.826443</td>
+      <td>0.824448</td>
+      <td>0.822436</td>
+      <td>0.820405</td>
+      <td>0.79887</td>
+      <td>0.796636</td>
+      <td>0.794385</td>
+      <td>0.792114</td>
+      <td>0.789825</td>
+      <td>0.765671</td>
+      <td>0.763178</td>
+      <td>0.760667</td>
+      <td>0.758137</td>
+      <td>0.75559</td>
+      <td>0.728851</td>
+      <td>0.726107</td>
+      <td>0.723345</td>
+      <td>0.720566</td>
+      <td>0.71777</td>
+      <td>0.721687</td>
+      <td>0.718897</td>
+      <td>0.716091</td>
+      <td>0.713269</td>
+      <td>0.710429</td>
+      <td>0.680837</td>
+      <td>0.677821</td>
+      <td>0.674791</td>
+      <td>0.671745</td>
+      <td>0.668686</td>
+      <td>0.637007</td>
+      <td>0.6338</td>
+      <td>0.630581</td>
+      <td>0.627351</td>
+      <td>0.624109</td>
+      <td>0.590776</td>
+      <td>0.587425</td>
+      <td>0.584066</td>
+      <td>0.580699</td>
+      <td>0.577325</td>
+      <td>0.582055</td>
+      <td>0.578684</td>
+      <td>0.575305</td>
+      <td>0.571919</td>
+      <td>0.568527</td>
+      <td>0.533946</td>
+      <td>0.5305</td>
+      <td>0.52705</td>
+      <td>0.523598</td>
+      <td>0.520144</td>
+      <td>0.485197</td>
+      <td>0.48174</td>
+      <td>0.478285</td>
+      <td>0.474832</td>
+      <td>0.471381</td>
+      <td>0.436728</td>
+      <td>0.433326</td>
+      <td>0.42993</td>
+      <td>0.42654</td>
+      <td>0.423157</td>
+      <td>0.898</td>
+      <td>0.742146</td>
+      <td>0.740355</td>
+      <td>0.738547</td>
+      <td>0.736724</td>
+      <td>0.717385</td>
+      <td>0.71538</td>
+      <td>0.713357</td>
+      <td>0.711319</td>
+      <td>0.709263</td>
+      <td>0.687572</td>
+      <td>0.685334</td>
+      <td>0.683079</td>
+      <td>0.680807</td>
+      <td>0.67852</td>
+      <td>0.654509</td>
+      <td>0.652044</td>
+      <td>0.649564</td>
+      <td>0.647068</td>
+      <td>0.644558</td>
+      <td>0.648075</td>
+      <td>0.64557</td>
+      <td>0.64305</td>
+      <td>0.640515</td>
+      <td>0.637965</td>
+      <td>0.611392</td>
+      <td>0.608683</td>
+      <td>0.605962</td>
+      <td>0.603227</td>
+      <td>0.60048</td>
+      <td>0.572033</td>
+      <td>0.569153</td>
+      <td>0.566262</td>
+      <td>0.563361</td>
+      <td>0.560449</td>
+      <td>0.530517</td>
+      <td>0.527508</td>
+      <td>0.524492</td>
+      <td>0.521468</td>
+      <td>0.518438</td>
+      <td>0.522686</td>
+      <td>0.519658</td>
+      <td>0.516624</td>
+      <td>0.513583</td>
+      <td>0.510537</td>
+      <td>0.479484</td>
+      <td>0.476389</td>
+      <td>0.473291</td>
+      <td>0.470191</td>
+      <td>0.467089</td>
+      <td>0.435707</td>
+      <td>0.432603</td>
+      <td>0.4295</td>
+      <td>0.426399</td>
+      <td>0.4233</td>
+      <td>0.392182</td>
+      <td>0.389127</td>
+      <td>0.386077</td>
+      <td>0.383033</td>
+      <td>0.379995</td>
+      <td>0.696704</td>
+      <td>0.575786</td>
+      <td>0.574396</td>
+      <td>0.572994</td>
+      <td>0.571579</td>
+      <td>0.556576</td>
+      <td>0.55502</td>
+      <td>0.553451</td>
+      <td>0.551869</td>
+      <td>0.550274</td>
+      <td>0.533446</td>
+      <td>0.531709</td>
+      <td>0.529959</td>
+      <td>0.528197</td>
+      <td>0.526422</td>
+      <td>0.507793</td>
+      <td>0.505881</td>
+      <td>0.503957</td>
+      <td>0.502021</td>
+      <td>0.500073</td>
+      <td>0.502802</td>
+      <td>0.500859</td>
+      <td>0.498904</td>
+      <td>0.496937</td>
+      <td>0.494959</td>
+      <td>0.474342</td>
+      <td>0.472241</td>
+      <td>0.470129</td>
+      <td>0.468008</td>
+      <td>0.465876</td>
+      <td>0.443805</td>
+      <td>0.441571</td>
+      <td>0.439328</td>
+      <td>0.437078</td>
+      <td>0.434819</td>
+      <td>0.411596</td>
+      <td>0.409262</td>
+      <td>0.406921</td>
+      <td>0.404575</td>
+      <td>0.402224</td>
+      <td>0.40552</td>
+      <td>0.403171</td>
+      <td>0.400817</td>
+      <td>0.398458</td>
+      <td>0.396095</td>
+      <td>0.372002</td>
+      <td>0.369601</td>
+      <td>0.367198</td>
+      <td>0.364793</td>
+      <td>0.362386</td>
+      <td>0.338039</td>
+      <td>0.33563</td>
+      <td>0.333223</td>
+      <td>0.330817</td>
+      <td>0.328413</td>
+      <td>0.30427</td>
+      <td>0.3019</td>
+      <td>0.299534</td>
+      <td>0.297172</td>
+      <td>0.294815</td>
+      <td>0.62564</td>
+      <td>0.517056</td>
+      <td>0.515808</td>
+      <td>0.514549</td>
+      <td>0.513278</td>
+      <td>0.499805</td>
+      <td>0.498408</td>
+      <td>0.496999</td>
+      <td>0.495578</td>
+      <td>0.494146</td>
+      <td>0.479034</td>
+      <td>0.477475</td>
+      <td>0.475903</td>
+      <td>0.474321</td>
+      <td>0.472727</td>
+      <td>0.455999</td>
+      <td>0.454281</td>
+      <td>0.452554</td>
+      <td>0.450815</td>
+      <td>0.449066</td>
+      <td>0.451516</td>
+      <td>0.449771</td>
+      <td>0.448015</td>
+      <td>0.446249</td>
+      <td>0.444473</td>
+      <td>0.425959</td>
+      <td>0.424072</td>
+      <td>0.422176</td>
+      <td>0.420271</td>
+      <td>0.418356</td>
+      <td>0.398537</td>
+      <td>0.396531</td>
+      <td>0.394517</td>
+      <td>0.392496</td>
+      <td>0.390467</td>
+      <td>0.369613</td>
+      <td>0.367517</td>
+      <td>0.365415</td>
+      <td>0.363309</td>
+      <td>0.361198</td>
+      <td>0.364157</td>
+      <td>0.362048</td>
+      <td>0.359934</td>
+      <td>0.357816</td>
+      <td>0.355693</td>
+      <td>0.334058</td>
+      <td>0.331902</td>
+      <td>0.329744</td>
+      <td>0.327584</td>
+      <td>0.325423</td>
+      <td>0.303559</td>
+      <td>0.301396</td>
+      <td>0.299234</td>
+      <td>0.297074</td>
+      <td>0.294915</td>
+      <td>0.273235</td>
+      <td>0.271106</td>
+      <td>0.268981</td>
+      <td>0.266861</td>
+      <td>0.264744</td>
+      <td>0.910714</td>
+      <td>0.752653</td>
+      <td>0.750837</td>
+      <td>0.749004</td>
+      <td>0.747154</td>
+      <td>0.727542</td>
+      <td>0.725508</td>
+      <td>0.723457</td>
+      <td>0.721389</td>
+      <td>0.719305</td>
+      <td>0.697307</td>
+      <td>0.695037</td>
+      <td>0.69275</td>
+      <td>0.690446</td>
+      <td>0.688126</td>
+      <td>0.663775</td>
+      <td>0.661276</td>
+      <td>0.65876</td>
+      <td>0.65623</td>
+      <td>0.653683</td>
+      <td>0.65725</td>
+      <td>0.65471</td>
+      <td>0.652154</td>
+      <td>0.649584</td>
+      <td>0.646998</td>
+      <td>0.620048</td>
+      <td>0.617301</td>
+      <td>0.614541</td>
+      <td>0.611768</td>
+      <td>0.608981</td>
+      <td>0.580131</td>
+      <td>0.577211</td>
+      <td>0.574279</td>
+      <td>0.571337</td>
+      <td>0.568384</td>
+      <td>0.538028</td>
+      <td>0.534977</td>
+      <td>0.531917</td>
+      <td>0.528851</td>
+      <td>0.525778</td>
+      <td>0.530086</td>
+      <td>0.527015</td>
+      <td>0.523938</td>
+      <td>0.520855</td>
+      <td>0.517765</td>
+      <td>0.486272</td>
+      <td>0.483133</td>
+      <td>0.479992</td>
+      <td>0.476848</td>
+      <td>0.473702</td>
+      <td>0.441876</td>
+      <td>0.438727</td>
+      <td>0.435581</td>
+      <td>0.432436</td>
+      <td>0.429293</td>
+      <td>0.397735</td>
+      <td>0.394636</td>
+      <td>0.391543</td>
+      <td>0.388456</td>
+      <td>0.385375</td>
+      <td>0.817821</td>
+      <td>0.675883</td>
+      <td>0.674251</td>
+      <td>0.672605</td>
+      <td>0.670945</td>
+      <td>0.653333</td>
+      <td>0.651506</td>
+      <td>0.649664</td>
+      <td>0.647808</td>
+      <td>0.645936</td>
+      <td>0.626182</td>
+      <td>0.624143</td>
+      <td>0.622089</td>
+      <td>0.620021</td>
+      <td>0.617937</td>
+      <td>0.59607</td>
+      <td>0.593825</td>
+      <td>0.591567</td>
+      <td>0.589294</td>
+      <td>0.587008</td>
+      <td>0.590211</td>
+      <td>0.58793</td>
+      <td>0.585635</td>
+      <td>0.583326</td>
+      <td>0.581004</td>
+      <td>0.556803</td>
+      <td>0.554337</td>
+      <td>0.551858</td>
+      <td>0.549368</td>
+      <td>0.546865</td>
+      <td>0.520958</td>
+      <td>0.518335</td>
+      <td>0.515703</td>
+      <td>0.513061</td>
+      <td>0.510409</td>
+      <td>0.483149</td>
+      <td>0.480409</td>
+      <td>0.477662</td>
+      <td>0.474908</td>
+      <td>0.472149</td>
+      <td>0.476017</td>
+      <td>0.47326</td>
+      <td>0.470497</td>
+      <td>0.467728</td>
+      <td>0.464953</td>
+      <td>0.436673</td>
+      <td>0.433854</td>
+      <td>0.431033</td>
+      <td>0.42821</td>
+      <td>0.425385</td>
+      <td>0.396805</td>
+      <td>0.393977</td>
+      <td>0.391151</td>
+      <td>0.388327</td>
+      <td>0.385505</td>
+      <td>0.357166</td>
+      <td>0.354383</td>
+      <td>0.351606</td>
+      <td>0.348834</td>
+      <td>0.346067</td>
+      <td>0.634498</td>
+      <td>0.524376</td>
+      <td>0.523111</td>
+      <td>0.521834</td>
+      <td>0.520545</td>
+      <td>0.506881</td>
+      <td>0.505464</td>
+      <td>0.504035</td>
+      <td>0.502595</td>
+      <td>0.501142</td>
+      <td>0.485816</td>
+      <td>0.484235</td>
+      <td>0.482641</td>
+      <td>0.481036</td>
+      <td>0.47942</td>
+      <td>0.462455</td>
+      <td>0.460713</td>
+      <td>0.458961</td>
+      <td>0.457198</td>
+      <td>0.455424</td>
+      <td>0.457909</td>
+      <td>0.456139</td>
+      <td>0.454358</td>
+      <td>0.452567</td>
+      <td>0.450766</td>
+      <td>0.43199</td>
+      <td>0.430076</td>
+      <td>0.428153</td>
+      <td>0.426221</td>
+      <td>0.42428</td>
+      <td>0.40418</td>
+      <td>0.402145</td>
+      <td>0.400102</td>
+      <td>0.398053</td>
+      <td>0.395996</td>
+      <td>0.374846</td>
+      <td>0.37272</td>
+      <td>0.370589</td>
+      <td>0.368453</td>
+      <td>0.366311</td>
+      <td>0.369313</td>
+      <td>0.367174</td>
+      <td>0.36503</td>
+      <td>0.362881</td>
+      <td>0.360729</td>
+      <td>0.338788</td>
+      <td>0.336601</td>
+      <td>0.334412</td>
+      <td>0.332222</td>
+      <td>0.33003</td>
+      <td>0.307857</td>
+      <td>0.305663</td>
+      <td>0.303471</td>
+      <td>0.30128</td>
+      <td>0.29909</td>
+      <td>0.277103</td>
+      <td>0.274944</td>
+      <td>0.27279</td>
+      <td>0.270639</td>
+      <td>0.268493</td>
+      <td>0.569779</td>
+      <td>0.47089</td>
+      <td>0.469754</td>
+      <td>0.468607</td>
+      <td>0.46745</td>
+      <td>0.455179</td>
+      <td>0.453907</td>
+      <td>0.452624</td>
+      <td>0.45133</td>
+      <td>0.450026</td>
+      <td>0.436263</td>
+      <td>0.434843</td>
+      <td>0.433412</td>
+      <td>0.431971</td>
+      <td>0.430519</td>
+      <td>0.415284</td>
+      <td>0.41372</td>
+      <td>0.412147</td>
+      <td>0.410564</td>
+      <td>0.40897</td>
+      <td>0.411202</td>
+      <td>0.409613</td>
+      <td>0.408014</td>
+      <td>0.406406</td>
+      <td>0.404788</td>
+      <td>0.387927</td>
+      <td>0.386208</td>
+      <td>0.384482</td>
+      <td>0.382746</td>
+      <td>0.381003</td>
+      <td>0.362953</td>
+      <td>0.361126</td>
+      <td>0.359292</td>
+      <td>0.357451</td>
+      <td>0.355604</td>
+      <td>0.336612</td>
+      <td>0.334703</td>
+      <td>0.332789</td>
+      <td>0.33087</td>
+      <td>0.328948</td>
+      <td>0.331643</td>
+      <td>0.329722</td>
+      <td>0.327797</td>
+      <td>0.325868</td>
+      <td>0.323935</td>
+      <td>0.304231</td>
+      <td>0.302268</td>
+      <td>0.300302</td>
+      <td>0.298335</td>
+      <td>0.296367</td>
+      <td>0.276455</td>
+      <td>0.274485</td>
+      <td>0.272517</td>
+      <td>0.270549</td>
+      <td>0.268583</td>
+      <td>0.248839</td>
+      <td>0.2469</td>
+      <td>0.244965</td>
+      <td>0.243034</td>
+      <td>0.241106</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.0</td>
+      <td>0.173557</td>
+      <td>0.175552</td>
+      <td>0.177564</td>
+      <td>0.179595</td>
+      <td>0.20113</td>
+      <td>0.203364</td>
+      <td>0.205615</td>
+      <td>0.207886</td>
+      <td>0.210175</td>
+      <td>0.234329</td>
+      <td>0.236822</td>
+      <td>0.239333</td>
+      <td>0.241863</td>
+      <td>0.24441</td>
+      <td>0.271149</td>
+      <td>0.273893</td>
+      <td>0.276655</td>
+      <td>0.279434</td>
+      <td>0.28223</td>
+      <td>0.278313</td>
+      <td>0.281103</td>
+      <td>0.283909</td>
+      <td>0.286731</td>
+      <td>0.289571</td>
+      <td>0.319163</td>
+      <td>0.322179</td>
+      <td>0.325209</td>
+      <td>0.328255</td>
+      <td>0.331314</td>
+      <td>0.362993</td>
+      <td>0.3662</td>
+      <td>0.369419</td>
+      <td>0.372649</td>
+      <td>0.375891</td>
+      <td>0.409224</td>
+      <td>0.412575</td>
+      <td>0.415934</td>
+      <td>0.419301</td>
+      <td>0.422675</td>
+      <td>0.417945</td>
+      <td>0.421316</td>
+      <td>0.424695</td>
+      <td>0.428081</td>
+      <td>0.431473</td>
+      <td>0.466054</td>
+      <td>0.4695</td>
+      <td>0.47295</td>
+      <td>0.476402</td>
+      <td>0.479856</td>
+      <td>0.514803</td>
+      <td>0.51826</td>
+      <td>0.521715</td>
+      <td>0.525168</td>
+      <td>0.528619</td>
+      <td>0.563272</td>
+      <td>0.566674</td>
+      <td>0.57007</td>
+      <td>0.57346</td>
+      <td>0.576843</td>
+      <td>0.102</td>
+      <td>0.257854</td>
+      <td>0.259645</td>
+      <td>0.261453</td>
+      <td>0.263276</td>
+      <td>0.282615</td>
+      <td>0.28462</td>
+      <td>0.286643</td>
+      <td>0.288681</td>
+      <td>0.290737</td>
+      <td>0.312428</td>
+      <td>0.314666</td>
+      <td>0.316921</td>
+      <td>0.319193</td>
+      <td>0.32148</td>
+      <td>0.345491</td>
+      <td>0.347956</td>
+      <td>0.350436</td>
+      <td>0.352932</td>
+      <td>0.355442</td>
+      <td>0.351925</td>
+      <td>0.35443</td>
+      <td>0.35695</td>
+      <td>0.359485</td>
+      <td>0.362035</td>
+      <td>0.388608</td>
+      <td>0.391317</td>
+      <td>0.394038</td>
+      <td>0.396773</td>
+      <td>0.39952</td>
+      <td>0.427967</td>
+      <td>0.430847</td>
+      <td>0.433738</td>
+      <td>0.436639</td>
+      <td>0.439551</td>
+      <td>0.469483</td>
+      <td>0.472492</td>
+      <td>0.475508</td>
+      <td>0.478532</td>
+      <td>0.481562</td>
+      <td>0.477314</td>
+      <td>0.480342</td>
+      <td>0.483376</td>
+      <td>0.486417</td>
+      <td>0.489463</td>
+      <td>0.520516</td>
+      <td>0.523611</td>
+      <td>0.526709</td>
+      <td>0.529809</td>
+      <td>0.532911</td>
+      <td>0.564293</td>
+      <td>0.567397</td>
+      <td>0.5705</td>
+      <td>0.573601</td>
+      <td>0.5767</td>
+      <td>0.607818</td>
+      <td>0.610873</td>
+      <td>0.613923</td>
+      <td>0.616967</td>
+      <td>0.620005</td>
+      <td>0.303296</td>
+      <td>0.424214</td>
+      <td>0.425604</td>
+      <td>0.427006</td>
+      <td>0.428421</td>
+      <td>0.443424</td>
+      <td>0.44498</td>
+      <td>0.446549</td>
+      <td>0.448131</td>
+      <td>0.449726</td>
+      <td>0.466554</td>
+      <td>0.468291</td>
+      <td>0.470041</td>
+      <td>0.471803</td>
+      <td>0.473578</td>
+      <td>0.492207</td>
+      <td>0.494119</td>
+      <td>0.496043</td>
+      <td>0.497979</td>
+      <td>0.499927</td>
+      <td>0.497198</td>
+      <td>0.499141</td>
+      <td>0.501096</td>
+      <td>0.503063</td>
+      <td>0.505041</td>
+      <td>0.525658</td>
+      <td>0.527759</td>
+      <td>0.529871</td>
+      <td>0.531992</td>
+      <td>0.534124</td>
+      <td>0.556195</td>
+      <td>0.558429</td>
+      <td>0.560672</td>
+      <td>0.562922</td>
+      <td>0.565181</td>
+      <td>0.588404</td>
+      <td>0.590738</td>
+      <td>0.593079</td>
+      <td>0.595425</td>
+      <td>0.597776</td>
+      <td>0.59448</td>
+      <td>0.596829</td>
+      <td>0.599183</td>
+      <td>0.601542</td>
+      <td>0.603905</td>
+      <td>0.627998</td>
+      <td>0.630399</td>
+      <td>0.632802</td>
+      <td>0.635207</td>
+      <td>0.637614</td>
+      <td>0.661961</td>
+      <td>0.66437</td>
+      <td>0.666777</td>
+      <td>0.669183</td>
+      <td>0.671587</td>
+      <td>0.69573</td>
+      <td>0.6981</td>
+      <td>0.700466</td>
+      <td>0.702828</td>
+      <td>0.705185</td>
+      <td>0.37436</td>
+      <td>0.482944</td>
+      <td>0.484192</td>
+      <td>0.485451</td>
+      <td>0.486722</td>
+      <td>0.500195</td>
+      <td>0.501592</td>
+      <td>0.503001</td>
+      <td>0.504422</td>
+      <td>0.505854</td>
+      <td>0.520966</td>
+      <td>0.522525</td>
+      <td>0.524097</td>
+      <td>0.525679</td>
+      <td>0.527273</td>
+      <td>0.544001</td>
+      <td>0.545719</td>
+      <td>0.547446</td>
+      <td>0.549185</td>
+      <td>0.550934</td>
+      <td>0.548484</td>
+      <td>0.550229</td>
+      <td>0.551985</td>
+      <td>0.553751</td>
+      <td>0.555527</td>
+      <td>0.574041</td>
+      <td>0.575928</td>
+      <td>0.577824</td>
+      <td>0.579729</td>
+      <td>0.581644</td>
+      <td>0.601463</td>
+      <td>0.603469</td>
+      <td>0.605483</td>
+      <td>0.607504</td>
+      <td>0.609533</td>
+      <td>0.630387</td>
+      <td>0.632483</td>
+      <td>0.634585</td>
+      <td>0.636691</td>
+      <td>0.638802</td>
+      <td>0.635843</td>
+      <td>0.637952</td>
+      <td>0.640066</td>
+      <td>0.642184</td>
+      <td>0.644307</td>
+      <td>0.665942</td>
+      <td>0.668098</td>
+      <td>0.670256</td>
+      <td>0.672416</td>
+      <td>0.674577</td>
+      <td>0.696441</td>
+      <td>0.698604</td>
+      <td>0.700766</td>
+      <td>0.702926</td>
+      <td>0.705085</td>
+      <td>0.726765</td>
+      <td>0.728894</td>
+      <td>0.731019</td>
+      <td>0.733139</td>
+      <td>0.735256</td>
+      <td>0.089286</td>
+      <td>0.247347</td>
+      <td>0.249163</td>
+      <td>0.250996</td>
+      <td>0.252846</td>
+      <td>0.272458</td>
+      <td>0.274492</td>
+      <td>0.276543</td>
+      <td>0.278611</td>
+      <td>0.280695</td>
+      <td>0.302693</td>
+      <td>0.304963</td>
+      <td>0.30725</td>
+      <td>0.309554</td>
+      <td>0.311874</td>
+      <td>0.336225</td>
+      <td>0.338724</td>
+      <td>0.34124</td>
+      <td>0.34377</td>
+      <td>0.346317</td>
+      <td>0.34275</td>
+      <td>0.34529</td>
+      <td>0.347846</td>
+      <td>0.350416</td>
+      <td>0.353002</td>
+      <td>0.379952</td>
+      <td>0.382699</td>
+      <td>0.385459</td>
+      <td>0.388232</td>
+      <td>0.391019</td>
+      <td>0.419869</td>
+      <td>0.422789</td>
+      <td>0.425721</td>
+      <td>0.428663</td>
+      <td>0.431616</td>
+      <td>0.461972</td>
+      <td>0.465023</td>
+      <td>0.468083</td>
+      <td>0.471149</td>
+      <td>0.474222</td>
+      <td>0.469914</td>
+      <td>0.472985</td>
+      <td>0.476062</td>
+      <td>0.479145</td>
+      <td>0.482235</td>
+      <td>0.513728</td>
+      <td>0.516867</td>
+      <td>0.520008</td>
+      <td>0.523152</td>
+      <td>0.526298</td>
+      <td>0.558124</td>
+      <td>0.561273</td>
+      <td>0.564419</td>
+      <td>0.567564</td>
+      <td>0.570707</td>
+      <td>0.602265</td>
+      <td>0.605364</td>
+      <td>0.608457</td>
+      <td>0.611544</td>
+      <td>0.614625</td>
+      <td>0.182179</td>
+      <td>0.324117</td>
+      <td>0.325749</td>
+      <td>0.327395</td>
+      <td>0.329055</td>
+      <td>0.346667</td>
+      <td>0.348494</td>
+      <td>0.350336</td>
+      <td>0.352192</td>
+      <td>0.354064</td>
+      <td>0.373818</td>
+      <td>0.375857</td>
+      <td>0.377911</td>
+      <td>0.379979</td>
+      <td>0.382063</td>
+      <td>0.40393</td>
+      <td>0.406175</td>
+      <td>0.408433</td>
+      <td>0.410706</td>
+      <td>0.412992</td>
+      <td>0.409789</td>
+      <td>0.41207</td>
+      <td>0.414365</td>
+      <td>0.416674</td>
+      <td>0.418996</td>
+      <td>0.443197</td>
+      <td>0.445663</td>
+      <td>0.448142</td>
+      <td>0.450632</td>
+      <td>0.453135</td>
+      <td>0.479042</td>
+      <td>0.481665</td>
+      <td>0.484297</td>
+      <td>0.486939</td>
+      <td>0.489591</td>
+      <td>0.516851</td>
+      <td>0.519591</td>
+      <td>0.522338</td>
+      <td>0.525092</td>
+      <td>0.527851</td>
+      <td>0.523983</td>
+      <td>0.52674</td>
+      <td>0.529503</td>
+      <td>0.532272</td>
+      <td>0.535047</td>
+      <td>0.563327</td>
+      <td>0.566146</td>
+      <td>0.568967</td>
+      <td>0.57179</td>
+      <td>0.574615</td>
+      <td>0.603195</td>
+      <td>0.606023</td>
+      <td>0.608849</td>
+      <td>0.611673</td>
+      <td>0.614495</td>
+      <td>0.642834</td>
+      <td>0.645617</td>
+      <td>0.648394</td>
+      <td>0.651166</td>
+      <td>0.653933</td>
+      <td>0.365502</td>
+      <td>0.475624</td>
+      <td>0.476889</td>
+      <td>0.478166</td>
+      <td>0.479455</td>
+      <td>0.493119</td>
+      <td>0.494536</td>
+      <td>0.495965</td>
+      <td>0.497405</td>
+      <td>0.498858</td>
+      <td>0.514184</td>
+      <td>0.515765</td>
+      <td>0.517359</td>
+      <td>0.518964</td>
+      <td>0.52058</td>
+      <td>0.537545</td>
+      <td>0.539287</td>
+      <td>0.541039</td>
+      <td>0.542802</td>
+      <td>0.544576</td>
+      <td>0.542091</td>
+      <td>0.543861</td>
+      <td>0.545642</td>
+      <td>0.547433</td>
+      <td>0.549234</td>
+      <td>0.56801</td>
+      <td>0.569924</td>
+      <td>0.571847</td>
+      <td>0.573779</td>
+      <td>0.57572</td>
+      <td>0.59582</td>
+      <td>0.597855</td>
+      <td>0.599898</td>
+      <td>0.601947</td>
+      <td>0.604004</td>
+      <td>0.625154</td>
+      <td>0.62728</td>
+      <td>0.629411</td>
+      <td>0.631547</td>
+      <td>0.633689</td>
+      <td>0.630687</td>
+      <td>0.632826</td>
+      <td>0.63497</td>
+      <td>0.637119</td>
+      <td>0.639271</td>
+      <td>0.661212</td>
+      <td>0.663399</td>
+      <td>0.665588</td>
+      <td>0.667778</td>
+      <td>0.66997</td>
+      <td>0.692143</td>
+      <td>0.694337</td>
+      <td>0.696529</td>
+      <td>0.69872</td>
+      <td>0.70091</td>
+      <td>0.722897</td>
+      <td>0.725056</td>
+      <td>0.72721</td>
+      <td>0.729361</td>
+      <td>0.731507</td>
+      <td>0.430221</td>
+      <td>0.52911</td>
+      <td>0.530246</td>
+      <td>0.531393</td>
+      <td>0.53255</td>
+      <td>0.544821</td>
+      <td>0.546093</td>
+      <td>0.547376</td>
+      <td>0.54867</td>
+      <td>0.549974</td>
+      <td>0.563737</td>
+      <td>0.565157</td>
+      <td>0.566588</td>
+      <td>0.568029</td>
+      <td>0.569481</td>
+      <td>0.584716</td>
+      <td>0.58628</td>
+      <td>0.587853</td>
+      <td>0.589436</td>
+      <td>0.59103</td>
+      <td>0.588798</td>
+      <td>0.590387</td>
+      <td>0.591986</td>
+      <td>0.593594</td>
+      <td>0.595212</td>
+      <td>0.612073</td>
+      <td>0.613792</td>
+      <td>0.615518</td>
+      <td>0.617254</td>
+      <td>0.618997</td>
+      <td>0.637047</td>
+      <td>0.638874</td>
+      <td>0.640708</td>
+      <td>0.642549</td>
+      <td>0.644396</td>
+      <td>0.663388</td>
+      <td>0.665297</td>
+      <td>0.667211</td>
+      <td>0.66913</td>
+      <td>0.671052</td>
+      <td>0.668357</td>
+      <td>0.670278</td>
+      <td>0.672203</td>
+      <td>0.674132</td>
+      <td>0.676065</td>
+      <td>0.695769</td>
+      <td>0.697732</td>
+      <td>0.699698</td>
+      <td>0.701665</td>
+      <td>0.703633</td>
+      <td>0.723545</td>
+      <td>0.725515</td>
+      <td>0.727483</td>
+      <td>0.729451</td>
+      <td>0.731417</td>
+      <td>0.751161</td>
+      <td>0.7531</td>
+      <td>0.755035</td>
+      <td>0.756966</td>
+      <td>0.758894</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Fracture</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Cord compression</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Nerve root</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No gait disturbance</th>
+      <td>1.0</td>
+      <td>0.551711</td>
+      <td>0.182858</td>
+      <td>0.100885</td>
+      <td>0.722857</td>
+      <td>0.398808</td>
+      <td>0.132180</td>
+      <td>0.072925</td>
+    </tr>
+    <tr>
+      <th>New onset trips</th>
+      <td>0.0</td>
+      <td>0.115002</td>
+      <td>0.361428</td>
+      <td>0.261998</td>
+      <td>0.103998</td>
+      <td>0.152467</td>
+      <td>0.317866</td>
+      <td>0.227126</td>
+    </tr>
+    <tr>
+      <th>Falls</th>
+      <td>0.0</td>
+      <td>0.078717</td>
+      <td>0.250000</td>
+      <td>0.229202</td>
+      <td>0.139001</td>
+      <td>0.168703</td>
+      <td>0.317121</td>
+      <td>0.271818</td>
+    </tr>
+    <tr>
+      <th>Inability to lift the foot</th>
+      <td>0.0</td>
+      <td>0.254570</td>
+      <td>0.205714</td>
+      <td>0.407915</td>
+      <td>0.034144</td>
+      <td>0.280022</td>
+      <td>0.232834</td>
+      <td>0.428131</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Space occupying lesion/cancer</th>
+      <th colspan="16" halign="left">No</th>
+      <th colspan="16" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Cauda equina</th>
+      <th colspan="8" halign="left">No</th>
+      <th colspan="8" halign="left">Yes</th>
+      <th colspan="8" halign="left">No</th>
+      <th colspan="8" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Infective condition</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Fracture</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Nerve root</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1.0</td>
+      <td>0.920714</td>
+      <td>0.823428</td>
+      <td>0.758142</td>
+      <td>0.803</td>
+      <td>0.739333</td>
+      <td>0.661213</td>
+      <td>0.608788</td>
+      <td>0.488</td>
+      <td>0.449309</td>
+      <td>0.401833</td>
+      <td>0.369974</td>
+      <td>0.391864</td>
+      <td>0.360795</td>
+      <td>0.322672</td>
+      <td>0.297089</td>
+      <td>0.745561</td>
+      <td>0.686448</td>
+      <td>0.613916</td>
+      <td>0.565241</td>
+      <td>0.598685</td>
+      <td>0.551218</td>
+      <td>0.492974</td>
+      <td>0.453889</td>
+      <td>0.363834</td>
+      <td>0.334987</td>
+      <td>0.299591</td>
+      <td>0.275838</td>
+      <td>0.292159</td>
+      <td>0.268995</td>
+      <td>0.240572</td>
+      <td>0.221498</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.0</td>
+      <td>0.079286</td>
+      <td>0.176572</td>
+      <td>0.241858</td>
+      <td>0.197</td>
+      <td>0.260667</td>
+      <td>0.338787</td>
+      <td>0.391212</td>
+      <td>0.512</td>
+      <td>0.550691</td>
+      <td>0.598167</td>
+      <td>0.630026</td>
+      <td>0.608136</td>
+      <td>0.639205</td>
+      <td>0.677328</td>
+      <td>0.702911</td>
+      <td>0.254439</td>
+      <td>0.313552</td>
+      <td>0.386084</td>
+      <td>0.434759</td>
+      <td>0.401315</td>
+      <td>0.448782</td>
+      <td>0.507026</td>
+      <td>0.546111</td>
+      <td>0.636166</td>
+      <td>0.665013</td>
+      <td>0.700409</td>
+      <td>0.724162</td>
+      <td>0.707841</td>
+      <td>0.731005</td>
+      <td>0.759428</td>
+      <td>0.778502</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Cauda equina</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Infective condition</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Nerve root</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5/5 bilaterally</th>
+      <td>1.0</td>
+      <td>0.303167</td>
+      <td>0.766833</td>
+      <td>0.232479</td>
+      <td>0.270833</td>
+      <td>0.082108</td>
+      <td>0.207684</td>
+      <td>0.062963</td>
+    </tr>
+    <tr>
+      <th>Myotome weakness</th>
+      <td>0.0</td>
+      <td>0.550498</td>
+      <td>0.124667</td>
+      <td>0.528564</td>
+      <td>0.631500</td>
+      <td>0.688183</td>
+      <td>0.596746</td>
+      <td>0.623751</td>
+    </tr>
+    <tr>
+      <th>Unable to complete assessment</th>
+      <td>0.0</td>
+      <td>0.146334</td>
+      <td>0.108500</td>
+      <td>0.238957</td>
+      <td>0.097667</td>
+      <td>0.229709</td>
+      <td>0.195570</td>
+      <td>0.313286</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Cauda equina</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Cord compression</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No UMN/LMN signs</th>
+      <td>1.0</td>
+      <td>0.227285</td>
+      <td>0.705857</td>
+      <td>0.160431</td>
+    </tr>
+    <tr>
+      <th>Altered reflexes</th>
+      <td>0.0</td>
+      <td>0.447572</td>
+      <td>0.244572</td>
+      <td>0.480973</td>
+    </tr>
+    <tr>
+      <th>Positive clonus</th>
+      <td>0.0</td>
+      <td>0.165285</td>
+      <td>0.025428</td>
+      <td>0.178455</td>
+    </tr>
+    <tr>
+      <th>Positive babinski</th>
+      <td>0.0</td>
+      <td>0.159857</td>
+      <td>0.024143</td>
+      <td>0.180141</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Infective condition</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Cord compression</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Normal co-ordination</th>
+      <td>1.0</td>
+      <td>0.356001</td>
+      <td>0.881</td>
+      <td>0.313637</td>
+    </tr>
+    <tr>
+      <th>Reduced co-ordination</th>
+      <td>0.0</td>
+      <td>0.643999</td>
+      <td>0.119</td>
+      <td>0.686363</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Space occupying lesion/cancer</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Infective condition</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1.0</td>
+      <td>0.295535</td>
+      <td>0.257427</td>
+      <td>0.076079</td>
+    </tr>
+    <tr>
+      <th>yes &lt;5% body weight</th>
+      <td>0.0</td>
+      <td>0.301354</td>
+      <td>0.284520</td>
+      <td>0.247404</td>
+    </tr>
+    <tr>
+      <th>yes 5-10% body weight</th>
+      <td>0.0</td>
+      <td>0.244763</td>
+      <td>0.260492</td>
+      <td>0.351892</td>
+    </tr>
+    <tr>
+      <th>yes &gt;10% body weight</th>
+      <td>0.0</td>
+      <td>0.158348</td>
+      <td>0.197561</td>
+      <td>0.324626</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Inflammatory condition</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Irritability of pain</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1.0</td>
+      <td>0.826941</td>
+      <td>0.729883</td>
+      <td>0.604431</td>
+      <td>0.230151</td>
+      <td>0.190322</td>
+      <td>0.167984</td>
+      <td>0.139111</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.0</td>
+      <td>0.173059</td>
+      <td>0.270117</td>
+      <td>0.395569</td>
+      <td>0.769849</td>
+      <td>0.809678</td>
+      <td>0.832016</td>
+      <td>0.860889</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Space occupying lesion/cancer</th>
+      <th colspan="2" halign="left">No</th>
+      <th colspan="2" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Inflammatory condition</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1.0</td>
+      <td>0.827418</td>
+      <td>0.706274</td>
+      <td>0.584384</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.0</td>
+      <td>0.172582</td>
+      <td>0.293726</td>
+      <td>0.415616</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Depression</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+    </tr>
+    <tr>
+      <th>Stress</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+    </tr>
+    <tr>
+      <th>Anxiety/fear (judgement)</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>None</th>
+      <td>0.212459</td>
+      <td>0.164633</td>
+      <td>0.122427</td>
+      <td>0.087074</td>
+      <td>0.059087</td>
+      <td>0.198341</td>
+      <td>0.171114</td>
+      <td>0.145707</td>
+      <td>0.122394</td>
+      <td>0.101380</td>
+      <td>0.191315</td>
+      <td>0.172378</td>
+      <td>0.154336</td>
+      <td>0.137289</td>
+      <td>0.121319</td>
+      <td>0.187275</td>
+      <td>0.172775</td>
+      <td>0.158809</td>
+      <td>0.145420</td>
+      <td>0.132650</td>
+      <td>0.181463</td>
+      <td>0.125555</td>
+      <td>0.080671</td>
+      <td>0.047816</td>
+      <td>0.026037</td>
+      <td>0.182783</td>
+      <td>0.152872</td>
+      <td>0.125601</td>
+      <td>0.101302</td>
+      <td>0.080164</td>
+      <td>0.180560</td>
+      <td>0.160352</td>
+      <td>0.141302</td>
+      <td>0.123525</td>
+      <td>0.107109</td>
+      <td>0.179009</td>
+      <td>0.163778</td>
+      <td>0.149194</td>
+      <td>0.135309</td>
+      <td>0.122166</td>
+      <td>0.124939</td>
+      <td>0.065689</td>
+      <td>0.029199</td>
+      <td>0.010781</td>
+      <td>0.003264</td>
+      <td>0.162479</td>
+      <td>0.129748</td>
+      <td>0.101003</td>
+      <td>0.076572</td>
+      <td>0.056501</td>
+      <td>0.167781</td>
+      <td>0.146232</td>
+      <td>0.126208</td>
+      <td>0.107839</td>
+      <td>0.091206</td>
+      <td>0.169617</td>
+      <td>0.153620</td>
+      <td>0.138418</td>
+      <td>0.124069</td>
+      <td>0.110619</td>
+    </tr>
+    <tr>
+      <th>Low</th>
+      <td>0.277426</td>
+      <td>0.250011</td>
+      <td>0.217262</td>
+      <td>0.181495</td>
+      <td>0.145427</td>
+      <td>0.236301</td>
+      <td>0.220643</td>
+      <td>0.203616</td>
+      <td>0.185616</td>
+      <td>0.167083</td>
+      <td>0.220466</td>
+      <td>0.209576</td>
+      <td>0.198090</td>
+      <td>0.186138</td>
+      <td>0.173863</td>
+      <td>0.212126</td>
+      <td>0.203793</td>
+      <td>0.195132</td>
+      <td>0.186199</td>
+      <td>0.177057</td>
+      <td>0.286588</td>
+      <td>0.245137</td>
+      <td>0.196553</td>
+      <td>0.146855</td>
+      <td>0.101888</td>
+      <td>0.233799</td>
+      <td>0.214639</td>
+      <td>0.193929</td>
+      <td>0.172329</td>
+      <td>0.150541</td>
+      <td>0.217072</td>
+      <td>0.204638</td>
+      <td>0.191565</td>
+      <td>0.178038</td>
+      <td>0.164254</td>
+      <td>0.208921</td>
+      <td>0.199726</td>
+      <td>0.190187</td>
+      <td>0.180379</td>
+      <td>0.170382</td>
+      <td>0.298206</td>
+      <td>0.223603</td>
+      <td>0.145432</td>
+      <td>0.080837</td>
+      <td>0.038042</td>
+      <td>0.229616</td>
+      <td>0.205373</td>
+      <td>0.179551</td>
+      <td>0.153301</td>
+      <td>0.127764</td>
+      <td>0.212617</td>
+      <td>0.198229</td>
+      <td>0.183189</td>
+      <td>0.167763</td>
+      <td>0.152227</td>
+      <td>0.205040</td>
+      <td>0.194822</td>
+      <td>0.184253</td>
+      <td>0.173435</td>
+      <td>0.162468</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>0.258129</td>
+      <td>0.269091</td>
+      <td>0.271770</td>
+      <td>0.265142</td>
+      <td>0.249393</td>
+      <td>0.235013</td>
+      <td>0.237146</td>
+      <td>0.236811</td>
+      <td>0.233910</td>
+      <td>0.228458</td>
+      <td>0.224635</td>
+      <td>0.225136</td>
+      <td>0.224489</td>
+      <td>0.222671</td>
+      <td>0.219684</td>
+      <td>0.218858</td>
+      <td>0.218867</td>
+      <td>0.218216</td>
+      <td>0.216899</td>
+      <td>0.214917</td>
+      <td>0.284568</td>
+      <td>0.297899</td>
+      <td>0.294958</td>
+      <td>0.274756</td>
+      <td>0.240106</td>
+      <td>0.242191</td>
+      <td>0.243560</td>
+      <td>0.241491</td>
+      <td>0.235928</td>
+      <td>0.227020</td>
+      <td>0.227681</td>
+      <td>0.227648</td>
+      <td>0.226190</td>
+      <td>0.223295</td>
+      <td>0.218990</td>
+      <td>0.220441</td>
+      <td>0.220097</td>
+      <td>0.218980</td>
+      <td>0.217087</td>
+      <td>0.214425</td>
+      <td>0.341001</td>
+      <td>0.355431</td>
+      <td>0.329080</td>
+      <td>0.267361</td>
+      <td>0.189420</td>
+      <td>0.251850</td>
+      <td>0.251556</td>
+      <td>0.246244</td>
+      <td>0.236044</td>
+      <td>0.221486</td>
+      <td>0.231193</td>
+      <td>0.230328</td>
+      <td>0.227661</td>
+      <td>0.223211</td>
+      <td>0.217053</td>
+      <td>0.222119</td>
+      <td>0.221293</td>
+      <td>0.219551</td>
+      <td>0.216900</td>
+      <td>0.213358</td>
+    </tr>
+    <tr>
+      <th>High</th>
+      <td>0.171137</td>
+      <td>0.205277</td>
+      <td>0.239621</td>
+      <td>0.271475</td>
+      <td>0.297996</td>
+      <td>0.195116</td>
+      <td>0.212452</td>
+      <td>0.229217</td>
+      <td>0.244942</td>
+      <td>0.259164</td>
+      <td>0.202376</td>
+      <td>0.213693</td>
+      <td>0.224628</td>
+      <td>0.235026</td>
+      <td>0.244740</td>
+      <td>0.205678</td>
+      <td>0.214018</td>
+      <td>0.222102</td>
+      <td>0.229863</td>
+      <td>0.237235</td>
+      <td>0.177652</td>
+      <td>0.225327</td>
+      <td>0.272622</td>
+      <td>0.313150</td>
+      <td>0.340750</td>
+      <td>0.203182</td>
+      <td>0.223368</td>
+      <td>0.242532</td>
+      <td>0.259945</td>
+      <td>0.274921</td>
+      <td>0.208348</td>
+      <td>0.220755</td>
+      <td>0.232607</td>
+      <td>0.243700</td>
+      <td>0.253839</td>
+      <td>0.210281</td>
+      <td>0.219174</td>
+      <td>0.227730</td>
+      <td>0.235867</td>
+      <td>0.243503</td>
+      <td>0.186818</td>
+      <td>0.263829</td>
+      <td>0.338294</td>
+      <td>0.390040</td>
+      <td>0.402979</td>
+      <td>0.214398</td>
+      <td>0.238436</td>
+      <td>0.260537</td>
+      <td>0.279518</td>
+      <td>0.294352</td>
+      <td>0.215710</td>
+      <td>0.229391</td>
+      <td>0.242245</td>
+      <td>0.253996</td>
+      <td>0.264390</td>
+      <td>0.215631</td>
+      <td>0.225131</td>
+      <td>0.234181</td>
+      <td>0.242679</td>
+      <td>0.250527</td>
+    </tr>
+    <tr>
+      <th>Extreme</th>
+      <td>0.080848</td>
+      <td>0.110989</td>
+      <td>0.148921</td>
+      <td>0.194814</td>
+      <td>0.248097</td>
+      <td>0.135229</td>
+      <td>0.158645</td>
+      <td>0.184650</td>
+      <td>0.213137</td>
+      <td>0.243914</td>
+      <td>0.161208</td>
+      <td>0.179217</td>
+      <td>0.198458</td>
+      <td>0.218876</td>
+      <td>0.240395</td>
+      <td>0.176063</td>
+      <td>0.190547</td>
+      <td>0.205742</td>
+      <td>0.221619</td>
+      <td>0.238142</td>
+      <td>0.069729</td>
+      <td>0.106082</td>
+      <td>0.155196</td>
+      <td>0.217422</td>
+      <td>0.291219</td>
+      <td>0.138046</td>
+      <td>0.165560</td>
+      <td>0.196446</td>
+      <td>0.230495</td>
+      <td>0.267353</td>
+      <td>0.166339</td>
+      <td>0.186606</td>
+      <td>0.208336</td>
+      <td>0.231441</td>
+      <td>0.255808</td>
+      <td>0.181347</td>
+      <td>0.197225</td>
+      <td>0.213909</td>
+      <td>0.231359</td>
+      <td>0.249523</td>
+      <td>0.049035</td>
+      <td>0.091449</td>
+      <td>0.157994</td>
+      <td>0.250982</td>
+      <td>0.366296</td>
+      <td>0.141657</td>
+      <td>0.174886</td>
+      <td>0.212666</td>
+      <td>0.254565</td>
+      <td>0.299897</td>
+      <td>0.172699</td>
+      <td>0.195820</td>
+      <td>0.220697</td>
+      <td>0.247191</td>
+      <td>0.275124</td>
+      <td>0.187593</td>
+      <td>0.205136</td>
+      <td>0.223596</td>
+      <td>0.242917</td>
+      <td>0.263028</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Inflammatory condition</th>
+      <th colspan="15" halign="left">No</th>
+      <th colspan="15" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Depression</th>
+      <th colspan="5" halign="left">Low</th>
+      <th colspan="5" halign="left">Medium</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">Low</th>
+      <th colspan="5" halign="left">Medium</th>
+      <th colspan="5" halign="left">High</th>
+    </tr>
+    <tr>
+      <th>Anxiety/fear (judgement)</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>1.0</td>
+      <td>0.54274</td>
+      <td>0.450073</td>
+      <td>0.360745</td>
+      <td>0.280116</td>
+      <td>0.546423</td>
+      <td>0.453751</td>
+      <td>0.364177</td>
+      <td>0.283121</td>
+      <td>0.214032</td>
+      <td>0.457434</td>
+      <td>0.367623</td>
+      <td>0.286145</td>
+      <td>0.216541</td>
+      <td>0.160072</td>
+      <td>0.544856</td>
+      <td>0.295715</td>
+      <td>0.245225</td>
+      <td>0.196554</td>
+      <td>0.152623</td>
+      <td>0.297722</td>
+      <td>0.247229</td>
+      <td>0.198424</td>
+      <td>0.15426</td>
+      <td>0.116617</td>
+      <td>0.249236</td>
+      <td>0.200301</td>
+      <td>0.155908</td>
+      <td>0.117984</td>
+      <td>0.087216</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.0</td>
+      <td>0.45726</td>
+      <td>0.549927</td>
+      <td>0.639255</td>
+      <td>0.719884</td>
+      <td>0.453577</td>
+      <td>0.546249</td>
+      <td>0.635823</td>
+      <td>0.716879</td>
+      <td>0.785968</td>
+      <td>0.542566</td>
+      <td>0.632377</td>
+      <td>0.713855</td>
+      <td>0.783459</td>
+      <td>0.839928</td>
+      <td>0.455144</td>
+      <td>0.704285</td>
+      <td>0.754775</td>
+      <td>0.803446</td>
+      <td>0.847377</td>
+      <td>0.702278</td>
+      <td>0.752771</td>
+      <td>0.801576</td>
+      <td>0.84574</td>
+      <td>0.883383</td>
+      <td>0.750764</td>
+      <td>0.799699</td>
+      <td>0.844092</td>
+      <td>0.882016</td>
+      <td>0.912784</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Space occupying lesion/cancer</th>
+      <th colspan="6" halign="left">No</th>
+      <th colspan="6" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Nerve root</th>
+      <th colspan="3" halign="left">No</th>
+      <th colspan="3" halign="left">Yes</th>
+      <th colspan="3" halign="left">No</th>
+      <th colspan="3" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Depression</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Improved with paracetamol</th>
+      <td>0.262335</td>
+      <td>0.142554</td>
+      <td>0.064456</td>
+      <td>0.140607</td>
+      <td>0.069248</td>
+      <td>0.029644</td>
+      <td>0.143806</td>
+      <td>0.063704</td>
+      <td>0.025378</td>
+      <td>0.075263</td>
+      <td>0.031703</td>
+      <td>0.012374</td>
+    </tr>
+    <tr>
+      <th>Improved with NSAIDS</th>
+      <td>0.282037</td>
+      <td>0.188786</td>
+      <td>0.105146</td>
+      <td>0.281610</td>
+      <td>0.170840</td>
+      <td>0.090088</td>
+      <td>0.118621</td>
+      <td>0.064729</td>
+      <td>0.031763</td>
+      <td>0.115654</td>
+      <td>0.060009</td>
+      <td>0.028851</td>
+    </tr>
+    <tr>
+      <th>Improved with opiods</th>
+      <td>0.161638</td>
+      <td>0.206293</td>
+      <td>0.219073</td>
+      <td>0.114536</td>
+      <td>0.132483</td>
+      <td>0.133204</td>
+      <td>0.336056</td>
+      <td>0.349642</td>
+      <td>0.327133</td>
+      <td>0.232522</td>
+      <td>0.230037</td>
+      <td>0.210876</td>
+    </tr>
+    <tr>
+      <th>Improved with atypicals/Neuropathic medications</th>
+      <td>0.113119</td>
+      <td>0.155031</td>
+      <td>0.176791</td>
+      <td>0.288617</td>
+      <td>0.358494</td>
+      <td>0.387058</td>
+      <td>0.127868</td>
+      <td>0.142861</td>
+      <td>0.143534</td>
+      <td>0.318569</td>
+      <td>0.338435</td>
+      <td>0.333154</td>
+    </tr>
+    <tr>
+      <th>No improvement</th>
+      <td>0.180870</td>
+      <td>0.307336</td>
+      <td>0.434534</td>
+      <td>0.174631</td>
+      <td>0.268936</td>
+      <td>0.360006</td>
+      <td>0.273649</td>
+      <td>0.379065</td>
+      <td>0.472194</td>
+      <td>0.257992</td>
+      <td>0.339817</td>
+      <td>0.414746</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Infective condition</th>
+      <th colspan="120" halign="left">No</th>
+      <th colspan="120" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Nerve root</th>
+      <th colspan="60" halign="left">No</th>
+      <th colspan="60" halign="left">Yes</th>
+      <th colspan="60" halign="left">No</th>
+      <th colspan="60" halign="left">Yes</th>
+    </tr>
+    <tr>
+      <th>Depression</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+    </tr>
+    <tr>
+      <th>Stress</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+    </tr>
+    <tr>
+      <th>Anxiety/fear (judgement)</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>None</th>
+      <td>0.000974</td>
+      <td>0.078643</td>
+      <td>0.125922</td>
+      <td>0.148875</td>
+      <td>0.162055</td>
+      <td>0.035436</td>
+      <td>0.089476</td>
+      <td>0.120268</td>
+      <td>0.138862</td>
+      <td>0.151134</td>
+      <td>0.056479</td>
+      <td>0.092419</td>
+      <td>0.115772</td>
+      <td>0.131639</td>
+      <td>0.143003</td>
+      <td>0.066475</td>
+      <td>0.093300</td>
+      <td>0.112328</td>
+      <td>0.126229</td>
+      <td>0.136741</td>
+      <td>0.214901</td>
+      <td>0.215426</td>
+      <td>0.215278</td>
+      <td>0.214937</td>
+      <td>0.214555</td>
+      <td>0.192344</td>
+      <td>0.196069</td>
+      <td>0.198484</td>
+      <td>0.200165</td>
+      <td>0.201399</td>
+      <td>0.176331</td>
+      <td>0.181632</td>
+      <td>0.185465</td>
+      <td>0.188364</td>
+      <td>0.190632</td>
+      <td>0.164476</td>
+      <td>0.170515</td>
+      <td>0.175122</td>
+      <td>0.178750</td>
+      <td>0.181681</td>
+      <td>0.253343</td>
+      <td>0.248261</td>
+      <td>0.244211</td>
+      <td>0.240912</td>
+      <td>0.238174</td>
+      <td>0.234393</td>
+      <td>0.231826</td>
+      <td>0.229724</td>
+      <td>0.227973</td>
+      <td>0.226494</td>
+      <td>0.219110</td>
+      <td>0.218273</td>
+      <td>0.217558</td>
+      <td>0.216943</td>
+      <td>0.216409</td>
+      <td>0.206576</td>
+      <td>0.206942</td>
+      <td>0.207225</td>
+      <td>0.207449</td>
+      <td>0.207629</td>
+      <td>5.261340e-13</td>
+      <td>1.029775e-13</td>
+      <td>1.986127e-14</td>
+      <td>3.714258e-15</td>
+      <td>6.536362e-16</td>
+      <td>1.101873e-15</td>
+      <td>1.809542e-16</td>
+      <td>2.589784e-17</td>
+      <td>3.159800e-18</td>
+      <td>3.359711e-19</td>
+      <td>6.592253e-19</td>
+      <td>6.540960e-20</td>
+      <td>6.107247e-21</td>
+      <td>5.529236e-22</td>
+      <td>4.933442e-23</td>
+      <td>1.008618e-22</td>
+      <td>8.952508e-24</td>
+      <td>7.916017e-25</td>
+      <td>6.987575e-26</td>
+      <td>4.989857e-16</td>
+      <td>1.962102e-10</td>
+      <td>3.899473e-11</td>
+      <td>7.726428e-12</td>
+      <td>0.000002</td>
+      <td>0.021110</td>
+      <td>4.859333e-13</td>
+      <td>9.506278e-14</td>
+      <td>1.831566e-14</td>
+      <td>0.005982</td>
+      <td>0.037487</td>
+      <td>1.011324e-15</td>
+      <td>1.651399e-16</td>
+      <td>0.000728</td>
+      <td>0.019507</td>
+      <td>0.048183</td>
+      <td>5.900670e-19</td>
+      <td>0.000013</td>
+      <td>0.007968</td>
+      <td>0.031186</td>
+      <td>0.055434</td>
+      <td>0.014531</td>
+      <td>0.086897</td>
+      <td>0.125125</td>
+      <td>0.145676</td>
+      <td>0.158268</td>
+      <td>0.047694</td>
+      <td>0.092619</td>
+      <td>0.119560</td>
+      <td>0.136717</td>
+      <td>0.148463</td>
+      <td>0.062659</td>
+      <td>0.094103</td>
+      <td>0.115296</td>
+      <td>0.130157</td>
+      <td>0.141057</td>
+      <td>0.070179</td>
+      <td>0.094420</td>
+      <td>0.112036</td>
+      <td>0.125180</td>
+      <td>0.135286</td>
+      <td>0.174932</td>
+      <td>0.180333</td>
+      <td>0.184267</td>
+      <td>0.187259</td>
+      <td>0.18961</td>
+      <td>0.163429</td>
+      <td>0.169507</td>
+      <td>0.174165</td>
+      <td>0.177847</td>
+      <td>0.180829</td>
+      <td>0.154587</td>
+      <td>0.160925</td>
+      <td>0.165954</td>
+      <td>0.170038</td>
+      <td>0.173419</td>
+      <td>0.147600</td>
+      <td>0.153972</td>
+      <td>0.159161</td>
+      <td>0.163465</td>
+      <td>0.167091</td>
+      <td>0.217651</td>
+      <td>0.216965</td>
+      <td>0.216373</td>
+      <td>0.215860</td>
+      <td>0.215412</td>
+      <td>0.205375</td>
+      <td>0.205846</td>
+      <td>0.206217</td>
+      <td>0.206516</td>
+      <td>0.206761</td>
+      <td>0.195141</td>
+      <td>0.196424</td>
+      <td>0.197492</td>
+      <td>0.198395</td>
+      <td>0.199167</td>
+      <td>0.186499</td>
+      <td>0.188354</td>
+      <td>0.189929</td>
+      <td>0.191281</td>
+      <td>0.192456</td>
+      <td>0.238632</td>
+      <td>0.236437</td>
+      <td>0.234545</td>
+      <td>0.232896</td>
+      <td>0.231448</td>
+      <td>0.227730</td>
+      <td>0.226448</td>
+      <td>0.225330</td>
+      <td>0.224347</td>
+      <td>0.223476</td>
+      <td>0.218219</td>
+      <td>0.217650</td>
+      <td>0.217147</td>
+      <td>0.216700</td>
+      <td>0.216300</td>
+      <td>0.209862</td>
+      <td>0.209854</td>
+      <td>0.209842</td>
+      <td>0.209828</td>
+      <td>0.209812</td>
+      <td>4.965749e-16</td>
+      <td>7.705637e-17</td>
+      <td>0.001182</td>
+      <td>0.021034</td>
+      <td>0.049226</td>
+      <td>2.359660e-19</td>
+      <td>0.000043</td>
+      <td>0.009114</td>
+      <td>0.032385</td>
+      <td>0.056181</td>
+      <td>2.747984e-08</td>
+      <td>0.002832</td>
+      <td>0.019179</td>
+      <td>0.040987</td>
+      <td>0.061178</td>
+      <td>0.000513</td>
+      <td>0.009859</td>
+      <td>0.028115</td>
+      <td>0.047530</td>
+      <td>0.064926</td>
+      <td>0.063886</td>
+      <td>0.094297</td>
+      <td>0.114994</td>
+      <td>0.129626</td>
+      <td>0.140421</td>
+      <td>0.070898</td>
+      <td>0.094528</td>
+      <td>0.111811</td>
+      <td>0.124777</td>
+      <td>0.134790</td>
+      <td>0.075062</td>
+      <td>0.094438</td>
+      <td>0.109327</td>
+      <td>0.120975</td>
+      <td>0.130278</td>
+      <td>0.077798</td>
+      <td>0.094244</td>
+      <td>0.107345</td>
+      <td>0.117919</td>
+      <td>0.126586</td>
+      <td>0.170792</td>
+      <td>0.176412</td>
+      <td>0.180601</td>
+      <td>0.183842</td>
+      <td>0.186423</td>
+      <td>0.160372</td>
+      <td>0.166498</td>
+      <td>0.171264</td>
+      <td>0.175076</td>
+      <td>0.178193</td>
+      <td>0.152266</td>
+      <td>0.158564</td>
+      <td>0.163617</td>
+      <td>0.167758</td>
+      <td>0.171212</td>
+      <td>0.145798</td>
+      <td>0.152086</td>
+      <td>0.157251</td>
+      <td>0.161567</td>
+      <td>0.165225</td>
+    </tr>
+    <tr>
+      <th>Minimal</th>
+      <td>0.402819</td>
+      <td>0.358468</td>
+      <td>0.312767</td>
+      <td>0.290754</td>
+      <td>0.278220</td>
+      <td>0.302208</td>
+      <td>0.286434</td>
+      <td>0.273539</td>
+      <td>0.265415</td>
+      <td>0.259993</td>
+      <td>0.249036</td>
+      <td>0.251192</td>
+      <td>0.249691</td>
+      <td>0.247920</td>
+      <td>0.246373</td>
+      <td>0.223153</td>
+      <td>0.230749</td>
+      <td>0.233803</td>
+      <td>0.235189</td>
+      <td>0.235856</td>
+      <td>0.320729</td>
+      <td>0.302269</td>
+      <td>0.290259</td>
+      <td>0.281836</td>
+      <td>0.275607</td>
+      <td>0.294767</td>
+      <td>0.283561</td>
+      <td>0.275839</td>
+      <td>0.270201</td>
+      <td>0.265906</td>
+      <td>0.275326</td>
+      <td>0.268740</td>
+      <td>0.263967</td>
+      <td>0.260351</td>
+      <td>0.257519</td>
+      <td>0.260409</td>
+      <td>0.256822</td>
+      <td>0.254097</td>
+      <td>0.251956</td>
+      <td>0.250232</td>
+      <td>0.294229</td>
+      <td>0.287031</td>
+      <td>0.281362</td>
+      <td>0.276785</td>
+      <td>0.273013</td>
+      <td>0.283246</td>
+      <td>0.277730</td>
+      <td>0.273325</td>
+      <td>0.269729</td>
+      <td>0.266737</td>
+      <td>0.273552</td>
+      <td>0.269420</td>
+      <td>0.266073</td>
+      <td>0.263306</td>
+      <td>0.260982</td>
+      <td>0.265029</td>
+      <td>0.262016</td>
+      <td>0.259540</td>
+      <td>0.257470</td>
+      <td>0.255712</td>
+      <td>3.738310e-04</td>
+      <td>1.644046e-04</td>
+      <td>7.124775e-05</td>
+      <td>2.993842e-05</td>
+      <td>1.183820e-05</td>
+      <td>1.570989e-05</td>
+      <td>5.796999e-06</td>
+      <td>1.864192e-06</td>
+      <td>5.110688e-07</td>
+      <td>1.220996e-07</td>
+      <td>1.885986e-07</td>
+      <td>4.204737e-08</td>
+      <td>8.821359e-09</td>
+      <td>1.794518e-09</td>
+      <td>3.597703e-10</td>
+      <td>5.790212e-10</td>
+      <td>1.154795e-10</td>
+      <td>2.294350e-11</td>
+      <td>4.550635e-12</td>
+      <td>9.233397e-08</td>
+      <td>7.227948e-03</td>
+      <td>3.227691e-03</td>
+      <td>1.437002e-03</td>
+      <td>0.027055</td>
+      <td>0.198324</td>
+      <td>3.591973e-04</td>
+      <td>1.578918e-04</td>
+      <td>6.835405e-05</td>
+      <td>0.125158</td>
+      <td>0.188753</td>
+      <td>1.500064e-05</td>
+      <td>5.503816e-06</td>
+      <td>0.054324</td>
+      <td>0.144047</td>
+      <td>0.182098</td>
+      <td>1.756239e-07</td>
+      <td>0.009994</td>
+      <td>0.096968</td>
+      <td>0.150310</td>
+      <td>0.177653</td>
+      <td>0.365426</td>
+      <td>0.323913</td>
+      <td>0.295286</td>
+      <td>0.279996</td>
+      <td>0.270724</td>
+      <td>0.278326</td>
+      <td>0.270948</td>
+      <td>0.263518</td>
+      <td>0.258289</td>
+      <td>0.254566</td>
+      <td>0.238380</td>
+      <td>0.242853</td>
+      <td>0.243352</td>
+      <td>0.242930</td>
+      <td>0.242307</td>
+      <td>0.217648</td>
+      <td>0.225699</td>
+      <td>0.229508</td>
+      <td>0.231542</td>
+      <td>0.232723</td>
+      <td>0.273510</td>
+      <td>0.267319</td>
+      <td>0.262808</td>
+      <td>0.259377</td>
+      <td>0.25668</td>
+      <td>0.259005</td>
+      <td>0.255676</td>
+      <td>0.253132</td>
+      <td>0.251126</td>
+      <td>0.249505</td>
+      <td>0.247575</td>
+      <td>0.246147</td>
+      <td>0.244989</td>
+      <td>0.244032</td>
+      <td>0.243230</td>
+      <td>0.238372</td>
+      <td>0.238233</td>
+      <td>0.238062</td>
+      <td>0.237884</td>
+      <td>0.237709</td>
+      <td>0.272567</td>
+      <td>0.268571</td>
+      <td>0.265328</td>
+      <td>0.262644</td>
+      <td>0.260387</td>
+      <td>0.264167</td>
+      <td>0.261262</td>
+      <td>0.258872</td>
+      <td>0.256870</td>
+      <td>0.255169</td>
+      <td>0.256773</td>
+      <td>0.254746</td>
+      <td>0.253054</td>
+      <td>0.251621</td>
+      <td>0.250390</td>
+      <td>0.250245</td>
+      <td>0.248923</td>
+      <td>0.247802</td>
+      <td>0.246841</td>
+      <td>0.246008</td>
+      <td>0.271002</td>
+      <td>0.268229</td>
+      <td>0.265843</td>
+      <td>0.263770</td>
+      <td>0.261951</td>
+      <td>0.265321</td>
+      <td>0.263074</td>
+      <td>0.261130</td>
+      <td>0.259432</td>
+      <td>0.257935</td>
+      <td>0.260073</td>
+      <td>0.258288</td>
+      <td>0.256734</td>
+      <td>0.255368</td>
+      <td>0.254159</td>
+      <td>0.255232</td>
+      <td>0.253848</td>
+      <td>0.252636</td>
+      <td>0.251565</td>
+      <td>0.250612</td>
+      <td>1.018381e-05</td>
+      <td>3.550804e-06</td>
+      <td>0.061415</td>
+      <td>0.145301</td>
+      <td>0.181661</td>
+      <td>9.710417e-08</td>
+      <td>0.014847</td>
+      <td>0.100125</td>
+      <td>0.150895</td>
+      <td>0.177368</td>
+      <td>5.489648e-04</td>
+      <td>0.057859</td>
+      <td>0.118160</td>
+      <td>0.153444</td>
+      <td>0.174342</td>
+      <td>0.025080</td>
+      <td>0.085402</td>
+      <td>0.128059</td>
+      <td>0.154807</td>
+      <td>0.172107</td>
+      <td>0.235595</td>
+      <td>0.240646</td>
+      <td>0.241634</td>
+      <td>0.241555</td>
+      <td>0.241171</td>
+      <td>0.216093</td>
+      <td>0.224288</td>
+      <td>0.228301</td>
+      <td>0.230509</td>
+      <td>0.231829</td>
+      <td>0.204252</td>
+      <td>0.213240</td>
+      <td>0.218563</td>
+      <td>0.221985</td>
+      <td>0.224324</td>
+      <td>0.196351</td>
+      <td>0.205299</td>
+      <td>0.211155</td>
+      <td>0.215219</td>
+      <td>0.218171</td>
+      <td>0.267652</td>
+      <td>0.262695</td>
+      <td>0.259014</td>
+      <td>0.256175</td>
+      <td>0.253919</td>
+      <td>0.254502</td>
+      <td>0.251969</td>
+      <td>0.249996</td>
+      <td>0.248416</td>
+      <td>0.247123</td>
+      <td>0.244036</td>
+      <td>0.243131</td>
+      <td>0.242368</td>
+      <td>0.241719</td>
+      <td>0.241163</td>
+      <td>0.235538</td>
+      <td>0.235744</td>
+      <td>0.235849</td>
+      <td>0.235895</td>
+      <td>0.235906</td>
+    </tr>
+    <tr>
+      <th>Moderate</th>
+      <td>0.593097</td>
+      <td>0.428533</td>
+      <td>0.363552</td>
+      <td>0.334230</td>
+      <td>0.317922</td>
+      <td>0.500952</td>
+      <td>0.392994</td>
+      <td>0.351343</td>
+      <td>0.329657</td>
+      <td>0.316425</td>
+      <td>0.421211</td>
+      <td>0.367345</td>
+      <td>0.340623</td>
+      <td>0.324703</td>
+      <td>0.314152</td>
+      <td>0.380590</td>
+      <td>0.350096</td>
+      <td>0.332062</td>
+      <td>0.320159</td>
+      <td>0.311720</td>
+      <td>0.295794</td>
+      <td>0.290693</td>
+      <td>0.286797</td>
+      <td>0.283790</td>
+      <td>0.281419</td>
+      <td>0.303317</td>
+      <td>0.296414</td>
+      <td>0.291480</td>
+      <td>0.287787</td>
+      <td>0.284922</td>
+      <td>0.306079</td>
+      <td>0.299135</td>
+      <td>0.294090</td>
+      <td>0.290260</td>
+      <td>0.287256</td>
+      <td>0.306620</td>
+      <td>0.300236</td>
+      <td>0.295460</td>
+      <td>0.291755</td>
+      <td>0.288796</td>
+      <td>0.265753</td>
+      <td>0.266346</td>
+      <td>0.266622</td>
+      <td>0.266722</td>
+      <td>0.266724</td>
+      <td>0.272847</td>
+      <td>0.272198</td>
+      <td>0.271586</td>
+      <td>0.271024</td>
+      <td>0.270515</td>
+      <td>0.277818</td>
+      <td>0.276464</td>
+      <td>0.275323</td>
+      <td>0.274350</td>
+      <td>0.273512</td>
+      <td>0.281324</td>
+      <td>0.279594</td>
+      <td>0.278153</td>
+      <td>0.276935</td>
+      <td>0.275892</td>
+      <td>9.898585e-01</td>
+      <td>9.781479e-01</td>
+      <td>9.524765e-01</td>
+      <td>8.993002e-01</td>
+      <td>7.990134e-01</td>
+      <td>8.347068e-01</td>
+      <td>6.920805e-01</td>
+      <td>5.000768e-01</td>
+      <td>3.080478e-01</td>
+      <td>1.653658e-01</td>
+      <td>2.010769e-01</td>
+      <td>1.007292e-01</td>
+      <td>4.748369e-02</td>
+      <td>2.170448e-02</td>
+      <td>9.777315e-03</td>
+      <td>1.238743e-02</td>
+      <td>5.551166e-03</td>
+      <td>2.478173e-03</td>
+      <td>1.104426e-03</td>
+      <td>1.159606e-02</td>
+      <td>9.922644e-01</td>
+      <td>9.956278e-01</td>
+      <td>9.959904e-01</td>
+      <td>0.895771</td>
+      <td>0.480449</td>
+      <td>9.894829e-01</td>
+      <td>9.772990e-01</td>
+      <td>9.506592e-01</td>
+      <td>0.496164</td>
+      <td>0.404586</td>
+      <td>8.291782e-01</td>
+      <td>6.835886e-01</td>
+      <td>0.470878</td>
+      <td>0.404499</td>
+      <td>0.368953</td>
+      <td>1.947981e-01</td>
+      <td>0.363616</td>
+      <td>0.387307</td>
+      <td>0.366483</td>
+      <td>0.348487</td>
+      <td>0.566037</td>
+      <td>0.411292</td>
+      <td>0.357515</td>
+      <td>0.331835</td>
+      <td>0.316976</td>
+      <td>0.459444</td>
+      <td>0.380309</td>
+      <td>0.346086</td>
+      <td>0.327160</td>
+      <td>0.315186</td>
+      <td>0.400905</td>
+      <td>0.359016</td>
+      <td>0.336505</td>
+      <td>0.322472</td>
+      <td>0.312897</td>
+      <td>0.369312</td>
+      <td>0.344400</td>
+      <td>0.328857</td>
+      <td>0.318245</td>
+      <td>0.310545</td>
+      <td>0.306173</td>
+      <td>0.299283</td>
+      <td>0.294262</td>
+      <td>0.290442</td>
+      <td>0.28744</td>
+      <td>0.306565</td>
+      <td>0.300264</td>
+      <td>0.295534</td>
+      <td>0.291855</td>
+      <td>0.288911</td>
+      <td>0.305987</td>
+      <td>0.300405</td>
+      <td>0.296090</td>
+      <td>0.292656</td>
+      <td>0.289857</td>
+      <td>0.304961</td>
+      <td>0.300080</td>
+      <td>0.296203</td>
+      <td>0.293050</td>
+      <td>0.290435</td>
+      <td>0.278244</td>
+      <td>0.276839</td>
+      <td>0.275658</td>
+      <td>0.274653</td>
+      <td>0.273788</td>
+      <td>0.281622</td>
+      <td>0.279866</td>
+      <td>0.278405</td>
+      <td>0.277169</td>
+      <td>0.276111</td>
+      <td>0.284014</td>
+      <td>0.282098</td>
+      <td>0.280495</td>
+      <td>0.279134</td>
+      <td>0.277964</td>
+      <td>0.285706</td>
+      <td>0.283746</td>
+      <td>0.282090</td>
+      <td>0.280673</td>
+      <td>0.279447</td>
+      <td>0.265635</td>
+      <td>0.265650</td>
+      <td>0.265630</td>
+      <td>0.265588</td>
+      <td>0.265532</td>
+      <td>0.269169</td>
+      <td>0.268833</td>
+      <td>0.268524</td>
+      <td>0.268240</td>
+      <td>0.267978</td>
+      <td>0.272019</td>
+      <td>0.271441</td>
+      <td>0.270928</td>
+      <td>0.270469</td>
+      <td>0.270058</td>
+      <td>0.274328</td>
+      <td>0.273587</td>
+      <td>0.272932</td>
+      <td>0.272351</td>
+      <td>0.271831</td>
+      <td>7.783140e-01</td>
+      <td>6.097670e-01</td>
+      <td>0.455446</td>
+      <td>0.398794</td>
+      <td>0.366125</td>
+      <td>1.489173e-01</td>
+      <td>0.362300</td>
+      <td>0.382533</td>
+      <td>0.363605</td>
+      <td>0.346735</td>
+      <td>1.708647e-01</td>
+      <td>0.344036</td>
+      <td>0.352681</td>
+      <td>0.343950</td>
+      <td>0.334067</td>
+      <td>0.277737</td>
+      <td>0.330960</td>
+      <td>0.335998</td>
+      <td>0.331395</td>
+      <td>0.325154</td>
+      <td>0.396343</td>
+      <td>0.357052</td>
+      <td>0.335518</td>
+      <td>0.321940</td>
+      <td>0.312605</td>
+      <td>0.366662</td>
+      <td>0.343025</td>
+      <td>0.328077</td>
+      <td>0.317782</td>
+      <td>0.310266</td>
+      <td>0.348343</td>
+      <td>0.332924</td>
+      <td>0.322121</td>
+      <td>0.314154</td>
+      <td>0.308045</td>
+      <td>0.336002</td>
+      <td>0.325351</td>
+      <td>0.317291</td>
+      <td>0.311011</td>
+      <td>0.305995</td>
+      <td>0.306095</td>
+      <td>0.299489</td>
+      <td>0.294614</td>
+      <td>0.290871</td>
+      <td>0.287907</td>
+      <td>0.306100</td>
+      <td>0.300136</td>
+      <td>0.295603</td>
+      <td>0.292043</td>
+      <td>0.289173</td>
+      <td>0.305365</td>
+      <td>0.300105</td>
+      <td>0.295993</td>
+      <td>0.292690</td>
+      <td>0.289979</td>
+      <td>0.304293</td>
+      <td>0.299697</td>
+      <td>0.296010</td>
+      <td>0.292986</td>
+      <td>0.290462</td>
+    </tr>
+    <tr>
+      <th>Severe</th>
+      <td>0.003110</td>
+      <td>0.134356</td>
+      <td>0.197760</td>
+      <td>0.226142</td>
+      <td>0.241802</td>
+      <td>0.161404</td>
+      <td>0.231096</td>
+      <td>0.254850</td>
+      <td>0.266066</td>
+      <td>0.272448</td>
+      <td>0.273275</td>
+      <td>0.289045</td>
+      <td>0.293914</td>
+      <td>0.295738</td>
+      <td>0.296472</td>
+      <td>0.329781</td>
+      <td>0.325855</td>
+      <td>0.321807</td>
+      <td>0.318424</td>
+      <td>0.315683</td>
+      <td>0.168575</td>
+      <td>0.191612</td>
+      <td>0.207666</td>
+      <td>0.219438</td>
+      <td>0.228419</td>
+      <td>0.209571</td>
+      <td>0.223957</td>
+      <td>0.234198</td>
+      <td>0.241847</td>
+      <td>0.247773</td>
+      <td>0.242264</td>
+      <td>0.250493</td>
+      <td>0.256478</td>
+      <td>0.261024</td>
+      <td>0.264593</td>
+      <td>0.268495</td>
+      <td>0.272427</td>
+      <td>0.275321</td>
+      <td>0.277539</td>
+      <td>0.279290</td>
+      <td>0.186674</td>
+      <td>0.198362</td>
+      <td>0.207805</td>
+      <td>0.215581</td>
+      <td>0.222089</td>
+      <td>0.209514</td>
+      <td>0.218247</td>
+      <td>0.225365</td>
+      <td>0.231274</td>
+      <td>0.236255</td>
+      <td>0.229520</td>
+      <td>0.235844</td>
+      <td>0.241047</td>
+      <td>0.245401</td>
+      <td>0.249098</td>
+      <td>0.247071</td>
+      <td>0.251448</td>
+      <td>0.255082</td>
+      <td>0.258147</td>
+      <td>0.260766</td>
+      <td>9.767647e-03</td>
+      <td>2.168772e-02</td>
+      <td>4.745221e-02</td>
+      <td>1.006699e-01</td>
+      <td>2.009748e-01</td>
+      <td>1.652775e-01</td>
+      <td>3.079137e-01</td>
+      <td>4.999214e-01</td>
+      <td>6.919517e-01</td>
+      <td>8.346341e-01</td>
+      <td>7.989229e-01</td>
+      <td>8.992708e-01</td>
+      <td>9.525163e-01</td>
+      <td>9.782955e-01</td>
+      <td>9.902227e-01</td>
+      <td>9.876126e-01</td>
+      <td>9.944488e-01</td>
+      <td>9.975218e-01</td>
+      <td>9.988956e-01</td>
+      <td>9.884039e-01</td>
+      <td>5.076434e-04</td>
+      <td>1.144514e-03</td>
+      <td>2.572597e-03</td>
+      <td>0.077172</td>
+      <td>0.300117</td>
+      <td>1.015787e-02</td>
+      <td>2.254314e-02</td>
+      <td>4.927248e-02</td>
+      <td>0.372695</td>
+      <td>0.369174</td>
+      <td>1.708068e-01</td>
+      <td>3.164059e-01</td>
+      <td>0.474071</td>
+      <td>0.431947</td>
+      <td>0.400767</td>
+      <td>8.052018e-01</td>
+      <td>0.626378</td>
+      <td>0.507757</td>
+      <td>0.452021</td>
+      <td>0.418425</td>
+      <td>0.054006</td>
+      <td>0.177898</td>
+      <td>0.222074</td>
+      <td>0.242494</td>
+      <td>0.254033</td>
+      <td>0.214536</td>
+      <td>0.256124</td>
+      <td>0.270837</td>
+      <td>0.277834</td>
+      <td>0.281786</td>
+      <td>0.298057</td>
+      <td>0.304028</td>
+      <td>0.304848</td>
+      <td>0.304440</td>
+      <td>0.303740</td>
+      <td>0.342861</td>
+      <td>0.335481</td>
+      <td>0.329599</td>
+      <td>0.325033</td>
+      <td>0.321446</td>
+      <td>0.245386</td>
+      <td>0.253065</td>
+      <td>0.258664</td>
+      <td>0.262923</td>
+      <td>0.26627</td>
+      <td>0.271001</td>
+      <td>0.274553</td>
+      <td>0.277169</td>
+      <td>0.279172</td>
+      <td>0.280755</td>
+      <td>0.291851</td>
+      <td>0.292523</td>
+      <td>0.292968</td>
+      <td>0.293275</td>
+      <td>0.293494</td>
+      <td>0.309067</td>
+      <td>0.307715</td>
+      <td>0.306574</td>
+      <td>0.305601</td>
+      <td>0.304764</td>
+      <td>0.231537</td>
+      <td>0.237626</td>
+      <td>0.242641</td>
+      <td>0.246843</td>
+      <td>0.250413</td>
+      <td>0.248836</td>
+      <td>0.253025</td>
+      <td>0.256507</td>
+      <td>0.259445</td>
+      <td>0.261959</td>
+      <td>0.264072</td>
+      <td>0.266731</td>
+      <td>0.268958</td>
+      <td>0.270851</td>
+      <td>0.272478</td>
+      <td>0.277550</td>
+      <td>0.278978</td>
+      <td>0.280179</td>
+      <td>0.281204</td>
+      <td>0.282089</td>
+      <td>0.224732</td>
+      <td>0.229684</td>
+      <td>0.233982</td>
+      <td>0.237746</td>
+      <td>0.241069</td>
+      <td>0.237781</td>
+      <td>0.241645</td>
+      <td>0.245016</td>
+      <td>0.247982</td>
+      <td>0.250611</td>
+      <td>0.249689</td>
+      <td>0.252621</td>
+      <td>0.255191</td>
+      <td>0.257462</td>
+      <td>0.259483</td>
+      <td>0.260578</td>
+      <td>0.262711</td>
+      <td>0.264590</td>
+      <td>0.266257</td>
+      <td>0.267745</td>
+      <td>2.216758e-01</td>
+      <td>3.902295e-01</td>
+      <td>0.481957</td>
+      <td>0.434871</td>
+      <td>0.402988</td>
+      <td>8.510826e-01</td>
+      <td>0.622810</td>
+      <td>0.508228</td>
+      <td>0.453115</td>
+      <td>0.419715</td>
+      <td>8.285863e-01</td>
+      <td>0.595273</td>
+      <td>0.509981</td>
+      <td>0.461619</td>
+      <td>0.430414</td>
+      <td>0.696671</td>
+      <td>0.573778</td>
+      <td>0.507828</td>
+      <td>0.466268</td>
+      <td>0.437813</td>
+      <td>0.304176</td>
+      <td>0.308006</td>
+      <td>0.307854</td>
+      <td>0.306880</td>
+      <td>0.305803</td>
+      <td>0.346348</td>
+      <td>0.338158</td>
+      <td>0.331811</td>
+      <td>0.326932</td>
+      <td>0.323114</td>
+      <td>0.372343</td>
+      <td>0.359399</td>
+      <td>0.349989</td>
+      <td>0.342886</td>
+      <td>0.337354</td>
+      <td>0.389849</td>
+      <td>0.375106</td>
+      <td>0.364209</td>
+      <td>0.355851</td>
+      <td>0.349249</td>
+      <td>0.255461</td>
+      <td>0.261404</td>
+      <td>0.265771</td>
+      <td>0.269113</td>
+      <td>0.271752</td>
+      <td>0.279026</td>
+      <td>0.281397</td>
+      <td>0.283137</td>
+      <td>0.284465</td>
+      <td>0.285511</td>
+      <td>0.298333</td>
+      <td>0.298199</td>
+      <td>0.298022</td>
+      <td>0.297832</td>
+      <td>0.297646</td>
+      <td>0.314372</td>
+      <td>0.312473</td>
+      <td>0.310890</td>
+      <td>0.309552</td>
+      <td>0.308408</td>
+    </tr>
+  </tbody>
+</table>
+ <br> 
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Irritability of pain</th>
+      <th colspan="60" halign="left">None</th>
+      <th colspan="60" halign="left">Low</th>
+      <th colspan="60" halign="left">Medium</th>
+      <th colspan="60" halign="left">High</th>
+    </tr>
+    <tr>
+      <th>Depression</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+      <th colspan="20" halign="left">Low</th>
+      <th colspan="20" halign="left">Medium</th>
+      <th colspan="20" halign="left">High</th>
+    </tr>
+    <tr>
+      <th>Stress</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+      <th colspan="5" halign="left">Insignificant</th>
+      <th colspan="5" halign="left">Moderate</th>
+      <th colspan="5" halign="left">High</th>
+      <th colspan="5" halign="left">PTSD</th>
+    </tr>
+    <tr>
+      <th>Anxiety/fear (judgement)</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+      <th>None</th>
+      <th>Low</th>
+      <th>Medium</th>
+      <th>High</th>
+      <th>Extreme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>None</th>
+      <td>0.229393</td>
+      <td>0.194471</td>
+      <td>0.175838</td>
+      <td>0.164641</td>
+      <td>0.157251</td>
+      <td>0.176869</td>
+      <td>0.162240</td>
+      <td>0.153400</td>
+      <td>0.147672</td>
+      <td>0.143699</td>
+      <td>0.142755</td>
+      <td>0.138896</td>
+      <td>0.135996</td>
+      <td>0.133898</td>
+      <td>0.132340</td>
+      <td>0.119633</td>
+      <td>0.121530</td>
+      <td>0.122254</td>
+      <td>0.122575</td>
+      <td>0.122730</td>
+      <td>0.230828</td>
+      <td>0.195356</td>
+      <td>0.176470</td>
+      <td>0.165129</td>
+      <td>0.157648</td>
+      <td>0.177963</td>
+      <td>0.162968</td>
+      <td>0.153942</td>
+      <td>0.148103</td>
+      <td>0.144056</td>
+      <td>0.143607</td>
+      <td>0.139503</td>
+      <td>0.136466</td>
+      <td>0.134281</td>
+      <td>0.132663</td>
+      <td>0.120312</td>
+      <td>0.122042</td>
+      <td>0.122664</td>
+      <td>0.122917</td>
+      <td>0.123023</td>
+      <td>0.232263</td>
+      <td>0.196241</td>
+      <td>0.177102</td>
+      <td>0.165617</td>
+      <td>0.158045</td>
+      <td>0.179058</td>
+      <td>0.163698</td>
+      <td>0.154485</td>
+      <td>0.148535</td>
+      <td>0.144413</td>
+      <td>0.144460</td>
+      <td>0.140111</td>
+      <td>0.136936</td>
+      <td>0.134664</td>
+      <td>0.132986</td>
+      <td>0.120992</td>
+      <td>0.122555</td>
+      <td>0.123075</td>
+      <td>0.123260</td>
+      <td>0.123316</td>
+      <td>0.220314</td>
+      <td>0.194920</td>
+      <td>0.179695</td>
+      <td>0.169649</td>
+      <td>0.162557</td>
+      <td>0.184780</td>
+      <td>0.170458</td>
+      <td>0.161366</td>
+      <td>0.155124</td>
+      <td>0.150588</td>
+      <td>0.158488</td>
+      <td>0.151237</td>
+      <td>0.146361</td>
+      <td>0.142877</td>
+      <td>0.140269</td>
+      <td>0.138612</td>
+      <td>0.135905</td>
+      <td>0.133940</td>
+      <td>0.132463</td>
+      <td>0.131317</td>
+      <td>0.221176</td>
+      <td>0.195545</td>
+      <td>0.180182</td>
+      <td>0.170046</td>
+      <td>0.162892</td>
+      <td>0.185505</td>
+      <td>0.171002</td>
+      <td>0.161800</td>
+      <td>0.155483</td>
+      <td>0.150894</td>
+      <td>0.159101</td>
+      <td>0.151713</td>
+      <td>0.146748</td>
+      <td>0.143203</td>
+      <td>0.140551</td>
+      <td>0.139136</td>
+      <td>0.136323</td>
+      <td>0.134288</td>
+      <td>0.132760</td>
+      <td>0.131576</td>
+      <td>0.222037</td>
+      <td>0.196171</td>
+      <td>0.180669</td>
+      <td>0.170444</td>
+      <td>0.163227</td>
+      <td>0.186230</td>
+      <td>0.171546</td>
+      <td>0.162233</td>
+      <td>0.155843</td>
+      <td>0.151201</td>
+      <td>0.159715</td>
+      <td>0.152188</td>
+      <td>0.147135</td>
+      <td>0.143529</td>
+      <td>0.140833</td>
+      <td>0.139660</td>
+      <td>0.136741</td>
+      <td>0.134636</td>
+      <td>0.133058</td>
+      <td>0.131836</td>
+      <td>0.213200</td>
+      <td>0.194331</td>
+      <td>0.181805</td>
+      <td>0.172929</td>
+      <td>0.166329</td>
+      <td>0.187050</td>
+      <td>0.174809</td>
+      <td>0.166400</td>
+      <td>0.160287</td>
+      <td>0.155651</td>
+      <td>0.166238</td>
+      <td>0.158690</td>
+      <td>0.153332</td>
+      <td>0.149341</td>
+      <td>0.146256</td>
+      <td>0.149466</td>
+      <td>0.145255</td>
+      <td>0.142166</td>
+      <td>0.139808</td>
+      <td>0.137950</td>
+      <td>0.213815</td>
+      <td>0.194814</td>
+      <td>0.182201</td>
+      <td>0.173264</td>
+      <td>0.166619</td>
+      <td>0.187591</td>
+      <td>0.175242</td>
+      <td>0.166760</td>
+      <td>0.160595</td>
+      <td>0.155920</td>
+      <td>0.166715</td>
+      <td>0.159079</td>
+      <td>0.153661</td>
+      <td>0.149625</td>
+      <td>0.146506</td>
+      <td>0.149888</td>
+      <td>0.145606</td>
+      <td>0.142466</td>
+      <td>0.140070</td>
+      <td>0.138183</td>
+      <td>0.214430</td>
+      <td>0.195298</td>
+      <td>0.182597</td>
+      <td>0.173599</td>
+      <td>0.166908</td>
+      <td>0.188132</td>
+      <td>0.175675</td>
+      <td>0.167120</td>
+      <td>0.160902</td>
+      <td>0.156188</td>
+      <td>0.167192</td>
+      <td>0.159469</td>
+      <td>0.153989</td>
+      <td>0.149908</td>
+      <td>0.146755</td>
+      <td>0.150311</td>
+      <td>0.145957</td>
+      <td>0.142766</td>
+      <td>0.140332</td>
+      <td>0.138415</td>
+      <td>0.208497</td>
+      <td>0.193681</td>
+      <td>0.183123</td>
+      <td>0.175242</td>
+      <td>0.169147</td>
+      <td>0.187941</td>
+      <td>0.177487</td>
+      <td>0.169864</td>
+      <td>0.164072</td>
+      <td>0.159528</td>
+      <td>0.170828</td>
+      <td>0.163670</td>
+      <td>0.158335</td>
+      <td>0.154212</td>
+      <td>0.150932</td>
+      <td>0.156465</td>
+      <td>0.151803</td>
+      <td>0.148256</td>
+      <td>0.145468</td>
+      <td>0.143222</td>
+      <td>0.208975</td>
+      <td>0.194075</td>
+      <td>0.183456</td>
+      <td>0.175531</td>
+      <td>0.169402</td>
+      <td>0.188372</td>
+      <td>0.177847</td>
+      <td>0.170172</td>
+      <td>0.164341</td>
+      <td>0.159767</td>
+      <td>0.171218</td>
+      <td>0.163999</td>
+      <td>0.158620</td>
+      <td>0.154462</td>
+      <td>0.151155</td>
+      <td>0.156818</td>
+      <td>0.152105</td>
+      <td>0.148520</td>
+      <td>0.145702</td>
+      <td>0.143432</td>
+      <td>0.209452</td>
+      <td>0.194468</td>
+      <td>0.183790</td>
+      <td>0.175820</td>
+      <td>0.169656</td>
+      <td>0.188803</td>
+      <td>0.178206</td>
+      <td>0.170480</td>
+      <td>0.164610</td>
+      <td>0.160005</td>
+      <td>0.171607</td>
+      <td>0.164328</td>
+      <td>0.158905</td>
+      <td>0.154713</td>
+      <td>0.151379</td>
+      <td>0.157171</td>
+      <td>0.152408</td>
+      <td>0.148784</td>
+      <td>0.145936</td>
+      <td>0.143642</td>
+    </tr>
+    <tr>
+      <th>Low</th>
+      <td>0.320418</td>
+      <td>0.259460</td>
+      <td>0.230091</td>
+      <td>0.213141</td>
+      <td>0.202195</td>
+      <td>0.269872</td>
+      <td>0.230673</td>
+      <td>0.210820</td>
+      <td>0.198936</td>
+      <td>0.191055</td>
+      <td>0.230794</td>
+      <td>0.207282</td>
+      <td>0.194550</td>
+      <td>0.186605</td>
+      <td>0.181185</td>
+      <td>0.201471</td>
+      <td>0.188409</td>
+      <td>0.180831</td>
+      <td>0.175898</td>
+      <td>0.172434</td>
+      <td>0.320874</td>
+      <td>0.259905</td>
+      <td>0.230457</td>
+      <td>0.213443</td>
+      <td>0.202450</td>
+      <td>0.270480</td>
+      <td>0.231133</td>
+      <td>0.211180</td>
+      <td>0.199229</td>
+      <td>0.191302</td>
+      <td>0.231406</td>
+      <td>0.207725</td>
+      <td>0.194895</td>
+      <td>0.186886</td>
+      <td>0.181423</td>
+      <td>0.202039</td>
+      <td>0.188822</td>
+      <td>0.181156</td>
+      <td>0.176165</td>
+      <td>0.172661</td>
+      <td>0.321324</td>
+      <td>0.260348</td>
+      <td>0.230821</td>
+      <td>0.213744</td>
+      <td>0.202704</td>
+      <td>0.271084</td>
+      <td>0.231591</td>
+      <td>0.211540</td>
+      <td>0.199523</td>
+      <td>0.191549</td>
+      <td>0.232017</td>
+      <td>0.208167</td>
+      <td>0.195239</td>
+      <td>0.187167</td>
+      <td>0.181660</td>
+      <td>0.202605</td>
+      <td>0.189235</td>
+      <td>0.181481</td>
+      <td>0.176432</td>
+      <td>0.172888</td>
+      <td>0.268591</td>
+      <td>0.239127</td>
+      <td>0.221239</td>
+      <td>0.209353</td>
+      <td>0.200926</td>
+      <td>0.241923</td>
+      <td>0.220509</td>
+      <td>0.207242</td>
+      <td>0.198264</td>
+      <td>0.191801</td>
+      <td>0.219275</td>
+      <td>0.204396</td>
+      <td>0.194901</td>
+      <td>0.188333</td>
+      <td>0.183526</td>
+      <td>0.200399</td>
+      <td>0.190544</td>
+      <td>0.184047</td>
+      <td>0.179448</td>
+      <td>0.176024</td>
+      <td>0.268953</td>
+      <td>0.239449</td>
+      <td>0.221514</td>
+      <td>0.209591</td>
+      <td>0.201134</td>
+      <td>0.242318</td>
+      <td>0.220834</td>
+      <td>0.207515</td>
+      <td>0.198497</td>
+      <td>0.192004</td>
+      <td>0.219670</td>
+      <td>0.204714</td>
+      <td>0.195166</td>
+      <td>0.188559</td>
+      <td>0.183723</td>
+      <td>0.200779</td>
+      <td>0.190849</td>
+      <td>0.184302</td>
+      <td>0.179666</td>
+      <td>0.176214</td>
+      <td>0.269312</td>
+      <td>0.239769</td>
+      <td>0.221789</td>
+      <td>0.209828</td>
+      <td>0.201341</td>
+      <td>0.242712</td>
+      <td>0.221159</td>
+      <td>0.207787</td>
+      <td>0.198730</td>
+      <td>0.192206</td>
+      <td>0.220065</td>
+      <td>0.205031</td>
+      <td>0.195430</td>
+      <td>0.188785</td>
+      <td>0.183920</td>
+      <td>0.201158</td>
+      <td>0.191154</td>
+      <td>0.184555</td>
+      <td>0.179884</td>
+      <td>0.176405</td>
+      <td>0.246712</td>
+      <td>0.228399</td>
+      <td>0.215869</td>
+      <td>0.206818</td>
+      <td>0.199997</td>
+      <td>0.228948</td>
+      <td>0.214741</td>
+      <td>0.204915</td>
+      <td>0.197738</td>
+      <td>0.192278</td>
+      <td>0.213200</td>
+      <td>0.202513</td>
+      <td>0.195000</td>
+      <td>0.189441</td>
+      <td>0.185165</td>
+      <td>0.199405</td>
+      <td>0.191622</td>
+      <td>0.186050</td>
+      <td>0.181868</td>
+      <td>0.178616</td>
+      <td>0.246993</td>
+      <td>0.228650</td>
+      <td>0.216090</td>
+      <td>0.207014</td>
+      <td>0.200172</td>
+      <td>0.229240</td>
+      <td>0.214993</td>
+      <td>0.205134</td>
+      <td>0.197931</td>
+      <td>0.192450</td>
+      <td>0.213493</td>
+      <td>0.202761</td>
+      <td>0.195214</td>
+      <td>0.189629</td>
+      <td>0.185334</td>
+      <td>0.199689</td>
+      <td>0.191863</td>
+      <td>0.186258</td>
+      <td>0.182051</td>
+      <td>0.178779</td>
+      <td>0.247274</td>
+      <td>0.228900</td>
+      <td>0.216311</td>
+      <td>0.207209</td>
+      <td>0.200347</td>
+      <td>0.229532</td>
+      <td>0.215245</td>
+      <td>0.205353</td>
+      <td>0.198124</td>
+      <td>0.192622</td>
+      <td>0.213784</td>
+      <td>0.203008</td>
+      <td>0.195429</td>
+      <td>0.189818</td>
+      <td>0.185501</td>
+      <td>0.199973</td>
+      <td>0.192103</td>
+      <td>0.186466</td>
+      <td>0.182234</td>
+      <td>0.178942</td>
+      <td>0.234710</td>
+      <td>0.221786</td>
+      <td>0.212270</td>
+      <td>0.205003</td>
+      <td>0.199288</td>
+      <td>0.221490</td>
+      <td>0.211035</td>
+      <td>0.203284</td>
+      <td>0.197323</td>
+      <td>0.192605</td>
+      <td>0.209474</td>
+      <td>0.201202</td>
+      <td>0.195009</td>
+      <td>0.190205</td>
+      <td>0.186374</td>
+      <td>0.198639</td>
+      <td>0.192248</td>
+      <td>0.187407</td>
+      <td>0.183616</td>
+      <td>0.180569</td>
+      <td>0.234937</td>
+      <td>0.221991</td>
+      <td>0.212454</td>
+      <td>0.205170</td>
+      <td>0.199439</td>
+      <td>0.221722</td>
+      <td>0.211240</td>
+      <td>0.203467</td>
+      <td>0.197488</td>
+      <td>0.192754</td>
+      <td>0.209705</td>
+      <td>0.201405</td>
+      <td>0.195189</td>
+      <td>0.190367</td>
+      <td>0.186520</td>
+      <td>0.198866</td>
+      <td>0.192446</td>
+      <td>0.187583</td>
+      <td>0.183774</td>
+      <td>0.180712</td>
+      <td>0.235164</td>
+      <td>0.222196</td>
+      <td>0.212639</td>
+      <td>0.205336</td>
+      <td>0.199591</td>
+      <td>0.221954</td>
+      <td>0.211446</td>
+      <td>0.203650</td>
+      <td>0.197652</td>
+      <td>0.192903</td>
+      <td>0.209937</td>
+      <td>0.201608</td>
+      <td>0.195369</td>
+      <td>0.190528</td>
+      <td>0.186667</td>
+      <td>0.199093</td>
+      <td>0.192645</td>
+      <td>0.187759</td>
+      <td>0.183932</td>
+      <td>0.180856</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>0.270244</td>
+      <td>0.256445</td>
+      <td>0.243205</td>
+      <td>0.233797</td>
+      <td>0.227066</td>
+      <td>0.276230</td>
+      <td>0.253047</td>
+      <td>0.239107</td>
+      <td>0.230093</td>
+      <td>0.223847</td>
+      <td>0.268157</td>
+      <td>0.246172</td>
+      <td>0.233741</td>
+      <td>0.225805</td>
+      <td>0.220315</td>
+      <td>0.255990</td>
+      <td>0.238177</td>
+      <td>0.227938</td>
+      <td>0.221307</td>
+      <td>0.216667</td>
+      <td>0.269531</td>
+      <td>0.256229</td>
+      <td>0.243139</td>
+      <td>0.233786</td>
+      <td>0.227078</td>
+      <td>0.275901</td>
+      <td>0.252971</td>
+      <td>0.239104</td>
+      <td>0.230116</td>
+      <td>0.223880</td>
+      <td>0.268070</td>
+      <td>0.246187</td>
+      <td>0.233783</td>
+      <td>0.225854</td>
+      <td>0.220365</td>
+      <td>0.256042</td>
+      <td>0.238250</td>
+      <td>0.228010</td>
+      <td>0.221374</td>
+      <td>0.216728</td>
+      <td>0.268816</td>
+      <td>0.256011</td>
+      <td>0.243071</td>
+      <td>0.233774</td>
+      <td>0.227090</td>
+      <td>0.275568</td>
+      <td>0.252893</td>
+      <td>0.239101</td>
+      <td>0.230139</td>
+      <td>0.223913</td>
+      <td>0.267981</td>
+      <td>0.246201</td>
+      <td>0.233824</td>
+      <td>0.225902</td>
+      <td>0.220414</td>
+      <td>0.256091</td>
+      <td>0.238321</td>
+      <td>0.228081</td>
+      <td>0.221440</td>
+      <td>0.216789</td>
+      <td>0.247587</td>
+      <td>0.239484</td>
+      <td>0.232286</td>
+      <td>0.226616</td>
+      <td>0.222183</td>
+      <td>0.248177</td>
+      <td>0.237441</td>
+      <td>0.229770</td>
+      <td>0.224150</td>
+      <td>0.219895</td>
+      <td>0.244354</td>
+      <td>0.233656</td>
+      <td>0.226416</td>
+      <td>0.221224</td>
+      <td>0.217329</td>
+      <td>0.238546</td>
+      <td>0.229032</td>
+      <td>0.222639</td>
+      <td>0.218055</td>
+      <td>0.214612</td>
+      <td>0.247344</td>
+      <td>0.239389</td>
+      <td>0.232253</td>
+      <td>0.226612</td>
+      <td>0.222193</td>
+      <td>0.248059</td>
+      <td>0.237409</td>
+      <td>0.229772</td>
+      <td>0.224168</td>
+      <td>0.219920</td>
+      <td>0.244325</td>
+      <td>0.233669</td>
+      <td>0.226445</td>
+      <td>0.221258</td>
+      <td>0.217365</td>
+      <td>0.238576</td>
+      <td>0.229077</td>
+      <td>0.222687</td>
+      <td>0.218103</td>
+      <td>0.214658</td>
+      <td>0.247100</td>
+      <td>0.239294</td>
+      <td>0.232219</td>
+      <td>0.226607</td>
+      <td>0.222203</td>
+      <td>0.247940</td>
+      <td>0.237375</td>
+      <td>0.229774</td>
+      <td>0.224185</td>
+      <td>0.219944</td>
+      <td>0.244294</td>
+      <td>0.233680</td>
+      <td>0.226473</td>
+      <td>0.221293</td>
+      <td>0.217402</td>
+      <td>0.238606</td>
+      <td>0.229121</td>
+      <td>0.222734</td>
+      <td>0.218150</td>
+      <td>0.214703</td>
+      <td>0.235299</td>
+      <td>0.230285</td>
+      <td>0.225746</td>
+      <td>0.221937</td>
+      <td>0.218782</td>
+      <td>0.235097</td>
+      <td>0.228890</td>
+      <td>0.224012</td>
+      <td>0.220155</td>
+      <td>0.217058</td>
+      <td>0.232803</td>
+      <td>0.226449</td>
+      <td>0.221688</td>
+      <td>0.218012</td>
+      <td>0.215097</td>
+      <td>0.229343</td>
+      <td>0.223399</td>
+      <td>0.219011</td>
+      <td>0.215646</td>
+      <td>0.212986</td>
+      <td>0.235184</td>
+      <td>0.230234</td>
+      <td>0.225728</td>
+      <td>0.221936</td>
+      <td>0.218791</td>
+      <td>0.235041</td>
+      <td>0.228874</td>
+      <td>0.224015</td>
+      <td>0.220169</td>
+      <td>0.217077</td>
+      <td>0.232791</td>
+      <td>0.226459</td>
+      <td>0.221710</td>
+      <td>0.218038</td>
+      <td>0.215125</td>
+      <td>0.229365</td>
+      <td>0.223430</td>
+      <td>0.219046</td>
+      <td>0.215682</td>
+      <td>0.213022</td>
+      <td>0.235067</td>
+      <td>0.230183</td>
+      <td>0.225709</td>
+      <td>0.221935</td>
+      <td>0.218800</td>
+      <td>0.234983</td>
+      <td>0.228857</td>
+      <td>0.224019</td>
+      <td>0.220183</td>
+      <td>0.217097</td>
+      <td>0.232778</td>
+      <td>0.226470</td>
+      <td>0.221730</td>
+      <td>0.218064</td>
+      <td>0.215153</td>
+      <td>0.229385</td>
+      <td>0.223461</td>
+      <td>0.219081</td>
+      <td>0.215717</td>
+      <td>0.213057</td>
+      <td>0.227919</td>
+      <td>0.224534</td>
+      <td>0.221395</td>
+      <td>0.218648</td>
+      <td>0.216279</td>
+      <td>0.227565</td>
+      <td>0.223500</td>
+      <td>0.220108</td>
+      <td>0.217286</td>
+      <td>0.214923</td>
+      <td>0.225998</td>
+      <td>0.221769</td>
+      <td>0.218386</td>
+      <td>0.215637</td>
+      <td>0.213367</td>
+      <td>0.223668</td>
+      <td>0.219584</td>
+      <td>0.216375</td>
+      <td>0.213793</td>
+      <td>0.211674</td>
+      <td>0.227854</td>
+      <td>0.224503</td>
+      <td>0.221385</td>
+      <td>0.218648</td>
+      <td>0.216287</td>
+      <td>0.227533</td>
+      <td>0.223491</td>
+      <td>0.220112</td>
+      <td>0.217298</td>
+      <td>0.214939</td>
+      <td>0.225994</td>
+      <td>0.221778</td>
+      <td>0.218403</td>
+      <td>0.215658</td>
+      <td>0.213390</td>
+      <td>0.223684</td>
+      <td>0.219607</td>
+      <td>0.216402</td>
+      <td>0.213821</td>
+      <td>0.211702</td>
+      <td>0.227789</td>
+      <td>0.224473</td>
+      <td>0.221373</td>
+      <td>0.218649</td>
+      <td>0.216294</td>
+      <td>0.227501</td>
+      <td>0.223483</td>
+      <td>0.220116</td>
+      <td>0.217309</td>
+      <td>0.214954</td>
+      <td>0.225988</td>
+      <td>0.221787</td>
+      <td>0.218419</td>
+      <td>0.215678</td>
+      <td>0.213413</td>
+      <td>0.223700</td>
+      <td>0.219630</td>
+      <td>0.216428</td>
+      <td>0.213849</td>
+      <td>0.211731</td>
+    </tr>
+    <tr>
+      <th>High</th>
+      <td>0.137626</td>
+      <td>0.187771</td>
+      <td>0.207651</td>
+      <td>0.217297</td>
+      <td>0.222709</td>
+      <td>0.189667</td>
+      <td>0.214176</td>
+      <td>0.223801</td>
+      <td>0.228490</td>
+      <td>0.231117</td>
+      <td>0.223918</td>
+      <td>0.232660</td>
+      <td>0.235849</td>
+      <td>0.237250</td>
+      <td>0.237935</td>
+      <td>0.245406</td>
+      <td>0.245516</td>
+      <td>0.244846</td>
+      <td>0.244121</td>
+      <td>0.243477</td>
+      <td>0.136807</td>
+      <td>0.187183</td>
+      <td>0.207236</td>
+      <td>0.216986</td>
+      <td>0.222465</td>
+      <td>0.188877</td>
+      <td>0.213663</td>
+      <td>0.223439</td>
+      <td>0.228216</td>
+      <td>0.230899</td>
+      <td>0.223252</td>
+      <td>0.232228</td>
+      <td>0.235538</td>
+      <td>0.237010</td>
+      <td>0.237740</td>
+      <td>0.244873</td>
+      <td>0.245158</td>
+      <td>0.244580</td>
+      <td>0.243911</td>
+      <td>0.243304</td>
+      <td>0.135993</td>
+      <td>0.186595</td>
+      <td>0.206820</td>
+      <td>0.216675</td>
+      <td>0.222220</td>
+      <td>0.188089</td>
+      <td>0.213151</td>
+      <td>0.223077</td>
+      <td>0.227942</td>
+      <td>0.230680</td>
+      <td>0.222587</td>
+      <td>0.231797</td>
+      <td>0.235227</td>
+      <td>0.236769</td>
+      <td>0.237545</td>
+      <td>0.244339</td>
+      <td>0.244799</td>
+      <td>0.244313</td>
+      <td>0.243700</td>
+      <td>0.243130</td>
+      <td>0.172565</td>
+      <td>0.195793</td>
+      <td>0.207979</td>
+      <td>0.215172</td>
+      <td>0.219801</td>
+      <td>0.199484</td>
+      <td>0.212817</td>
+      <td>0.219916</td>
+      <td>0.224163</td>
+      <td>0.226925</td>
+      <td>0.219324</td>
+      <td>0.225929</td>
+      <td>0.229458</td>
+      <td>0.231566</td>
+      <td>0.232928</td>
+      <td>0.233791</td>
+      <td>0.236013</td>
+      <td>0.237095</td>
+      <td>0.237671</td>
+      <td>0.237994</td>
+      <td>0.172034</td>
+      <td>0.195399</td>
+      <td>0.207677</td>
+      <td>0.214930</td>
+      <td>0.219602</td>
+      <td>0.199004</td>
+      <td>0.212467</td>
+      <td>0.219645</td>
+      <td>0.223945</td>
+      <td>0.226744</td>
+      <td>0.218907</td>
+      <td>0.225621</td>
+      <td>0.229218</td>
+      <td>0.231370</td>
+      <td>0.232763</td>
+      <td>0.233434</td>
+      <td>0.235745</td>
+      <td>0.236882</td>
+      <td>0.237495</td>
+      <td>0.237845</td>
+      <td>0.171505</td>
+      <td>0.195006</td>
+      <td>0.207375</td>
+      <td>0.214689</td>
+      <td>0.219403</td>
+      <td>0.198524</td>
+      <td>0.212116</td>
+      <td>0.219374</td>
+      <td>0.223727</td>
+      <td>0.226563</td>
+      <td>0.218490</td>
+      <td>0.225313</td>
+      <td>0.228977</td>
+      <td>0.231174</td>
+      <td>0.232598</td>
+      <td>0.233078</td>
+      <td>0.235477</td>
+      <td>0.236669</td>
+      <td>0.237319</td>
+      <td>0.237695</td>
+      <td>0.184960</td>
+      <td>0.199186</td>
+      <td>0.207919</td>
+      <td>0.213695</td>
+      <td>0.217740</td>
+      <td>0.202531</td>
+      <td>0.211688</td>
+      <td>0.217392</td>
+      <td>0.221214</td>
+      <td>0.223919</td>
+      <td>0.216436</td>
+      <td>0.221871</td>
+      <td>0.225298</td>
+      <td>0.227615</td>
+      <td>0.229264</td>
+      <td>0.227402</td>
+      <td>0.230163</td>
+      <td>0.231901</td>
+      <td>0.233069</td>
+      <td>0.233895</td>
+      <td>0.184588</td>
+      <td>0.198893</td>
+      <td>0.207682</td>
+      <td>0.213498</td>
+      <td>0.217573</td>
+      <td>0.202193</td>
+      <td>0.211422</td>
+      <td>0.217177</td>
+      <td>0.221034</td>
+      <td>0.223764</td>
+      <td>0.216135</td>
+      <td>0.221632</td>
+      <td>0.225102</td>
+      <td>0.227449</td>
+      <td>0.229122</td>
+      <td>0.227135</td>
+      <td>0.229949</td>
+      <td>0.231724</td>
+      <td>0.232918</td>
+      <td>0.233764</td>
+      <td>0.184217</td>
+      <td>0.198601</td>
+      <td>0.207446</td>
+      <td>0.213301</td>
+      <td>0.217405</td>
+      <td>0.201855</td>
+      <td>0.211157</td>
+      <td>0.216961</td>
+      <td>0.220853</td>
+      <td>0.223610</td>
+      <td>0.215833</td>
+      <td>0.221393</td>
+      <td>0.224906</td>
+      <td>0.227284</td>
+      <td>0.228979</td>
+      <td>0.226868</td>
+      <td>0.229735</td>
+      <td>0.231546</td>
+      <td>0.232767</td>
+      <td>0.233633</td>
+      <td>0.190919</td>
+      <td>0.200969</td>
+      <td>0.207770</td>
+      <td>0.212613</td>
+      <td>0.216204</td>
+      <td>0.203833</td>
+      <td>0.210832</td>
+      <td>0.215626</td>
+      <td>0.219077</td>
+      <td>0.221658</td>
+      <td>0.214528</td>
+      <td>0.219164</td>
+      <td>0.222376</td>
+      <td>0.224710</td>
+      <td>0.226469</td>
+      <td>0.223373</td>
+      <td>0.226203</td>
+      <td>0.228179</td>
+      <td>0.229624</td>
+      <td>0.230717</td>
+      <td>0.190638</td>
+      <td>0.200738</td>
+      <td>0.207576</td>
+      <td>0.212447</td>
+      <td>0.216060</td>
+      <td>0.203575</td>
+      <td>0.210619</td>
+      <td>0.215447</td>
+      <td>0.218922</td>
+      <td>0.221523</td>
+      <td>0.214293</td>
+      <td>0.218969</td>
+      <td>0.222211</td>
+      <td>0.224567</td>
+      <td>0.226343</td>
+      <td>0.223160</td>
+      <td>0.226025</td>
+      <td>0.228027</td>
+      <td>0.229491</td>
+      <td>0.230600</td>
+      <td>0.190356</td>
+      <td>0.200507</td>
+      <td>0.207382</td>
+      <td>0.212281</td>
+      <td>0.215915</td>
+      <td>0.203316</td>
+      <td>0.210406</td>
+      <td>0.215267</td>
+      <td>0.218768</td>
+      <td>0.221389</td>
+      <td>0.214057</td>
+      <td>0.218774</td>
+      <td>0.222045</td>
+      <td>0.224424</td>
+      <td>0.226218</td>
+      <td>0.222947</td>
+      <td>0.225847</td>
+      <td>0.227875</td>
+      <td>0.229359</td>
+      <td>0.230483</td>
+    </tr>
+    <tr>
+      <th>Extreme</th>
+      <td>0.042320</td>
+      <td>0.101853</td>
+      <td>0.143214</td>
+      <td>0.171124</td>
+      <td>0.190778</td>
+      <td>0.087361</td>
+      <td>0.139863</td>
+      <td>0.172872</td>
+      <td>0.194809</td>
+      <td>0.210282</td>
+      <td>0.134376</td>
+      <td>0.174989</td>
+      <td>0.199863</td>
+      <td>0.216442</td>
+      <td>0.228224</td>
+      <td>0.177500</td>
+      <td>0.206368</td>
+      <td>0.224131</td>
+      <td>0.236099</td>
+      <td>0.244692</td>
+      <td>0.041960</td>
+      <td>0.101327</td>
+      <td>0.142699</td>
+      <td>0.170656</td>
+      <td>0.190359</td>
+      <td>0.086779</td>
+      <td>0.139264</td>
+      <td>0.172333</td>
+      <td>0.194335</td>
+      <td>0.209863</td>
+      <td>0.133664</td>
+      <td>0.174356</td>
+      <td>0.199318</td>
+      <td>0.215969</td>
+      <td>0.227809</td>
+      <td>0.176735</td>
+      <td>0.205728</td>
+      <td>0.223590</td>
+      <td>0.235633</td>
+      <td>0.244284</td>
+      <td>0.041604</td>
+      <td>0.100805</td>
+      <td>0.142186</td>
+      <td>0.170190</td>
+      <td>0.189941</td>
+      <td>0.086201</td>
+      <td>0.138667</td>
+      <td>0.171797</td>
+      <td>0.193862</td>
+      <td>0.209445</td>
+      <td>0.132956</td>
+      <td>0.173725</td>
+      <td>0.198774</td>
+      <td>0.215497</td>
+      <td>0.227395</td>
+      <td>0.175972</td>
+      <td>0.205090</td>
+      <td>0.223050</td>
+      <td>0.235168</td>
+      <td>0.243876</td>
+      <td>0.090942</td>
+      <td>0.130675</td>
+      <td>0.158801</td>
+      <td>0.179209</td>
+      <td>0.194533</td>
+      <td>0.125636</td>
+      <td>0.158774</td>
+      <td>0.181706</td>
+      <td>0.198299</td>
+      <td>0.210791</td>
+      <td>0.158559</td>
+      <td>0.184782</td>
+      <td>0.202863</td>
+      <td>0.216001</td>
+      <td>0.225948</td>
+      <td>0.188653</td>
+      <td>0.208505</td>
+      <td>0.222278</td>
+      <td>0.232363</td>
+      <td>0.240053</td>
+      <td>0.090493</td>
+      <td>0.130217</td>
+      <td>0.158374</td>
+      <td>0.178820</td>
+      <td>0.194179</td>
+      <td>0.125114</td>
+      <td>0.158288</td>
+      <td>0.181268</td>
+      <td>0.197907</td>
+      <td>0.210438</td>
+      <td>0.157997</td>
+      <td>0.184284</td>
+      <td>0.202424</td>
+      <td>0.215610</td>
+      <td>0.225598</td>
+      <td>0.188075</td>
+      <td>0.208005</td>
+      <td>0.221842</td>
+      <td>0.231976</td>
+      <td>0.239707</td>
+      <td>0.090046</td>
+      <td>0.129761</td>
+      <td>0.157948</td>
+      <td>0.178432</td>
+      <td>0.193826</td>
+      <td>0.124593</td>
+      <td>0.157804</td>
+      <td>0.180832</td>
+      <td>0.197515</td>
+      <td>0.210085</td>
+      <td>0.157437</td>
+      <td>0.183787</td>
+      <td>0.201985</td>
+      <td>0.215220</td>
+      <td>0.225248</td>
+      <td>0.187498</td>
+      <td>0.207506</td>
+      <td>0.221406</td>
+      <td>0.231590</td>
+      <td>0.239361</td>
+      <td>0.119829</td>
+      <td>0.147799</td>
+      <td>0.168660</td>
+      <td>0.184621</td>
+      <td>0.197152</td>
+      <td>0.146375</td>
+      <td>0.169872</td>
+      <td>0.187282</td>
+      <td>0.200605</td>
+      <td>0.211094</td>
+      <td>0.171323</td>
+      <td>0.190478</td>
+      <td>0.204681</td>
+      <td>0.215592</td>
+      <td>0.224217</td>
+      <td>0.194384</td>
+      <td>0.209561</td>
+      <td>0.220872</td>
+      <td>0.229609</td>
+      <td>0.236552</td>
+      <td>0.119420</td>
+      <td>0.147408</td>
+      <td>0.168298</td>
+      <td>0.184288</td>
+      <td>0.196846</td>
+      <td>0.145936</td>
+      <td>0.169469</td>
+      <td>0.186915</td>
+      <td>0.200271</td>
+      <td>0.210789</td>
+      <td>0.170867</td>
+      <td>0.190069</td>
+      <td>0.204313</td>
+      <td>0.215259</td>
+      <td>0.223914</td>
+      <td>0.193923</td>
+      <td>0.209152</td>
+      <td>0.220506</td>
+      <td>0.229279</td>
+      <td>0.236252</td>
+      <td>0.119012</td>
+      <td>0.147018</td>
+      <td>0.167937</td>
+      <td>0.183956</td>
+      <td>0.196541</td>
+      <td>0.145497</td>
+      <td>0.169066</td>
+      <td>0.186548</td>
+      <td>0.199938</td>
+      <td>0.210484</td>
+      <td>0.170412</td>
+      <td>0.189660</td>
+      <td>0.203946</td>
+      <td>0.214926</td>
+      <td>0.223611</td>
+      <td>0.193462</td>
+      <td>0.208743</td>
+      <td>0.220141</td>
+      <td>0.228949</td>
+      <td>0.235952</td>
+      <td>0.137955</td>
+      <td>0.159030</td>
+      <td>0.175442</td>
+      <td>0.188494</td>
+      <td>0.199082</td>
+      <td>0.159171</td>
+      <td>0.177146</td>
+      <td>0.191117</td>
+      <td>0.202241</td>
+      <td>0.211286</td>
+      <td>0.179171</td>
+      <td>0.194196</td>
+      <td>0.205894</td>
+      <td>0.215237</td>
+      <td>0.222858</td>
+      <td>0.197856</td>
+      <td>0.210162</td>
+      <td>0.219783</td>
+      <td>0.227499</td>
+      <td>0.233819</td>
+      <td>0.137596</td>
+      <td>0.158693</td>
+      <td>0.175128</td>
+      <td>0.188204</td>
+      <td>0.198813</td>
+      <td>0.158798</td>
+      <td>0.176802</td>
+      <td>0.190801</td>
+      <td>0.201951</td>
+      <td>0.211017</td>
+      <td>0.178791</td>
+      <td>0.193849</td>
+      <td>0.205578</td>
+      <td>0.214947</td>
+      <td>0.222591</td>
+      <td>0.197472</td>
+      <td>0.209816</td>
+      <td>0.219469</td>
+      <td>0.227211</td>
+      <td>0.233554</td>
+      <td>0.137239</td>
+      <td>0.158356</td>
+      <td>0.174816</td>
+      <td>0.187914</td>
+      <td>0.198544</td>
+      <td>0.158426</td>
+      <td>0.176459</td>
+      <td>0.190486</td>
+      <td>0.201660</td>
+      <td>0.210749</td>
+      <td>0.178410</td>
+      <td>0.193503</td>
+      <td>0.205262</td>
+      <td>0.214657</td>
+      <td>0.222324</td>
+      <td>0.197089</td>
+      <td>0.209470</td>
+      <td>0.219154</td>
+      <td>0.226924</td>
+      <td>0.233289</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
