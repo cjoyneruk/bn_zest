@@ -1,4 +1,3 @@
-from numpy.core.fromnumeric import var
 from .nodes import Node
 import pandas as pd
 import numpy as np
